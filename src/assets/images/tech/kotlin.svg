@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="kotlin">
+<g id="kotlin_2">
+<path id="Vector" d="M32 32H0V0H32L15.6688 15.768L32 32Z" fill="url(#paint0_radial_1009_4616)"/>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1009_4616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(30.936 1.3152) scale(36.6555)">
+<stop offset="0.003" stop-color="#EF4857"/>
+<stop offset="0.469" stop-color="#D211EC"/>
+<stop offset="1" stop-color="#7F52FF"/>
+</radialGradient>
+</defs>
+</svg>

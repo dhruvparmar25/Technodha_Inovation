@@ -1,0 +1,456 @@
+
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #fb6557;
+  --color-secondary: #fe9139;
+
+  --color-bg: #0f0f12;
+  --color-border: #F2C5BE;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3bd;
+
+  --gradient-primary: linear-gradient(90deg,#fb6557 0%,#fe9139 100%);
+}
+
+[data-theme="light"] {
+  --color-bg: #fff7f5;
+  --color-border: #f2c5be;
+  --color-text-primary: #2c2c2c;
+  --color-text-secondary: #6e5c59;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+button{
+    cursor: pointer;
+}
+/* =========================================================
+   Base Styles
+========================================================= */
+body {
+    font-family: "Poppins", sans-serif; 
+background-color:#fff7f5;
+    color: var(--color-text-primary); 
+    overflow-x: hidden; 
+}
+
+.navbar-scrolled {
+  background: transparent;
+}
+
+[data-theme="light"] .navbar-scrolled {
+  background: var(--color-bg);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+/* Gradient text utility */
+.text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Main wrapper */
+.page-wrapper {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Decorative blurred circle */
+.left-circle {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    opacity: 0.25;
+    filter: blur(120px);
+    box-shadow: 0 0 120px rgba(254, 145, 57, 0.25), 0 0 200px rgba(251, 101, 87, 0.2);
+    pointer-events: none;
+}
+
+/* Smaller circle on mobile */
+@media (max-width: 768px) {
+    .left-circle {
+        width: 200px;
+        height: 200px;
+        filter: blur(80px);
+        opacity: 0.18;
+    }
+}
+
+/* =========================================================
+   Navigation
+========================================================= */
+.nav-link {
+  @apply relative transition-all duration-300 text-text-primary;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+/* Bottom underline for active link */
+.nav-link.active::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 w-full h-0.5 bg-[#FB6557];
+}
+
+/* =========================================================
+   Dropdown
+========================================================= */
+
+/* Dropdown menu items */
+.dropdown-item {
+    @apply py-2.5 px-1 text-sm text-white rounded-lg
+         transition-all duration-200
+         hover:text-[#FB6557]
+         hover:bg-[#FB6557]/10
+         active:text-[#FB6557]
+         active:bg-[#FB6557]/10;
+}
+
+/* =========================================================
+   Typography Utilities
+========================================================= */
+
+/* Small uppercase label */
+.eyebrow-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.006em;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Section small title */
+.section-title {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+    color: #FE9139;
+    margin-bottom: 8px;
+}
+
+/* Main heading (light) */
+.heading-primary {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+
+    letter-spacing: 0.006em;
+    margin-top: 8px;
+    color: #1a1a1f;
+}
+
+/* Main heading (dark) */
+.heading-primary-dark {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+
+    letter-spacing: 0.006em;
+    margin-top: 8px;
+    color: white;
+}
+
+/* Span spacing inside heading */
+.heading-primary span {
+    padding-right: 4px;
+    margin-right: 4px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Primary highlighted word */
+.highlight-primary {
+    font-style: italic;
+    color: #fb6557;
+}
+
+/* Secondary highlighted word */
+.highlight-secondary {
+    font-style: italic;
+    color: #fe9139;
+}
+
+/* Paragraph/support text */
+.text-support {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.006em;
+    margin-top: 16px;
+    color: #5f5f6b;
+}
+
+/* Responsive heading sizes */
+@media (min-width: 640px) {
+    .heading-primary {
+        font-size: 26px;
+        line-height: 38px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .heading-primary {
+        font-size: 30px;
+    }
+}
+
+/* =========================================================
+   Buttons
+========================================================= */
+
+/* Gradient text on hover */
+.btn-focus:hover {
+    border-color: transparent;
+    background: var(--gradient-primary);
+    background-clip: text, border-box;
+    -webkit-background-clip: text, border-box;
+    color: transparent;
+}
+
+/* =========================================================
+   Zoom Animations
+========================================================= */
+
+/* First image animation */
+.image-one {
+    animation: imageOneSwap 6s ease-in-out infinite alternate;
+}
+
+/* Second image animation */
+.image-two {
+    animation: imageTwoSwap 6s ease-in-out infinite alternate;
+}
+
+/* Image size swap animation */
+@keyframes imageOneSwap {
+    from { width: 262px; height: 270px; }
+    to   { width: 280px; height: 243px; }
+}
+
+@keyframes imageTwoSwap {
+    from { width: 280px; height: 243px; }
+    to   { width: 262px; height: 270px; }
+}
+
+/* Small box grows */
+.box-one {
+    animation: boxOneSwap 6s ease-in-out infinite alternate;
+    width: 69px;
+    height: 69px;
+}
+
+/* Big box shrinks */
+.box-two {
+    animation: boxTwoSwap 6s ease-in-out infinite alternate;
+    width: 100px;
+    height: 100px;
+}
+
+/* Box animations */
+@keyframes boxOneSwap {
+    from { width: 69px; height: 69px; }
+    to   { width: 100px; height: 100px; }
+}
+
+@keyframes boxTwoSwap {
+    from { width: 100px; height: 100px; }
+    to   { width: 69px; height: 69px; }
+}
+
+/* =========================================================
+   Hero / Text Effects
+========================================================= */
+
+/* Floating word text */
+.word {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-secondary)
+
+}
+
+/* Tablet outline text */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .word {
+        opacity: 0;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: transparent;
+        -webkit-text-stroke: 1.5px var(--color-secondary)
+
+    }
+}
+
+/* Laptop outline text */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .word {
+        opacity: 0;
+        font-size: 26px;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: transparent;
+        -webkit-text-stroke: 1.5px var(--color-secondary)
+
+    }
+}
+
+/* Desktop outline text */
+@media (min-width: 1280px) {
+    .word {
+        opacity: 0;
+        font-size: 42px;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--color-secondary)
+
+    }
+}
+
+/* =========================================================
+   Image Layers
+========================================================= */
+
+/* Keep main image above others */
+.men-image {
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================================================
+   Shape Animation
+========================================================= */
+
+/* Animated border radius */
+@keyframes threeCornerRotate {
+    0% { border-radius: 100px 0 0 100px; }
+    33% { border-radius: 100px 100px 0 0; }
+    66% { border-radius: 0 100px 0 100px; }
+    100% { border-radius: 100px 0 0 100px; }
+}
+
+.animate-three-corner {
+    animation: threeCornerRotate 15s ease-in-out infinite;
+}
+
+/* =========================================================
+   Tech Stack Boxes
+========================================================= */
+
+/* Tech item box */
+.tech-box {
+    width: 160px;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1f;
+}
+
+/* Bigger on larger screens */
+@media (min-width: 640px) { .tech-box { width: 190px; height: 56px; font-size: 14px; } }
+@media (min-width: 1024px) { .tech-box { width: 220px; height: 60px; font-size: 15px; } }
+@media (min-width: 1280px) { .tech-box { width: 240px; height: 64px; font-size: 16px; } }
+
+/* =========================================================
+   Marquee Animations
+========================================================= */
+
+/* Left scrolling */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Right scrolling */
+@keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+.animate-marquee { animation: marquee 60s linear infinite; }
+.animate-marquee-reverse { animation: marquee-reverse 60s linear infinite; }
+
+/* Scale loop */
+@keyframes scaleLoop {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.35); }
+}
+
+.animate-scale {
+    animation: scaleLoop 5.5s ease-in-out infinite;
+}
+
+/* Outline digit */
+.digit {
+    color: #0000;
+    -webkit-text-stroke: 1.5px var(--color-primary);
+}
+
+/* Icon pulse animation */
+@keyframes iconPulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+}
+
+.animate-icon-pulse {
+  animation: iconPulse 4s ease-in-out infinite;
+}
+
+/* Auto zoom */
+@keyframes zoomInOut {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.auto-zoom {
+  animation: zoomInOut 4s ease-in-out infinite;
+}
+
+/* Extra pulse effects */
+@keyframes pulseScale {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes centerPulse {
+  0%,100% { transform: scale(0.9); }
+  50% { transform: scale(1); }
+}
+
+/* Fade for corner cards */
+@keyframes cornerFade {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Align career content right */
+.career-right-align {
+  justify-content: end;
+}
