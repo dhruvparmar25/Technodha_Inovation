@@ -26,79 +26,78 @@ export default function ServiceStack() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-  if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return;
 
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  const mm = gsap.matchMedia();
+    const mm = gsap.matchMedia();
 
-  mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
-    const cards = gsap.utils.toArray(".service-card");
-    const centerIndex = Math.floor(cards.length / 2);
+    mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
+      const cards = gsap.utils.toArray(".service-card");
+      const centerIndex = Math.floor(cards.length / 2);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=1800",
-        scrub: true,
-        pin: true,
-      },
-    });
-
-    cards.forEach((card, i) => {
-      tl.from(card, {
-        y: 300,
-        opacity: 0,
-        rotate: i % 2 === 0 ? -5 : 5,
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=1800",
+          scrub: true,
+          pin: true,
+        },
       });
 
-      tl.to(card, {
-        y: -i * 8,
-        onStart: () => setActiveTitle(services[i].title),
-      });
-    });
+      cards.forEach((card, i) => {
+        tl.from(card, {
+          y: 300,
+          opacity: 0,
+          rotate: i % 2 === 0 ? -5 : 5,
+        });
 
-    tl.to(cards, {
-      x: (i) => (i - centerIndex) * 180, // 👈 mid screens
-    });
-  });
-
-  mm.add("(min-width: 1440px)", () => {
-    const cards = gsap.utils.toArray(".service-card");
-    const centerIndex = Math.floor(cards.length / 2);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=1800",
-        scrub: true,
-        pin: true,
-      },
-    });
-
-    cards.forEach((card, i) => {
-      tl.from(card, {
-        y: 400,
-        opacity: 0,
-        rotate: i % 2 === 0 ? -6 : 6,
+        tl.to(card, {
+          y: -i * 2,
+          onStart: () => setActiveTitle(services[i].title),
+        });
       });
 
-      tl.to(card, {
-        y: -i * 12,
-        onStart: () => setActiveTitle(services[i].title),
+      tl.to(cards, {
+        x: (i) => (i - centerIndex) * 200, // 👈 mid screens
       });
     });
 
-    tl.to(cards, {
-      x: (i) => (i - centerIndex) * 280, // 👈 large screens
+    mm.add("(min-width: 1440px)", () => {
+      const cards = gsap.utils.toArray(".service-card");
+      const centerIndex = Math.floor(cards.length / 2);
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=1800",
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      cards.forEach((card, i) => {
+        tl.from(card, {
+          y: 400,
+          opacity: 0,
+          rotate: i % 2 === 0 ? -6 : 6,
+        });
+
+        tl.to(card, {
+          y: -i * 2,
+          onStart: () => setActiveTitle(services[i].title),
+        });
+      });
+
+      tl.to(cards, {
+        x: (i) => (i - centerIndex) * 280, // 👈 large screens
+      });
     });
-  });
 
-  return () => mm.revert();
-}, []);
-
+    return () => mm.revert();
+  }, []);
 
   // Slider controls
   const nextSlide = () => {
@@ -106,9 +105,7 @@ export default function ServiceStack() {
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? services.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
   };
 
   return (
@@ -117,7 +114,6 @@ export default function ServiceStack() {
       className="h-screen bg-bg flex flex-col items-center justify-center overflow-hidden relative lg:px-[120px]"
     >
       <div className="max-w-[1440px] h-screen mx-auto w-full relative">
-
         {/* Heading */}
         <h2 className="lg:text-[48px] font-semibold absolute top-0 text-center text-text-primary mt-4 lg:leading-[65px] w-full text-[35px] leading-[48px]">
           Where <span className="text-primary"> Innovation </span>
@@ -129,7 +125,6 @@ export default function ServiceStack() {
 
         {/* ================= MOBILE SLIDER ================= */}
         <div className="lg:hidden w-full flex flex-col items-center gap-6 mt-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-
           <div className="relative w-full overflow-hidden">
             <div
               className="flex transition-transform duration-500"
@@ -140,7 +135,6 @@ export default function ServiceStack() {
               {services.map((service, index) => (
                 <div key={index} className="min-w-full flex justify-center">
                   <div className="w-[260px] h-[340px] relative border border-border rounded-xl overflow-hidden shadow-xl">
-                    
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -178,11 +172,13 @@ export default function ServiceStack() {
         </div>
 
         {/* ================= DESKTOP GSAP ================= */}
-<div className="hidden lg:flex xl:mt-0 mt-8 relative w-full justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">          {services.map((service, index) => (
+        <div className="hidden lg:flex xl:mt-0 mt-8 relative w-full justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          {" "}
+          {services.map((service, index) => (
             <div
               key={index}
               className="service-card group absolute 
-w-[160px] h-[240px] 
+w-[190px] h-[240px] 
 xl:w-[260px] xl:h-[340px]
 border border-border rounded-xl overflow-hidden shadow-xl"
             >
@@ -220,7 +216,6 @@ border border-border rounded-xl overflow-hidden shadow-xl"
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

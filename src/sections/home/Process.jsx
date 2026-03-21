@@ -130,7 +130,7 @@ function Process() {
           </div>
 
           {/* Card 3 */}
-          <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9 lg:absolute lg:top-90 lg:left-120">
+          <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9 lg:absolute lg:top-70 lg:left-120">
             <div className="relative">
               {" "}
               <Icon
@@ -198,7 +198,7 @@ function Process() {
           </div>
 
           {/* Card 5 */}
-          <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9 lg:absolute lg:top-90 lg:right-100">
+          <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9 lg:absolute lg:top-70 lg:right-100">
             <div className="relative">
               {" "}
               <Icon
