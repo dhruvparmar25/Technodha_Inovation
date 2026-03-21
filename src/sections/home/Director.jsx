@@ -42,7 +42,7 @@ export default function DirectorSection() {
   return (
     <section
       data-theme="light"
-      className="relative py-16 md:py-20 bg-[#fff7f5]"
+      className="relative py-16 md:py-20 bg-[#fff7f5] overflow-hidden"
     >
       <Image
         src={Left}

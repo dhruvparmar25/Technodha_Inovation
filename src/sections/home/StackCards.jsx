@@ -25,13 +25,48 @@ export default function ServiceStack() {
   const [activeTitle, setActiveTitle] = useState(services[0].title);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // GSAP only for desktop
   useEffect(() => {
-    if (window.innerWidth < 1024) return;
+  if (typeof window === "undefined") return;
 
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
     const cards = gsap.utils.toArray(".service-card");
+    const centerIndex = Math.floor(cards.length / 2);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=1800",
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    cards.forEach((card, i) => {
+      tl.from(card, {
+        y: 300,
+        opacity: 0,
+        rotate: i % 2 === 0 ? -5 : 5,
+      });
+
+      tl.to(card, {
+        y: -i * 8,
+        onStart: () => setActiveTitle(services[i].title),
+      });
+    });
+
+    tl.to(cards, {
+      x: (i) => (i - centerIndex) * 180, // 👈 mid screens
+    });
+  });
+
+  mm.add("(min-width: 1440px)", () => {
+    const cards = gsap.utils.toArray(".service-card");
+    const centerIndex = Math.floor(cards.length / 2);
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -48,7 +83,6 @@ export default function ServiceStack() {
         y: 400,
         opacity: 0,
         rotate: i % 2 === 0 ? -6 : 6,
-        duration: 0.6,
       });
 
       tl.to(card, {
@@ -58,15 +92,13 @@ export default function ServiceStack() {
     });
 
     tl.to(cards, {
-      x: (i) => (i - 2) * 280,
-      y: 0,
-      rotate: 0,
-      scale: 1,
-      duration: 1,
+      x: (i) => (i - centerIndex) * 280, // 👈 large screens
     });
+  });
 
-    return () => ScrollTrigger.getAll().forEach(t => t.kill());
-  }, []);
+  return () => mm.revert();
+}, []);
+
 
   // Slider controls
   const nextSlide = () => {
@@ -146,12 +178,13 @@ export default function ServiceStack() {
         </div>
 
         {/* ================= DESKTOP GSAP ================= */}
-        <div className="hidden lg:flex relative w-full justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          {services.map((service, index) => (
+<div className="hidden lg:flex xl:mt-0 mt-8 relative w-full justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">          {services.map((service, index) => (
             <div
               key={index}
-              className="service-card group absolute w-[260px] h-[340px]
-              border border-border rounded-xl overflow-hidden shadow-xl"
+              className="service-card group absolute 
+w-[160px] h-[240px] 
+xl:w-[260px] xl:h-[340px]
+border border-border rounded-xl overflow-hidden shadow-xl"
             >
               <Image
                 src={service.image}

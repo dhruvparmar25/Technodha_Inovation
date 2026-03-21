@@ -41,6 +41,7 @@ function HeroSection() {
   }, []);
 
   return (
+    
     <section
       data-theme="light"
       className="relative w-full min-h-screen overflow-hidden"

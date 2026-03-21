@@ -50,7 +50,7 @@ function Process() {
         tl.fromTo(
           cardsRef.current,
           { x: fromX },
-          { x: toX, ease: "none", duration: 1 }
+          { x: toX, ease: "none", duration: 1 },
         );
 
         // Letters animation
@@ -62,12 +62,12 @@ function Process() {
               duration: 0.1,
               ease: "none",
             },
-            i * 0.2
+            i * 0.2,
           );
         }
 
         return () => tl.kill();
-      }
+      },
     );
 
     return () => mm.revert();
@@ -79,7 +79,6 @@ function Process() {
         ref={sectionRef}
         className="process min-h-screen lg:h-screen flex flex-col md:flex-col lg:flex-row justify-start lg:justify-center items-center overflow-hidden py-20 lg:py-0"
       >
-        className="process min-h-screen lg:h-screen ..."
         {/* 🔤 Heading */}
         <h1
           className="font-extrabold flex gap-1 z-10 
@@ -92,7 +91,6 @@ function Process() {
             </span>
           ))}
         </h1>
-
         {/* 📦 Cards */}
         <div
           ref={cardsRef}
@@ -109,28 +107,117 @@ function Process() {
         >
           {/* Card 1 */}
           <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9">
-           <div className="relative"> <Icon icon="carbon:document-requirements" className="w-10 h-10 absolute right-0 top-0" color="#FE9139" /> <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2"> Requirement Gathering </h4> <p className="text-[#5F5F6B] text-[16px]"> We start by understanding your business goals, challenges, and project requirements. Our team works closely with you to gather all necessary details, ensuring we build the right solution that aligns with your objectives and delivers real value to your user </p>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9">
-            <div className="relative"> <Icon icon="mage:light-bulb" className="w-10 h-10 absolute right-0 top-0" color="#FE9139" /> <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2"> Ideation </h4> <p className="text-[#5F5F6B] text-[16px]"> After understanding your requirements, our team brainstorms and explores creative ideas to define the best approach for your project. We focus on innovative solutions that align with your business goals and deliver the best possible user experience </p>
+            <div className="relative">
+              {" "}
+              <Icon
+                icon="carbon:document-requirements"
+                className="w-10 h-10 absolute right-0 top-0"
+                color="#FE9139"
+              />{" "}
+              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+                {" "}
+                Requirement Gathering{" "}
+              </h4>{" "}
+              <p className="text-[#5F5F6B] text-[16px]">
+                {" "}
+                We start by understanding your business goals, challenges, and
+                project requirements. Our team works closely with you to gather
+                all necessary details, ensuring we build the right solution that
+                aligns with your objectives and delivers real value to your
+                user{" "}
+              </p>
             </div>
           </div>
 
           {/* Card 3 */}
           <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9 lg:absolute lg:top-90 lg:left-120">
-            <div className="relative"> <Icon icon="iconoir:design-nib" className="w-10 h-10 absolute right-0 top-0" color="#FE9139" /> <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2"> Design </h4> <p className="text-[#5F5F6B] text-[16px]"> In this stage, our team transforms ideas into visually engaging and user-friendly designs. We focus on creating intuitive interfaces and seamless user experiences that align with your brand and project goals </p> </div> </div>
-
+            <div className="relative">
+              {" "}
+              <Icon
+                icon="iconoir:design-nib"
+                className="w-10 h-10 absolute right-0 top-0"
+                color="#FE9139"
+              />{" "}
+              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+                {" "}
+                Design{" "}
+              </h4>{" "}
+              <p className="text-[#5F5F6B] text-[16px]">
+                {" "}
+                In this stage, our team transforms ideas into visually engaging
+                and user-friendly designs. We focus on creating intuitive
+                interfaces and seamless user experiences that align with your
+                brand and project goals{" "}
+              </p>{" "}
+            </div>{" "}
+          </div>
+          {/* Card 2 */}
+          <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9">
+            <div className="relative">
+              {" "}
+              <Icon
+                icon="mage:light-bulb"
+                className="w-10 h-10 absolute right-0 top-0"
+                color="#FE9139"
+              />{" "}
+              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+                {" "}
+                Ideation{" "}
+              </h4>{" "}
+              <p className="text-[#5F5F6B] text-[16px]">
+                {" "}
+                After understanding your requirements, our team brainstorms and
+                explores creative ideas to define the best approach for your
+                project. We focus on innovative solutions that align with your
+                business goals and deliver the best possible user
+                experience{" "}
+              </p>
+            </div>
+          </div>
           {/* Card 4 */}
           <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9">
-       <div className="relative"> <Icon icon="tdesign:code" className="w-10 h-10 absolute right-0 top-0" color="#FE9139" /> <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2"> Development </h4> <p className="text-[#5F5F6B] text-[16px]"> In this stage, our developers transform the approved designs into a fully functional product. We use modern technologies and best coding practices to build secure, scalable, and high-performance digital solutions </p> </div>
+            <div className="relative">
+              {" "}
+              <Icon
+                icon="tdesign:code"
+                className="w-10 h-10 absolute right-0 top-0"
+                color="#FE9139"
+              />{" "}
+              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+                {" "}
+                Development{" "}
+              </h4>{" "}
+              <p className="text-[#5F5F6B] text-[16px]">
+                {" "}
+                In this stage, our developers transform the approved designs
+                into a fully functional product. We use modern technologies and
+                best coding practices to build secure, scalable, and
+                high-performance digital solutions{" "}
+              </p>{" "}
+            </div>
           </div>
 
           {/* Card 5 */}
           <div className="w-full max-w-[500px] lg:w-130 min-h-[240px] bg-white border border-[#F2C5BE] rounded-2xl p-6 md:p-9 lg:absolute lg:top-90 lg:right-100">
-           <div className="relative"> <Icon icon="heroicons:rocket-launch" className="w-10 h-10 absolute right-0 top-0" color="#FE9139" /> <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2"> Launch </h4> <p className="text-[#5F5F6B] text-[16px]"> After thorough testing and final approval, we deploy the product to the live server and make it accessible to users. Our team ensures the launch is smooth, stable, and ready to support your business operations </p></div>
+            <div className="relative">
+              {" "}
+              <Icon
+                icon="heroicons:rocket-launch"
+                className="w-10 h-10 absolute right-0 top-0"
+                color="#FE9139"
+              />{" "}
+              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+                {" "}
+                Launch{" "}
+              </h4>{" "}
+              <p className="text-[#5F5F6B] text-[16px]">
+                {" "}
+                After thorough testing and final approval, we deploy the product
+                to the live server and make it accessible to users. Our team
+                ensures the launch is smooth, stable, and ready to support your
+                business operations{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>
