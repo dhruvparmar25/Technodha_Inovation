@@ -108,11 +108,15 @@ function AboutSection() {
                         </div>
 
                         <div className="mt-6 flex xl:justify-start sm:w-full">
-                            <GradientButton
-                                onClick={() => router.push('/about')}
-                                text="Explore how we work"
-                                className="w-full sm:w-auto"
-                            />
+                              <button className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0">
+SEND YOUR REQUIREMENTS                                          <Icon
+                                            color="#fe9139"
+                                            className="w-9 h-9 bg-white rounded-full -rotate-45 
+                                             transition-transform duration-300 ease-in-out 
+                                             group-hover:rotate-0"
+                                            icon="fa6-solid:circle-right"
+                                          />
+                                        </button>
                         </div>
                     </div>
                 </div>

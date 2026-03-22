@@ -50,14 +50,14 @@ export default function HoverCardsSection() {
         {/* Main Heading */}
         <div className="heading-primary ">
           Built with
-          <span className="italic text-gradient-primary mx-1">intention</span>
+          <span className="italic text-primary mx-1">intention</span>
           .Delivered with
-          <span className="italic text-gradient-primary mx-1"> confidence</span>
+          <span className="italic text-secondary mx-1"> confidence</span>
           .
         </div>
 
         {/* Sub Text */}
-        <p className="text-support mx-1">
+        <p className="text-support max-w-[794px] mx-1">
           We keep the process simple and structured—understand the goal, design
           with purpose, build with clean foundations, and ship something you can
           grow on.{" "}

@@ -23,16 +23,16 @@ const PRINCIPLES = [
 
 export default function PrinciplesSection() {
   return (
-    <section className=" py-16 max-w-[1230px] px-[15px] m-auto">
+    <section data-theme="light" className=" py-16 max-w-[1230px] px-[15px] m-auto">
       <div className="flex flex-col">
         {/* ================= HEADER ================= */}
         <header>
           <div className="section-title">WHAT WE STAND FOR</div>
 
           <h2 className="heading-primary">
-            <span className="italic text-(--light-color-primary)">Principles</span>{" "}
+            <span className="italic text-(--color-primary)">Principles</span>{" "}
             we don&apos;t{" "}
-            <span className="italic text-(--light-color-text-secondary)">
+            <span className="italic text-(--color-text-secondary)">
               compromise
             </span>{" "}
             on
@@ -57,7 +57,7 @@ export default function PrinciplesSection() {
               </h3>
 
               {/* Description */}
-              <p className="text-(--light-color-text-secondary) text-[14px] mt-2">
+              <p className="text-(--color-text-secondary) text-[14px] mt-2">
                 {item.desc}
               </p>
             </article>

@@ -11,9 +11,9 @@
     return (
       <section
         className="
-        py-16  max-w-[1230px] px-[15px] m-auto
+        py-16  max-w-[1230px]  m-auto
           flex flex-col gap-8
-          lg:flex-row lg:gap-16.25
+          lg:flex-row lg:gap-12.25
           justify-between items-center
         "
       >
@@ -25,10 +25,10 @@
           {/* Main Heading */}
           <h2 className="heading-primary text-xl sm:text-2xl lg:text-3xl leading-tight">
             We build{" "}
-            <span className="italic text-(--light-color-primary)">digital</span>{" "}
+            <span className="italic text-(--color-primary)">digital</span>{" "}
             products with{" "}
-            <span className="italic text-(--light-color-secondary)">clarity</span>,{" "}
-            <span className="text-(--light-color-text-secondary)">scale</span>, and
+            <span className="italic text-(--color-secondary)">clarity</span>,{" "}
+            <span className="text-(--color-text-secondary)">scale</span>, and
             long-term value
           </h2>
 

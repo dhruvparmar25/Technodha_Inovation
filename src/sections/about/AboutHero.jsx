@@ -1,5 +1,5 @@
 import CommonPageHero from "@/components/common/CommonPageHero";
-import aboutbg from "@/assets/images/sections/about/hero/about-bg.jpg";
+import aboutbg from "@/assets/images/sections/about/hero/hero-bg.png";
 
 export default function AboutHero() {
   return (

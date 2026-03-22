@@ -12,17 +12,16 @@ import DirectorSection from "@/sections/home/Director";
 export default function HomePage() {
   return (
     <main>
-
-       <HeroSection />
+      <HeroSection />
       <StackCards />
-   <AboutSection />
-  <WhyChooseSection />
-        <Creativity />
-        <TechStackSection />
-       <Process />
-       <DirectorSection />
-       <WorkflowSection /> 
-<ContactSection /> 
+      <AboutSection />
+      <WhyChooseSection />
+      <Creativity />
+      <TechStackSection />
+      <Process />
+      <DirectorSection />
+      {/* <WorkflowSection />  */}
+      <ContactSection />
     </main>
   );
 }

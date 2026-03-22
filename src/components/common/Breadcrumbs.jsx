@@ -13,7 +13,7 @@ const Breadcrumbs = () => {
                 <li>
                     <Link
                         href="/"
-                        className="font-[Poppins] font-medium text-[16px] text-white hover:opacity-80"
+                        className="font-[Poppins] font-medium text-[16px] text-text-primary hover:opacity-80"
                     >
                         Home
                     </Link>
@@ -25,7 +25,7 @@ const Breadcrumbs = () => {
 
                     return (
                         <li key={routeTo} className="flex items-center">
-                            <span className="mx-2 text-white">/</span>
+                            <span className="mx-2 text-text-primary">/</span>
 
                             {isLast ? (
                                 <span
@@ -47,7 +47,7 @@ const Breadcrumbs = () => {
                                         font-[Poppins]
                                         font-medium
                                         text-[16px]
-                                        text-white
+                                        text-text-primary
                                         hover:opacity-80
                                         capitalize
                                     "

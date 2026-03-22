@@ -26,18 +26,18 @@ const EXIST_CARDS = [
 
 export default function AboutExist() {
   return (
-    <section className="py-16  max-w-[1230px] px-[15px] m-auto">
+    <section data-theme="light" className="py-16  max-w-[1230px] px-[15px] m-auto">
       {/* ================= HEADER ================= */}
       <header className="text-center md:text-left">
         <div className="section-title">WHY WE EXIST</div>
 
         <h2 className="heading-primary">
           Driven by
-          <span className="italic text-(--light-color-secondary) mx-2">
+          <span className="italic text-(--color-secondary) mx-2">
             purpose
           </span>
           , not
-          <span className="italic text-(--light-color-text-secondary) mx-2">
+          <span className="italic text-(--color-text-secondary) mx-2">
             hype
           </span>
         </h2>
@@ -51,7 +51,7 @@ export default function AboutExist() {
             className="bg-white flex-1 pt-14 pb-8 px-4 rounded-xl relative"
           >
             {/* Icon */}
-            <div className="w-18 h-18 md:w-22 md:h-22 bg-(--light-color-border) rounded-full absolute left-1/2 md:left-6 -top-9 md:-top-11 -translate-x-1/2 md:translate-x-0 flex items-center justify-center p-3">
+            <div className="w-18 h-18 md:w-22 md:h-22 bg-(--color-border) rounded-full absolute left-1/2 md:left-6 -top-9 md:-top-11 -translate-x-1/2 md:translate-x-0 flex items-center justify-center p-3">
               <div className="animate-icon-pulse">
                 <Image
                   src={item.icon}
@@ -62,12 +62,12 @@ export default function AboutExist() {
             </div>
 
             {/* Title */}
-            <h3 className="text-(--light-color-text-primary) text-4 md:text-5 font-semibold mb-2">
+            <h3 className="text-(--color-text-primary) text-4 md:text-5 font-semibold mb-2">
               {item.title}
             </h3>
 
             {/* Description */}
-            <p className="text-3 md:text-4 text-(--light-color-text-secondary)">
+            <p className="text-3 md:text-4 text-(--color-text-secondary)">
               {item.desc}
             </p>
           </article>

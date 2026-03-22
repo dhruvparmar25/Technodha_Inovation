@@ -24,16 +24,16 @@ const expectations = [
 
 export default function ExpectationsSection() {
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-16">
+    <section data-theme="light"s className=" max-w-[1230px] px-[15px] m-auto py-16">
       {/* Header */}
       <div>
         <div className="section-title">WHAT YOU CAN EXPECT</div>
 
         <div className="heading-primary">
           Reliable{" "}
-          <span className="italic text-(--light-color-secondary)">delivery</span>,
+          <span className="italic text-(--color-secondary)">delivery</span>,
           built on{" "}
-          <span className="italic text-(--light-color-primary)">trust</span>
+          <span className="italic text-(--color-primary)">trust</span>
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export default function ExpectationsSection() {
               />
             </div>
 
-            <h4 className="text-lg font-medium text-[#2C2C2C] hover:text-(--light-color-primary) transition-colors duration-300">
+            <h4 className="text-lg font-medium text-[#2C2C2C] hover:text-(--color-primary) transition-colors duration-300">
               {item.title}
             </h4>
 

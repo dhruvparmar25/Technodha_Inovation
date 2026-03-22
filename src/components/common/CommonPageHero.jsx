@@ -7,7 +7,7 @@ export default function CommonPageHero({
   highlight,
 }) {
   return (
-    <section className="relative w-full h-82.5">
+    <section data-theme="light" className="relative w-full h-82.5">
 
       {/* Background */}
       {bgImage && (
@@ -22,14 +22,14 @@ export default function CommonPageHero({
       )}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      <div className="absolute inset-0  z-0" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
+      <div className="relative z-10 h-full flex flex-col  text-text-primary justify-center items-center text-center">
         <h1 className="font-poppins font-medium text-[48px] mb-4 leading-none">
           {title}{" "}
           {highlight && (
-            <span className="text-gradient-primary">
+            <span className="text-gradient-primary ">
               {highlight}
             </span>
           )}
