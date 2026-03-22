@@ -17,7 +17,7 @@ const contactInfo = [
   },
   {
     icon: <IoCallOutline size={16} />,
-    text: "+91 9297622622",
+    text: "+91 9297626262",
   },
   {
     icon: <CiLocationOn size={16} />,
@@ -69,7 +69,7 @@ function ContactSection() {
 
   return (
     <>
-      <section className="py-16 page-wrapper">
+      <section data-theme="light" className="py-16 page-wrapper">
         {/* Left glow */}
         <div className="left-circle top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
 
@@ -107,7 +107,7 @@ function ContactSection() {
                   value={form.name}
                   onChange={handleChange}
                   required
-                  className="w-full lg:w-146.25 h-11 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full lg:w-146.25 h-11 rounded-xl border border-(--color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
                 />
 
                 <input
@@ -117,7 +117,7 @@ function ContactSection() {
                   value={form.email}
                   onChange={handleChange}
                   required
-                  className="w-full lg:w-146.25 h-11 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full lg:w-146.25 h-11 rounded-xl border border-(--color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
                 />
 
                 <input
@@ -126,7 +126,7 @@ function ContactSection() {
                   placeholder="Phone number"
                   value={form.phone}
                   onChange={handleChange}
-                  className="w-full lg:w-146.25 h-11 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full lg:w-146.25 h-11 rounded-xl border border-(--color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
                 />
 
                 <textarea
@@ -134,7 +134,7 @@ function ContactSection() {
                   placeholder="Message"
                   value={form.message}
                   onChange={handleChange}
-                  className="w-full lg:w-146.25 h-38.5 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 resize-none outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full lg:w-146.25 h-38.5 rounded-xl border border-(--color-border) bg-white text-black px-5 py-3 resize-none outline-none focus:ring-2 focus:ring-orange-300"
                 />
 
                 {status.text && (
@@ -169,7 +169,7 @@ function ContactSection() {
               <div className="text-[13px] text-[#5F5F6B] mt-4">
                 {contactInfo.map((item) => (
                   <div key={item.text} className="flex gap-2 mt-2">
-                    <div className="w-6 h-6 flex justify-center text-(--light-color-secondary)">
+                    <div className="w-6 h-6 flex justify-center text-(--color-secondary)">
                       {item.icon}
                     </div>
                     {item.text}

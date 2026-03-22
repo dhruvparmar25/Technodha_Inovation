@@ -12,7 +12,7 @@ export default function CommonProcessSection({
   reverse = true,
 }) {
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto lg:py-16">
+    <section data-theme="light" className=" max-w-[1230px] px-[15px] m-auto lg:py-16">
       <div className={`grid lg:grid-cols-2 gap-13.5 items-center`}>
 
      {/* Illustration */}
@@ -55,7 +55,7 @@ export default function CommonProcessSection({
 
                 {/* LEFT SIDE: NUMBER OR ICON */}
                 {item.id ? (
-                  <span className="text-(--light-color-primary) font-extrabold text-[24px]">
+                  <span className="text-(--color-primary) font-extrabold text-[24px]">
                     {item.id}
                   </span>
                 ) : item.icon ? (
