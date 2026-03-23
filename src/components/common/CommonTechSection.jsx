@@ -8,19 +8,19 @@ export default function CommonTechSection({
   reverse = false,
 }) {
   return (
-    <section className="max-w-[1230px] px-[15px] mx-auto py-6 lg:py-16 overflow-x-hidden">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
-        
-        {/* Illustration */}
-        <div
-          className={`p-5 flex justify-center
+    <section className="w-full bg-[#000000]">
+      {" "}
+      <div className="max-w-[1230px] px-[15px] mx-auto py-6 lg:py-16 overflow-x-hidden">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div
+            className={`p-5 flex justify-center
           ${reverse ? "lg:order-2" : ""}`}
-        >
-          <Image
-            src={illustration}
-            alt=""
-            priority
-            className="
+          >
+            <Image
+              src={illustration}
+              alt=""
+              priority
+              className="
               w-[220px]
               sm:w-[280px]
               md:w-[340px]
@@ -31,14 +31,15 @@ export default function CommonTechSection({
               transform-gpu
               will-change-transform
             "
-          />
-        </div>
+            />
+          </div>
 
-        {/* Content */}
-        <div className={reverse ? "lg:order-1" : ""}>
-          {eyebrow && <div className="section-title">{eyebrow}</div>}
-          {heading}
-          {description && <p className="text-support">{description}</p>}
+          {/* Content */}
+        <div className={`${reverse ? "lg:order-1" : ""} text-white`}>
+  {eyebrow && <div className="section-title">{eyebrow}</div>}
+  {heading}
+  {description && <p className="text-support text-white!">{description}</p>}
+</div>
         </div>
       </div>
     </section>

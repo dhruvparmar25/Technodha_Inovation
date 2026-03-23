@@ -7,7 +7,7 @@ export default function CloudTech() {
       illustration={Illustration}
       eyebrow="TECH STACK"
       heading={
-        <div className="heading-primary" data-theme="light">
+        <div className="heading-primary text-white!" data-theme="light">
           Built on <span className="italic text-(--color-primary)">Python</span>. Powered by{" "}
           <span className="italic text-(--color-secondary)">AWS</span>
         </div>

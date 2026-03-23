@@ -8,7 +8,7 @@ export default function MobileTech() {
       illustration={Illustration}
       eyebrow="TECH STACK WE USE"
       heading={
-        <div className="heading-primary" data-theme="light">
+        <div className="heading-primary text-white!" data-theme="light">
          <span className="italic text-(--color-primary)">Android</span>,<span className="italic text-(--color-text-secondary)">Kotlin</span>&
         <span className="italic text-(--color-secondary)">Flutter</span>— Built for Speed and Scale
         </div>

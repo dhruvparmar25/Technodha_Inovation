@@ -21,13 +21,15 @@ export default function CommonHeroSection({
       data-theme={theme}
       className="relative overflow-hidden bg-black py-16"
     >
-      <Image
-        src={herobg}
-        alt=""
-        fill
-        priority
-        className="object-cover opacity-50"
-      />
+     {herobg && (
+  <Image
+    src={herobg}
+    alt="bg"
+    fill
+    priority
+    className="object-cover opacity-50"
+  />
+)}
 
       {/* Overlay */}
       <div className="absolute inset-0" />

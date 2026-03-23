@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 
-export default function CommonPageHero({
+export default function aCommonPageHero({
   bgImage,
   title,
   highlight,
+    showBreadcrumbs = true,
 }) {
   return (
     <section data-theme="light" className="relative w-full h-82.5">
@@ -35,7 +36,7 @@ export default function CommonPageHero({
           )}
         </h1>
 
-        <Breadcrumbs />
+        {showBreadcrumbs && <Breadcrumbs />}
       </div>
     </section>
   );
