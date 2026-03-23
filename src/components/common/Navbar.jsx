@@ -1,5 +1,7 @@
 "use client";
 import Illustration from "@/assets/images/common/illustration.gif";
+import NavBottom from "@/assets/images/common/nav-border.png";
+import LinkBorder from "@/assets/images/common/link-border.png";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -104,41 +106,42 @@ const Navbar = () => {
             <HiX />
           </button>
 
-          {/* NAV LINKS */}
-          <div className="flex flex-1 mt-19  justify-center px-4">
-            <nav
-              ref={navRef}
-              className="flex flex-col lg:flex-row  gap-6 md:gap-10 lg:gap-12 xl:gap-16 h-fit "
-            >
-              {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map(
-                (item) => (
-                  <Link
-                    key={item}
-                    href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
-                    onClick={() => setMenuOpen(false)}
-                    className="
+          <nav
+            ref={navRef}
+            className="flex flex-col mt-19 lg:flex-row gap-6 items-center justify-center md:gap-10 lg:gap-12 xl:gap-16 h-fit"
+          >
+            {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map((item) => (
+              <Link
+                key={item}
+                href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
+                onClick={() => setMenuOpen(false)}
+                className="group flex flex-col items-center"
+              >
+                {/* TEXT */}
+                <span
+                  className="
         text-[26px] 
         sm:text-[32px] 
         md:text-[36px] 
         lg:text-[32px] 
         xl:text-[40px]
         font-bold text-text-primary
-        hover:bg-gradient-primary
         transition
-        text-center
-        whitespace-nowrap
-        hover:text-primary
-        hover:border-primary
-        hover:border-b 
-        hover:b-4
-        "
-                  >
-                    {item}
-                  </Link>
-                ),
-              )}
-            </nav>
-          </div>
+        group-hover:text-primary
+      "
+                >
+                  {item}
+                </span>
+
+                {/* BORDER IMAGE */}
+                <Image
+                  src={LinkBorder}
+                  alt="border"
+          
+                />
+              </Link>
+            ))}
+          </nav>
 
           {/* CENTER IMAGE */}
           <div className="hidden lg:flex justify-center pointer-events-none px-4 md:px-8 ">
@@ -197,9 +200,15 @@ const Navbar = () => {
             </div>
 
             <div className="flex gap-4 md:gap-6 text-[13px]">
-              <Link className=" hover:text-black" href="/about">ABOUT</Link>
-              <Link className=" hover:text-black" href="/contact">CONTACT</Link>
-              <Link className=" hover:text-black" href="/career">CAREER</Link>
+              <Link className=" hover:text-black" href="/about">
+                ABOUT
+              </Link>
+              <Link className=" hover:text-black" href="/contact">
+                CONTACT
+              </Link>
+              <Link className=" hover:text-black" href="/career">
+                CAREER
+              </Link>
             </div>
 
             <a
@@ -235,9 +244,20 @@ const Navbar = () => {
           {/* RIGHT */}
           <div className="flex items-center gap-4 md:gap-8 lg:gap-10">
             {/* TEXT */}
-            <h1 className="hidden md:block text-[12px] md:text-[14px] lg:text-[16px] font-medium text-text-primary">
-              GET YOUR CUSTOM QUOTE
-            </h1>
+
+            <Link href="/contact">
+              <div className="hidden md:flex flex-col items-start cursor-pointer">
+                <h1 className="text-[12px] md:text-[14px] lg:text-[16px] font-medium text-text-primary">
+                  GET YOUR CUSTOM QUOTE
+                </h1>
+
+                <Image
+                  src={NavBottom}
+                  alt="border"
+                  className="mt-1 w-full max-w-[180px]"
+                />
+              </div>
+            </Link>
 
             {/* HAMBURGER */}
             <button
