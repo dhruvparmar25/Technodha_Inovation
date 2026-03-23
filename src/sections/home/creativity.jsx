@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-
+import CardBg from "@/assets/images/common/hero-bg.png"
 import BGCreativity from "../../assets/images/sections/creativity/creativity.png";
 import Men from "../../assets/images/sections/creativity/men.png";
 import MenFinsh from "../../assets/images/sections/creativity/men-finish.png";
@@ -51,31 +51,29 @@ export default function Creativity() {
         })
         .to(
           menRef.current,
-          {
-            opacity: 0,
-            duration: 0.5,
-          },
+          { opacity: 0, duration: 0.5 },
           "<"
         )
         .to(
           finishRef.current,
-          {
-            opacity: 1,
-            duration: 0.5,
-          },
+          { opacity: 1, duration: 0.5 },
           "<"
         );
 
-      tl.to({}, { duration: 0.8 });
 
-      cards.forEach((card) => {
-        tl.from(card, {
-          y: 200,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.out",
-        });
-      });
+cards.forEach((card, i) => {
+  tl.from(card, {
+    y: 200,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    onStart: () => {
+      cards.forEach((c) => gsap.set(c, { pointerEvents: "none" }));
+
+      gsap.set(card, { pointerEvents: "auto" });
+    },
+  });
+});
 
       return () => tl.kill();
     });
@@ -83,7 +81,7 @@ export default function Creativity() {
     return () => mm.revert();
   }, []);
 
-  // ✅ Added slug
+  // ✅ SERVICES WITH SLUG
   const services = [
     {
       title: "Web Development",
@@ -142,69 +140,87 @@ export default function Creativity() {
 
       {/* IMAGE */}
       <div className="hidden lg:flex justify-center relative h-[400px]">
-        <div ref={menRef} className="absolute left-0 bottom-75">
+        <div ref={menRef} className="absolute left-0 bottom-75 z-10">
           <Image src={Men} alt="Men" className="w-[250px] h-[350px]" />
         </div>
 
-        <div ref={finishRef} className="absolute right-10 bottom-75">
-          <Image
-            src={MenFinsh}
-            alt="Finish"
-            className="w-[250px] h-[350px]"
-          />
+        <div ref={finishRef} className="absolute right-10 bottom-75 z-10">
+          <Image src={MenFinsh} alt="Finish" className="w-[250px] h-[350px]" />
         </div>
 
         <Image src={BGCreativity} alt="bg" className="object-contain" />
       </div>
 
       {/* CARDS */}
-<div className="relative flex flex-col gap-6 px-4 mt-10 pb-10 lg:absolute lg:inset-0 lg:flex lg:justify-center lg:items-end">        
+      <div className="relative flex flex-col gap-6 px-4 mt-10 pb-10 lg:absolute lg:inset-0 lg:flex lg:justify-center lg:items-end">
+        
         {services.map((item, index) => (
-          <div
-            key={index}
-            className="creativity-card pointer-events-auto w-full lg:w-[900px] min-h-[300px] lg:h-[420px] bg-white border border-[#F2C5BE] rounded-xl flex flex-col lg:flex-row gap-6 lg:gap-10 p-6 lg:px-16 lg:py-10 relative left-0 translate-x-0 lg:absolute lg:bottom-10 lg:left-1/2 lg:-translate-x-1/2"
-          >
-            {/* IMAGE */}
-            <div className="w-full lg:w-1/2">
-              <Image src={item.image} alt={item.title} />
-            </div>
+     <div
+  key={index}
+  className="creativity-card w-full lg:w-[900px] min-h-[300px] lg:h-[420px] 
+  border border-[#F2C5BE] rounded-xl flex flex-col lg:flex-row 
+  gap-6 lg:gap-10 p-6 lg:px-16 lg:py-10 
+  relative left-0 translate-x-0 
+  lg:absolute lg:bottom-10 lg:left-1/2 lg:-translate-x-1/2 
+  cursor-pointer overflow-hidden bg-white"
+  style={{ zIndex: index }}
+>
+  {/* ✅ Background Image (opacity 50) */}
+  <Image
+    src={CardBg}
+    alt="card bg"
+    fill
+    className="object-cover opacity-50"
+  />
 
-            {/* CONTENT */}
-            <div className="w-full lg:w-1/2 space-y-4">
-              <h3 className="text-[20px] lg:text-[24px] font-semibold text-[#2C2C2C]">
-                {item.title}
-              </h3>
+  {/* ✅ Optional overlay (better contrast) */}
+  <div className="absolute inset-0 "></div>
 
-              <p className="text-[14px] lg:text-[16px] text-[#5F5F6B]">
-                {item.desc}
-              </p>
+  {/* ✅ CONTENT WRAPPER */}
+  <div className="relative z-10 w-full flex flex-col lg:flex-row gap-6 lg:gap-10">
 
-              <ul className="text-[12px] lg:text-[13px] space-y-2">
-                {item.points.map((point, i) => (
-                  <li key={i} className="flex gap-2 text-[#5F5F6B]">
-                    <span className="w-2 h-2 lg:w-3 lg:h-3 bg-primary rounded-full mt-1"></span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
+    {/* IMAGE */}
+    <div className="w-full lg:w-1/2">
+      <Image src={item.image} alt={item.title} />
+    </div>
 
-              {/* ✅ BUTTON FIX */}
-              <button
-                onClick={() => router.push(`/services/${item.slug}`)}
-                className="flex items-center gap-2 text-sm lg:text-base text-text-primary cursor-pointer group"
-              >
-                Explore our Capabilities
+    {/* CONTENT */}
+    <div className="w-full lg:w-1/2 space-y-4">
+      <h3 className="text-[20px] lg:text-[24px] font-semibold text-[#2C2C2C]">
+        {item.title}
+      </h3>
 
-                <Icon
-                  icon="fa6-solid:circle-right"
-                  className="w-7 h-7 bg-white rounded-full -rotate-45 
-                  transition-transform duration-300 
-                  group-hover:rotate-0"
-                  color="#fe9139"
-                />
-              </button>
-            </div>
-          </div>
+      <p className="text-[14px] lg:text-[16px] text-[#5F5F6B]">
+        {item.desc}
+      </p>
+
+      <ul className="text-[12px] lg:text-[13px] space-y-2">
+        {item.points.map((point, i) => (
+          <li key={i} className="flex gap-2 text-[#5F5F6B]">
+            <span className="w-2 h-2 lg:w-3 lg:h-3 bg-primary rounded-full mt-1"></span>
+            {point}
+          </li>
+        ))}
+      </ul>
+
+      {/* BUTTON */}
+      <button
+        onClick={() => router.push(`/services/${item.slug}`)}
+        className="flex items-center gap-2 text-sm lg:text-base text-text-primary cursor-pointer group"
+      >
+        Explore our Capabilities
+
+        <Icon
+          icon="fa6-solid:circle-right"
+          className="w-7 h-7 bg-white rounded-full -rotate-45 
+          transition-transform duration-300 
+          group-hover:rotate-0"
+          color="#fe9139"
+        />
+      </button>
+    </div>
+  </div>
+</div>
         ))}
       </div>
     </section>
