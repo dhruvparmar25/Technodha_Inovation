@@ -76,13 +76,23 @@ const Navbar = () => {
       tl?.kill();
     };
   }, [menuOpen]);
+useEffect(() => {
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [menuOpen]);
   return (
     <>
       {/* 🔥 FULLSCREEN MENU */}
       <div
         data-theme="light"
-        className={`fixed inset-0 z-999 flex flex-col justify-between bg-white transition-all duration-500 ${
+        className={`fixed inset-0 z-999 flex flex-col justify-between bg-white transition-all duration-500 overflow-hidden max-h-screen ${
           menuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
