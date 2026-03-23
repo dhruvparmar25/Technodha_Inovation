@@ -64,15 +64,15 @@ export default function Home() {
   }, [isDesktop]);
 
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-6 lg:py-16">
+    <section data-theme="light" className=" max-w-[1230px] px-[15px] m-auto py-6 lg:py-16">
       <header className="text-center">
         <div className="section-title">DESIGN WORKFLOW</div>
 
         <h2 className="heading-primary">
           From
-          <span className="italic text-(--light-color-secondary) mx-2">user</span>
+          <span className="italic text-(--color-secondary) mx-2">user</span>
           insight to usable
-          <span className="italic text-(--light-color-text-secondary) mx-2">
+          <span className="italic text-(--color-text-secondary) mx-2">
             interface
           </span>
         </h2>

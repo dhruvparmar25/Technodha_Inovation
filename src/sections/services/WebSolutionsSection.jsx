@@ -21,12 +21,12 @@ export default function WebSolutions() {
     <CommonSolutionsGrid
       eyebrow="WHAT WE BUILD"
       heading={
-        <div className="heading-primary">
-          <span className="italic text-(--light-color-primary)">Web solutions</span>{" "}
+        <div data-theme="light" className="heading-primary ">
+          <span className="italic text-(--color-primary)">Web solutions</span>{" "}
           designed to{" "}
-          <span className="italic text-(--light-color-secondary)">perform</span>{" "}
+          <span className="italic text-(--color-secondary)">perform</span>{" "}
           and{" "}
-          <span className="italic text-(--light-text-primary)">scale</span>
+          <span className="italic text-(--text-primary)">scale</span>
         </div>
       }
       description="From high-converting websites to full web platforms, we build experiences that stay fast, stable, and easy to maintain as your product grows."

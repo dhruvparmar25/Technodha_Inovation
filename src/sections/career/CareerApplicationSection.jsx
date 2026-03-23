@@ -14,7 +14,7 @@ const CAREER_CONTACT = [
 ];
 
 const inputClass =
-  "w-full h-11 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300";
+  "w-full h-11 rounded-xl border border-(--color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300";
 
 export default function CareerApplicationSection() {
   const [form, setForm] = useState({
@@ -80,7 +80,7 @@ export default function CareerApplicationSection() {
   };
 
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-16 flex flex-col lg:flex-row">
+    <section data-theme="light" className=" max-w-[1230px] px-[15px] m-auto py-16 flex flex-col lg:flex-row">
       {/* Left – red-orange branding */}
 <div
   className="w-full lg:w-[485px] flex flex-col justify-center px-6 xl:px-16 py-16 lg:py-24 bg-gradient-to-br from-[#FB6557] to-[#FE9139]"
@@ -113,9 +113,9 @@ export default function CareerApplicationSection() {
       <div className="w-full lg:w-[716px] bg-white flex flex-col justify-center px-2 xl:px-6 xl:p-[54px] ">
    <div className="heading-primary text-[24px]!" >
          Just   
-          <span className="italic text-(--light-color-primary)  mx-2">email</span>.
+          <span className="italic text-(--color-primary)  mx-2">email</span>.
            your CV—we’d 
-          <span className="italic text-(--light-color-secondary) mx-2">
+          <span className="italic text-(--color-secondary) mx-2">
             love
           </span>
           to hear from you

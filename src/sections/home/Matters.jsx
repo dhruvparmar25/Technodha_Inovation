@@ -13,7 +13,7 @@ import BottomRightIcon from "@/assets/images/sections/home/matters/bottomright-i
 import Animated from "@/assets/images/sections/home/matters/animated-img.png";
 export default function Maters() {
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-16 ">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-16 " data-theme="light">
       {" "}
       {/* Heading */}
       <div>
@@ -51,7 +51,7 @@ export default function Maters() {
 
 
         {/* TOP LEFT */}
-        <div className="absolute -top-14 -left-30 flex items-center gap-2 text-(--light-color-primary)  max-w-[250px]">
+        <div className="absolute -top-14 -left-30 flex items-center gap-2 text-(--color-primary)  max-w-[250px]">
           <Image src={TopLeftIcon} alt="" width={16} height={16} />
           <h1 className="text-sm">Scalable architecture</h1>
         </div>
@@ -61,7 +61,7 @@ export default function Maters() {
 </div>
 
         {/* TOP RIGHT */}
-        <div className="absolute -top-14 -right-30 flex items-center gap-2 text-(--light-color-primary) max-w-[250px]">
+        <div className="absolute -top-14 -right-30 flex items-center gap-2 text-(--color-primary) max-w-[250px]">
           <Image src={TopRightIcon} alt="" width={16} height={16} />
           <h1 className="text-sm">Secure development</h1>
         </div>
@@ -71,7 +71,7 @@ export default function Maters() {
 </div>
 
         {/* BOTTOM LEFT */}
-        <div className="absolute -bottom-18 -left-32 flex items-center gap-2 text-(--light-color-primary) max-w-[250px]">
+        <div className="absolute -bottom-18 -left-32 flex items-center gap-2 text-(--color-primary) max-w-[250px]">
           <Image src={BottomLeftIcon} alt="" width={16} height={16} />
           <h1 className="text-sm">Performance optimization</h1>
         </div>
@@ -82,7 +82,7 @@ export default function Maters() {
 
 
         {/* BOTTOM RIGHT */}
-        <div className="absolute -bottom-18 -right-23 flex items-center gap-2 text-(--light-color-primary) max-w-[250px]">
+        <div className="absolute -bottom-18 -right-23 flex items-center gap-2 text-(--color-primary) max-w-[250px]">
           <Image src={BottomRightIcon} alt="" width={16} height={16} />
           <h1 className="text-sm">Maintainable code</h1>
         </div>

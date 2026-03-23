@@ -21,8 +21,8 @@ export default function CloudSolutions() {
     <CommonSolutionsGrid
       eyebrow="WHAT WE HELP WITH"
       heading={
-        <div className="heading-primary">
-          Cloud services that keep your <span className="italic text-(--light-color-primary)">product</span> reliable
+        <div className="heading-primary" data-theme="light">
+          Cloud services that keep your <span className="italic text-(--color-primary)">product</span> reliable
         </div>
       }
       description="From setup to monitoring, we build cloud foundations that stay secure, scalable, and easy to manage."

@@ -19,8 +19,8 @@ export default function CloudProcess() {
       illustration={Illustration}
       eyebrow="WHY IT MATTERS"
       heading={
-        <div className="heading-primary">
-          Cloud built for long-term <span className="italic text-(--light-color-primary)">reliability</span>
+        <div className="heading-primary" data-theme="light">
+          Cloud built for long-term <span className="italic text-(--color-primary)">reliability</span>
         </div>
       }
       description="Cloud isn’t just hosting—it’s the foundation that keeps your product secure, scalable, and stable as usage grows."

@@ -16,8 +16,8 @@ export default function UIUXProcess() {
       illustration={Illustration}
       eyebrow="WHY IT MATTERS"
       heading={
-        <div className="heading-primary">
-          Design outcomes that <span className="italic text-(--light-color-primary)">improve</span> the product
+        <div className="heading-primary" data-theme="light">
+          Design outcomes that <span className="italic text-(--color-primary)">improve</span> the product
         </div>
       }
       description="Great UI is more than visuals—it reduces confusion, improves usability, and helps teams move faster with confidence."

@@ -17,9 +17,9 @@ export default function CareerTech() {
       illustration={Illustration}
       eyebrow="LIFE AT TECHNODHA"
       heading={
-        <div className="heading-primary">
-          <span className="italic text-(--light-color-primary)">Simple</span>, focused,
-          and <span className="italic text-(--light-color-primary)">collaborative</span>
+        <div className="heading-primary" data-theme="light">
+          <span className="italic text-(--color-primary)">Simple</span>, focused,
+          and <span className="italic text-(--color-primary)">collaborative</span>
         </div>
       }
       description="We keep our environment calm and goal-driven. A place where ideas are respected, learning is constant, and everyone contributes with ownership."

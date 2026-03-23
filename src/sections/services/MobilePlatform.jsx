@@ -24,7 +24,7 @@ const expectations = [
 
 export default function MobilePlatform() {
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-16 ">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-16 " data-theme="light">
 
       {/* Header */}
       <div className="text-center max-w-180 mx-auto">
@@ -33,8 +33,8 @@ export default function MobilePlatform() {
         </div>
 
         <div className="heading-primary">
-          <span className="italic text-(--light-color-primary)">Android</span>-ready,{" "}
-          <span className="italic text-(--light-color-secondary)">iOS</span>-polished
+          <span className="italic text-(--color-primary)">Android</span>-ready,{" "}
+          <span className="italic text-(--color-secondary)">iOS</span>-polished
         </div>
 
         <p className="text-support mt-3">
@@ -49,7 +49,7 @@ export default function MobilePlatform() {
     <div
       key={index}
       className="group
-        bg-white rounded-xl border border-(--light-color-border)
+        bg-white rounded-xl border border-(--color-border)
         p-4 pt-5.5 flex flex-col 
         transition-all duration-300
 hover:shadow-[0_0_0_1px_rgba(254,145,57,0.25),0_0_20px_rgba(254,145,57,0.35)]
@@ -65,7 +65,7 @@ hover:shadow-[0_0_0_1px_rgba(254,145,57,0.25),0_0_20px_rgba(254,145,57,0.35)]
       />
 
       {/* Title */}
-      <h4 className="text-sm font-medium text-[#1A1A1F] mb-2 transition-colors duration-300 group-hover:text-(--light-color-primary)">
+      <h4 className="text-sm font-medium text-[#1A1A1F] mb-2 transition-colors duration-300 group-hover:text-(--color-primary)">
         {item.title}
       </h4>
 

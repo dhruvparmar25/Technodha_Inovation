@@ -24,13 +24,13 @@ const serviceLinks = [
 const FooterHeading = ({ children }) => (
     <h4 className="relative text-white text-[14px] mb-4 pb-2 inline-">
         {children}
-        <span className="absolute left-0 bottom-0 h-px w-8.25 bg-(--light-color-secondary)"></span>
+        <span className="absolute left-0 bottom-0 h-px w-8.25 bg-(--color-secondary)"></span>
     </h4>
 );
 
 const Footer = () => {
     return (
-        <footer className="bg-bg text-text-secondary text-[13px]">
+        <footer data-theme="light" className="bg-black text-text-secondary text-[13px]">
             {/* Top Section */}
             <div className=" max-w-[1230px] px-[15px] m-auto py-15 grid gap-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                 {/* Logo */}
@@ -52,7 +52,7 @@ const Footer = () => {
                             <li key={link.id}>
                                 <Link
                                     href={link.path}
-                                    className=" transition-colors duration-200 hover:text-(--light-color-secondary)"
+                                    className=" transition-colors duration-200 hover:text-(--color-secondary)"
                                 >
                                     {link.name}
                                 </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
                             <li key={link.id}>
                                 <Link
                                     href={link.path}
-                                    className=" transition-colors duration-200 hover:text-(--light-color-secondary)"
+                                    className=" transition-colors duration-200 hover:text-(--color-secondary)"
                                 >
                                     {link.name}
                                 </Link>
@@ -95,7 +95,7 @@ const Footer = () => {
                             href="mailto:support@technodha.com"
                             className="
         flex items-center gap-2
-        hover:text-(--light-color-secondary)
+        hover:text-(--color-secondary)
         transition-colors
         break-all
         sm:break-normal
@@ -104,7 +104,7 @@ const Footer = () => {
 
                             <FaRegMessage
                                 size={16}
-                                className="text-(--light-color-secondary)"
+                                className="text-(--color-secondary)"
                             />
                             support@technodha.com
                         </a>
@@ -113,11 +113,11 @@ const Footer = () => {
                     <p>
                         <a
                             href="tel:+919297626262"
-                            className="flex items-center gap-2 hover:text-(--light-color-secondary) transition-colors"
+                            className="flex items-center gap-2 hover:text-(--color-secondary) transition-colors"
                         >
                             <IoCallOutline
                                 size={16}
-                                className="text-(--light-color-secondary)"
+                                className="text-(--color-secondary)"
                             />
                             +91 9297626262
                         </a>

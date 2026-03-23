@@ -21,8 +21,8 @@ export default function MobileSolutions() {
     <CommonSolutionsGrid
       eyebrow="APP TYPES WE DELIVER"
       heading={
-        <div className="heading-primary">
-          Mobile apps <span className="italic text-(--light-color-primary)">built</span> for real <span className="italic text-(--light-color-secondary)">users</span> and real growth
+        <div className="heading-primary" data-theme="light">
+          Mobile apps <span className="italic text-(--color-primary)">built</span> for real <span className="italic text-(--color-secondary)">users</span> and real growth
         </div>
       }
       description="From MVPs to feature-rich applications, we build mobile apps that are fast, reliable, and designed for smooth everyday usage"

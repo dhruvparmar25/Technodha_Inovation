@@ -22,8 +22,8 @@ export default function MobileProcess() {
       illustration={Illustration}
       eyebrow="THE DIFFERENCE IN EXECUTION"
       heading={
-        <div className="heading-primary">
-          Built for <span className="italic text-(--light-color-primary)">real-world</span> usage
+        <div className="heading-primary" data-theme="light">
+          Built for <span className="italic text-(--color-primary)">real-world</span> usage
         </div>
       }
       description="We focus on performance, scalability, and user experience—so your app feels smooth today and stays strong as it grows."

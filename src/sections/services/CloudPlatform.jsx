@@ -18,7 +18,7 @@ export default function CloudPlatform() {
   ];
 
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-20 bg-[#FFF7F2]">
+    <section data-theme="light" className=" max-w-[1230px] px-[15px] m-auto py-20 bg-[#FFF7F2]">
 
       {/* Header */}
       <div className="text-center max-w-[720px] mx-auto">
@@ -27,9 +27,9 @@ export default function CloudPlatform() {
         </div>
 
         <div className="heading-primary">
-          Cloud <span className="italic text-(--light-color-primary)">setups</span>{" "}
+          Cloud <span className="italic text-(--color-primary)">setups</span>{" "}
           built for real{" "}
-          <span className="italic text-(--light-color-secondary)">business</span>{" "}
+          <span className="italic text-(--color-secondary)">business</span>{" "}
           needs
         </div>
 
@@ -59,7 +59,7 @@ export default function CloudPlatform() {
             </span>
 
             {/* Title */}
-            <h4 className="text-[15px] font-medium text-(--light-color-primary) mb-2">
+            <h4 className="text-[15px] font-medium text-(--color-primary) mb-2">
               {item.title}
             </h4>
 

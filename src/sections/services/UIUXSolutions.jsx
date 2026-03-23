@@ -21,8 +21,8 @@ export default function UIUXSolutions() {
     <CommonSolutionsGrid
       eyebrow="WHAT WE DESIGN"
       heading={
-        <div className="heading-primary">
-          UI/UX solutions built for real <span className="italic text-(--light-color-primary)">product</span> usage
+        <div className="heading-primary" data-theme="light"> 
+          UI/UX solutions built for real <span className="italic text-(--color-primary)">product</span> usage
         </div>
       }
       description="From structure to final screens, we design experiences that feel simple for users and clear for development teams."

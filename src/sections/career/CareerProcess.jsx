@@ -57,7 +57,7 @@ useEffect(() => {
 
       .to(".card-2", {
         opacity: 1,
-        x: -90,
+        x: -30,
         y: 22,
         duration: 0.7,
         ease: "power2.out",
@@ -89,7 +89,7 @@ useEffect(() => {
 
 
 const RightAnimation = (
-  <>
+  <div data-theme="light">
     {/* MOBILE STATIC IMAGE */}
     <div className="block sm:hidden">
       <Image
@@ -107,21 +107,21 @@ const RightAnimation = (
         className="female-image w-56"
       />
 
-      <div className="absolute top-0 right-full mr-4 space-y-4">
+      <div className="absolute top-0 right-full mr-4 space-y-4 z-50">
         {careerCards.map((card, i) => (
           <div
             key={card.title}
             className={`career-card card-${i + 1} flex items-center gap-2 bg-white w-[250px] py-4 px-6.5 rounded-xl shadow-lg`}
           >
             <Image src={card.icon} alt="" className="w-6 h-6" />
-            <span className="text-(--light-color-primary) font-medium text-[16px]">
+            <span className="text-(--color-primary) font-medium text-[16px]">
               {card.title}
             </span>
           </div>
         ))}
       </div>
     </div>
-  </>
+  </div>
 );
 
 
@@ -131,9 +131,9 @@ const RightAnimation = (
       heading={
         <div className="heading-primary">
           Build{" "}
-          <span className="italic text-(--light-color-primary)">skills</span>.
+          <span className="italic text-(--color-primary)">skills</span>.
           Build{" "}
-          <span className="italic text-(--light-color-primary)">
+          <span className="italic text-(--color-primary)">
             confidence
           </span>
           . Build products

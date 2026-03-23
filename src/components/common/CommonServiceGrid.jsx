@@ -7,7 +7,7 @@ export default function CommonSolutionsGrid({
   items = [],
 }) {
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-16">
+    <section data-theme="light" className=" max-w-[1230px] px-[15px] m-auto py-16">
 
       {/* Header */}
       <div className="text-center">
@@ -29,7 +29,7 @@ export default function CommonSolutionsGrid({
           <div
             key={index}
             className="
-              bg-white rounded-xl border border-(--light-color-border)
+              bg-white rounded-xl border border-(--color-border)
               w-full max-w-96
               min-h-90
               px-5 sm:px-6
