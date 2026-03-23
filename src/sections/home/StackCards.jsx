@@ -22,90 +22,88 @@ export default function ServiceStack() {
     { title: "Real Estate", image: Realestate },
   ];
 
-  const [activeTitle, setActiveTitle] = useState(services[0].title);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
+useEffect(() => {
+  if (typeof window === "undefined") return;
 
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-    const mm = gsap.matchMedia();
+  const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
-      const cards = gsap.utils.toArray(".service-card");
-      const centerIndex = Math.floor(cards.length / 2);
+  // ================= MID SCREENS =================
+  mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
+    const cards = gsap.utils.toArray(".service-card");
+    const centerIndex = Math.floor(cards.length / 2);
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=1800",
-          scrub: true,
-          pin: true,
-        },
-      });
-
-      cards.forEach((card, i) => {
-        tl.from(card, {
-          y: 300,
-          opacity: 0,
-          rotate: i % 2 === 0 ? -5 : 5,
-        });
-
-        tl.to(card, {
-          y: -i * 2,
-          onStart: () => setActiveTitle(services[i].title),
-        });
-      });
-
-      tl.to(cards, {
-        x: (i) => (i - centerIndex) * 200, // 👈 mid screens
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=1600", // ✅ slower scroll
+        scrub: 1.5, // ✅ smooth delay
+        pin: true,
+      },
     });
 
-    mm.add("(min-width: 1440px)", () => {
-      const cards = gsap.utils.toArray(".service-card");
-      const centerIndex = Math.floor(cards.length / 2);
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=1800",
-          scrub: true,
-          pin: true,
-        },
-      });
-
-      cards.forEach((card, i) => {
-        tl.from(card, {
-          y: 400,
-          opacity: 0,
-          rotate: i % 2 === 0 ? -6 : 6,
-        });
-
-        tl.to(card, {
-          y: -i * 2,
-          onStart: () => setActiveTitle(services[i].title),
-        });
-      });
-
-      tl.to(cards, {
-        x: (i) => (i - centerIndex) * 280, // 👈 large screens
-      });
+    // 👉 smooth entry
+    tl.from(cards, {
+      y: 300,
+      opacity: 0,
+      rotate: (i) => (i % 2 === 0 ? -5 : 5),
+      stagger: 0.2,
+      ease: "power2.out",
     });
 
-    return () => mm.revert();
-  }, []);
+    // 👉 YOUR ORIGINAL spacing (kept same)
+    tl.to(cards, {
+      x: (i) => (i - centerIndex) * 200,
+      ease: "none", // ✅ important
+    });
+  });
 
-  // Slider controls
+  // ================= LARGE SCREENS =================
+  mm.add("(min-width: 1440px)", () => {
+    const cards = gsap.utils.toArray(".service-card");
+    const centerIndex = Math.floor(cards.length / 2);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=1600",
+        scrub: 1.5,
+        pin: true,
+      },
+    });
+
+    tl.from(cards, {
+      y: 400,
+      opacity: 0,
+      rotate: (i) => (i % 2 === 0 ? -6 : 6),
+      stagger: 0.2,
+      ease: "power2.out",
+    });
+
+    // 👉 YOUR ORIGINAL spacing (kept same)
+    tl.to(cards, {
+      x: (i) => (i - centerIndex) * 280,
+      ease: "none",
+    });
+  });
+
+  return () => mm.revert();
+}, []);
+
+  // ================= MOBILE SLIDER =================
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % services.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? services.length - 1 : prev - 1
+    );
   };
 
   return (
@@ -123,7 +121,7 @@ export default function ServiceStack() {
           </span>
         </h2>
 
-        {/* ================= MOBILE SLIDER ================= */}
+        {/* ================= MOBILE ================= */}
         <div className="lg:hidden w-full flex flex-col items-center gap-6 mt-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="relative w-full overflow-hidden">
             <div
@@ -140,6 +138,7 @@ export default function ServiceStack() {
                       alt={service.title}
                       fill
                       className="object-cover opacity-70"
+                      priority={index === 0} // ✅ performance boost
                     />
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-text-primary py-2 px-4 rounded-2xl">
@@ -171,16 +170,16 @@ export default function ServiceStack() {
           </div>
         </div>
 
-        {/* ================= DESKTOP GSAP ================= */}
-        <div className="hidden lg:flex xl:mt-0 mt-8 relative w-full justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          {" "}
+        {/* ================= DESKTOP ================= */}
+        <div className="hidden lg:flex relative w-full justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           {services.map((service, index) => (
             <div
               key={index}
               className="service-card group absolute 
-w-[190px] h-[240px] 
-xl:w-[260px] xl:h-[340px]
-border border-border rounded-xl overflow-hidden shadow-xl"
+              w-[190px] h-[240px] 
+              xl:w-[260px] xl:h-[340px]
+              border border-border rounded-xl overflow-hidden shadow-xl"
+              style={{ willChange: "transform" }} // ✅ smoother GPU rendering
             >
               <Image
                 src={service.image}
@@ -203,7 +202,7 @@ border border-border rounded-xl overflow-hidden shadow-xl"
                     {service.title}
                   </h3>
 
-                  <p className="text-[14px] mb-4 text-text-primary">
+                  <p className="text-[14px] mb-4">
                     Smart digital solutions designed to help {service.title}{" "}
                     businesses scale faster and improve their digital presence.
                   </p>

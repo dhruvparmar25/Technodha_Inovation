@@ -4,6 +4,8 @@ import CommonTechSection from "@/components/common/CommonTechSection";
 export default function CareerGrow() {
   return (
     <CommonTechSection
+  bg="white"
+  textColor="text-black"
 
       illustration={Illustration}
       eyebrow="LET’S GROW TOGETHER"

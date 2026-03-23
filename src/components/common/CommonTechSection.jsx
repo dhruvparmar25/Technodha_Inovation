@@ -6,10 +6,16 @@ export default function CommonTechSection({
   heading,
   description,
   reverse = false,
+    bg = "#000000", 
+      textColor = "text-white",
+
+
 }) {
   return (
-    <section className="w-full bg-[#000000]">
-      {" "}
+<section
+      className="w-full"
+      style={{ background: bg }}
+    >      {" "}
       <div className="max-w-[1230px] px-[15px] mx-auto py-6 lg:py-16 overflow-x-hidden">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div
@@ -35,10 +41,14 @@ export default function CommonTechSection({
           </div>
 
           {/* Content */}
-        <div className={`${reverse ? "lg:order-1" : ""} text-white`}>
+<div className={`${reverse ? "lg:order-1" : ""} ${textColor}`}>
   {eyebrow && <div className="section-title">{eyebrow}</div>}
   {heading}
-  {description && <p className="text-support text-white!">{description}</p>}
+  {description && (
+    <p className={textColor === "text-white" ? "text-white/80" : "text-gray-600"}>
+      {description}
+    </p>
+  )}
 </div>
         </div>
       </div>
