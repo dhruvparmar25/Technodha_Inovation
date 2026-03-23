@@ -69,7 +69,7 @@ function ContactSection() {
 
   return (
     <>
-      <section data-theme="light" className="py-16 page-wrapper">
+      <section data-theme="light" className="py-16 page-wrapper" id="contact">
         {/* Left glow */}
         <div className="left-circle top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
 

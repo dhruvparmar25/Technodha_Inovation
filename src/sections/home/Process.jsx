@@ -22,7 +22,6 @@ function Process() {
       (context) => {
         const { isLaptop, isDesktop } = context.conditions;
 
-        // ❌ Mobile & Tablet → no animation
         if (!isLaptop && !isDesktop) return;
 
         const letters = gsap.utils.toArray(".letter");
@@ -114,7 +113,7 @@ function Process() {
                 className="w-10 h-10 absolute right-0 top-0"
                 color="#FE9139"
               />{" "}
-              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+              <h4 className="text-[#1A1A1F] text-[20px] lg:text-[24px] font-medium mb-2">
                 {" "}
                 Requirement Gathering{" "}
               </h4>{" "}
@@ -138,7 +137,7 @@ function Process() {
                 className="w-10 h-10 absolute right-0 top-0"
                 color="#FE9139"
               />{" "}
-              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+              <h4 className="text-[#1A1A1F] text-[20px] lg:text-[24px] font-medium mb-2">
                 {" "}
                 Design{" "}
               </h4>{" "}
@@ -160,7 +159,7 @@ function Process() {
                 className="w-10 h-10 absolute right-0 top-0"
                 color="#FE9139"
               />{" "}
-              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+              <h4 className="text-[#1A1A1F] text-[20px] lg:text-[24px] font-medium mb-2">
                 {" "}
                 Ideation{" "}
               </h4>{" "}
@@ -183,7 +182,7 @@ function Process() {
                 className="w-10 h-10 absolute right-0 top-0"
                 color="#FE9139"
               />{" "}
-              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+              <h4 className="text-[#1A1A1F] text-[20px] lg:text-[24px] font-medium mb-2">
                 {" "}
                 Development{" "}
               </h4>{" "}
@@ -206,7 +205,7 @@ function Process() {
                 className="w-10 h-10 absolute right-0 top-0"
                 color="#FE9139"
               />{" "}
-              <h4 className="text-[#1A1A1F] text-[24px] font-medium mb-2">
+              <h4 className="text-[#1A1A1F] text-[20px] lg:text-[24px] font-medium mb-2">
                 {" "}
                 Launch{" "}
               </h4>{" "}

@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 
 import Main from "@/assets/images/sections/home/hero/main.gif";
 import { Icon } from "@iconify/react";
+import ContactSection from "./ContactSection";
 
 function HeroSection() {
   const headingRef = useRef(null);
@@ -84,19 +85,25 @@ function HeroSection() {
             and smarter.
           </p>
           <div ref={buttonRef} className="mt-6 ">
-            <button className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0">
-              GET IN TOUCH
-              <Icon
-                color="#fe9139"
-                className="w-9 h-9 bg-white rounded-full -rotate-45 
-                 transition-transform duration-300 ease-in-out 
-                 group-hover:rotate-0"
-                icon="fa6-solid:circle-right"
-              />
-            </button>
+         <button
+  onClick={() => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+  className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0"
+>
+  GET IN TOUCH
+  <Icon
+    color="#fe9139"
+    className="w-9 h-9 bg-white rounded-full -rotate-45 
+     transition-transform duration-300 ease-in-out 
+     group-hover:rotate-0"
+    icon="fa6-solid:circle-right"
+  />
+</button>
           </div>
         </div>
-
         {/* RIGHT */}
         <div className="w-full lg:w-1/2 flex justify-center relative">
           <div className="relative z-10">

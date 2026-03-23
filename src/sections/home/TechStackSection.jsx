@@ -22,7 +22,6 @@ import Tailwind from "@/assets/images/tech/tailwind.png";
 import Typescript from "@/assets/images/tech/typescript.png";
 import Techmen from "@/assets/images/tech/tech-men.gif";
 
-
 // DATA
 const techItems = [
   { title: "Flutter", img: Flutter },
@@ -83,41 +82,35 @@ const MarqueeRow = ({ items, reverse = false }) => {
   );
 };
 
-/* ================================
-   Main Section
-================================ */
 function TechStackSection() {
   return (
-    <section
-      className=" relative bg-[#000000]  sm:pb-20 page-wrapper "
-    >
+    <section className=" relative bg-[#000000]  sm:pb-20 page-wrapper ">
+      <div className="mt-4 py-8">
+        {/* HEADER */}
+        <div className="w-19 h-31.25 -rotate-25  flex justify-center items-center m-auto   ">
+          <Image src={Techmen} className="w-full pb-6" alt="" />
+        </div>
+        <div className="text-center mb-12 sm:mb-16 px-">
+          <span className="bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent text-sm sm:text-base font-medium">
+            POWERED BY MODERN ENGINEERING
+          </span>
 
-<div className="mt-4">
-      {/* HEADER */}
-      <div className="w-[76px] h-[125px] -rotate-25  flex justify-center items-center m-auto   ">
-        <Image src={Techmen} className="w-full pb-6" alt=""/>
-      </div>
-      <div className="text-center mb-12 sm:mb-16 px-">
-        <span className="bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent text-sm sm:text-base font-medium">
-          POWERED BY MODERN ENGINEERING
-        </span>
+          <div className="heading-primary mt-2 text-white!">
+            The <span className="italic text-[#FB6557]">stack</span> behind
+            reliable <span className="italic text-[#FE9139]">scalable</span>{" "}
+            systems
+          </div>
 
-        <div className="heading-primary mt-2 text-white!">
-          The <span className="italic text-[#FB6557]">stack</span> behind
-          reliable <span className="italic text-[#FE9139]">scalable</span>{" "}
-          systems
+          <p className="text-support mt-3 text-white!">
+            Technologies chosen for real-world performance, not trends.
+          </p>
         </div>
 
-        <p className="text-support mt-3 text-white!">
-          Technologies chosen for real-world performance, not trends.
-        </p>
-      </div>
-
-      {/* MARQUEE ROWS */}
-      <div className="flex flex-col gap-6 sm:gap-8 mt-14 sm:mt-16">
-        <MarqueeRow items={techItemsSecond} />
-        <MarqueeRow items={techItems} reverse />
-      </div>
+        {/* MARQUEE ROWS */}
+        <div className="flex flex-col gap-6 sm:gap-8 mt-14 sm:mt-16">
+          <MarqueeRow items={techItemsSecond} />
+          <MarqueeRow items={techItems} reverse />
+        </div>
       </div>
     </section>
   );

@@ -1,41 +1,78 @@
 "use client";
 import Illustration from "@/assets/images/common/illustration.gif";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
+import gsap from "gsap";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const navRef = useRef(null);
   const pathname = usePathname();
+  const overlayRef = useRef(null);
+  const contentRef = useRef(null);
 
-  // ✅ Navbar scroll hide
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+    let tl;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
+    if (menuOpen) {
+      tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-      setLastScrollY(currentScrollY);
+      // 🔥 STEP 1: Circle expand from RIGHT
+      tl.fromTo(
+        overlayRef.current,
+        {
+          scale: 0,
+          x: 300, // 👉 more right se start
+          y: -200, // 👉 top-right feel
+          transformOrigin: "top right",
+        },
+        {
+          scale: 26, // 👉 bigger for full cover
+          x: 0,
+          y: 0,
+          duration: 2.2, // 👉 slower
+        },
+      )
+
+        // 🔥 STEP 2: Content fade (soft entry)
+        .fromTo(
+          contentRef.current,
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 0.8,
+          },
+          "-=1.2",
+        )
+
+        // 🔥 STEP 3: Nav links stagger (cinematic)
+        .fromTo(
+          navRef.current.children,
+          {
+            y: 140,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.22, // 👉 slower stagger
+            duration: 1.3,
+          },
+          "-=0.6",
+        );
+    }
+
+    return () => {
+      tl?.kill();
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
-  // ✅ Disable scroll when menu open
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
-    return () => (document.body.style.overflow = "auto");
   }, [menuOpen]);
 
   return (
@@ -49,23 +86,37 @@ const Navbar = () => {
             : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        {/* CLOSE BUTTON */}
-        <button
-          onClick={() => setMenuOpen(false)}
-          className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary text-white flex items-center justify-center text-lg md:text-xl"
-        >
-          <HiX />
-        </button>
+        <div
+          ref={overlayRef}
+          className="absolute top-0 right-0 w-[200px] h-[200px] bg-primary rounded-full"
+        />
 
-        {/* NAV LINKS */}
-        <div className="flex flex-1 mt-19  justify-center px-4">
-          <nav className="flex flex-col lg:flex-row  gap-6 md:gap-10 lg:gap-12 xl:gap-16">
-            {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map((item) => (
-              <Link
-                key={item}
-                href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className="
+        {/* CONTENT */}
+        <div
+          ref={contentRef}
+          className="relative z-10 flex flex-col justify-between h-full bg-white"
+        >
+          {/* CLOSE BUTTON */}
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary text-white flex items-center justify-center text-lg md:text-xl"
+          >
+            <HiX />
+          </button>
+
+          {/* NAV LINKS */}
+          <div className="flex flex-1 mt-19  justify-center px-4">
+            <nav
+              ref={navRef}
+              className="flex flex-col lg:flex-row  gap-6 md:gap-10 lg:gap-12 xl:gap-16 h-fit "
+            >
+              {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
+                    onClick={() => setMenuOpen(false)}
+                    className="
         text-[26px] 
         sm:text-[32px] 
         md:text-[36px] 
@@ -76,18 +127,23 @@ const Navbar = () => {
         transition
         text-center
         whitespace-nowrap
+        hover:text-primary
+        hover:border-primary
+        hover:border-b 
+        hover:b-4
         "
-              >
-                {item}
-              </Link>
-            ))}
-          </nav>
-        </div>
+                  >
+                    {item}
+                  </Link>
+                ),
+              )}
+            </nav>
+          </div>
 
-        {/* CENTER IMAGE */}
-        <div className="hidden lg:flex justify-center pointer-events-none px-4 md:px-8 ">
-          <div
-            className="
+          {/* CENTER IMAGE */}
+          <div className="hidden lg:flex justify-center pointer-events-none px-4 md:px-8 ">
+            <div
+              className="
     w-35 h-35 
     md:w-50 md:h-50 
     lg:w-60 lg:h-60
@@ -97,20 +153,20 @@ const Navbar = () => {
     -translate-x-[70%] -translate-y-1/2
     
   "
-          >
-            <Image
-              src={Illustration}
-              alt="center"
-              width={200}
-              height={200}
-              className="rounded-full object-cover"
-            />
+            >
+              <Image
+                src={Illustration}
+                alt="center"
+                width={200}
+                height={200}
+                className="rounded-full object-cover"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* BOTTOM BAR */}
-        <div
-          className="
+          {/* BOTTOM BAR */}
+          <div
+            className="
           bg-primary 
           min-h-45 md:min-h-55 lg:h-65
           text-white 
@@ -121,22 +177,38 @@ const Navbar = () => {
           gap-4 
           text-center md:text-left
         "
-        >
-          <div className="flex w-8 h-8 gap-2 text-[32px]">
-            <Icon icon="mingcute:instagram-fill" />
-            <Icon icon="mdi:linkedin" />
-          </div>
+          >
+            <div className="flex w-8 h-8 gap-3 text-[32px]">
+              <a
+                href="https://www.instagram.com/technodha/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="mingcute:instagram-fill" />
+              </a>
 
-          <div className="flex gap-4 md:gap-6 text-[13px]">
-            <Link href="/about">ABOUT</Link>
-            <Link href="/contact">CONTACT</Link>
-            <Link href="/career">CAREER</Link>
-          </div>
+              <a
+                href="https://www.linkedin.com/company/technodha-innovations/posts/?feedView=a"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="mdi:linkedin" />
+              </a>
+            </div>
 
-          <div className="text-sm flex justify-center items-center gap-2">
-            {" "}
-            <Icon icon="ic:sharp-email" />
-            support@techindr.com
+            <div className="flex gap-4 md:gap-6 text-[13px]">
+              <Link className=" hover:text-black" href="/about">ABOUT</Link>
+              <Link className=" hover:text-black" href="/contact">CONTACT</Link>
+              <Link className=" hover:text-black" href="/career">CAREER</Link>
+            </div>
+
+            <a
+              href="mailto:support@techindr.com"
+              className="text-sm flex justify-center items-center gap-2 hover:underline"
+            >
+              <Icon icon="ic:sharp-email" />
+              support@techindr.com
+            </a>
           </div>
         </div>
       </div>

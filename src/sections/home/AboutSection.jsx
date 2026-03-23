@@ -107,8 +107,12 @@ function AboutSection() {
               ))}
             </div>
 
-            <div className="mt-6 flex xl:justify-start sm:w-full">
-              <button className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0">
+            <div className="mt-6 px-2 flex xl:justify-start sm:w-full">
+              <button  onClick={() => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }} className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0">
                 SEND YOUR REQUIREMENTS{" "}
                 <Icon
                   color="#fe9139"
