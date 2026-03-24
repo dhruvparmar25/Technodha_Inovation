@@ -96,7 +96,7 @@ function Process() {
           className="
           flex flex-col items-center lg:flex-row
           gap-6 md:gap-10 lg:gap-94.5
-          z-50
+          z-10
           relative lg:absolute
           top-0 lg:top-30
           left-0 lg:-left-120

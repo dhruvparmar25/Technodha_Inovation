@@ -2,97 +2,94 @@
 import Illustration from "@/assets/images/common/illustration.gif";
 import NavBottom from "@/assets/images/common/nav-border.png";
 import LinkBorder from "@/assets/images/common/link-border.png";
+import DarkLogo from "@/assets/images/common/nav-logo-dark.png";
+import LightLogo from "@/assets/images/common/nav-logo-light.png";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
 import gsap from "gsap";
 
 const Navbar = () => {
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
+  const [scrolled, setScrolled] = useState(false);
+
   const navRef = useRef(null);
-  const pathname = usePathname();
   const overlayRef = useRef(null);
   const contentRef = useRef(null);
 
+  // 🔥 MENU ANIMATION
   useEffect(() => {
     let tl;
 
     if (menuOpen) {
       tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-      // 🔥 STEP 1: Circle expand from RIGHT
       tl.fromTo(
         overlayRef.current,
         {
           scale: 0,
-          x: 300, // 👉 more right se start
-          y: -200, // 👉 top-right feel
+          x: 300,
+          y: -200,
           transformOrigin: "top right",
         },
         {
-          scale: 26, // 👉 bigger for full cover
+          scale: 26,
           x: 0,
           y: 0,
-          duration: 2.2, // 👉 slower
-        },
+          duration: 2,
+        }
       )
-
-        // 🔥 STEP 2: Content fade (soft entry)
         .fromTo(
           contentRef.current,
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-            duration: 0.8,
-          },
-          "-=1.2",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8 },
+          "-=1.2"
         )
-
-        // 🔥 STEP 3: Nav links stagger (cinematic)
         .fromTo(
           navRef.current.children,
-          {
-            y: 140,
-            opacity: 0,
-          },
+          { y: 120, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            stagger: 0.22, // 👉 slower stagger
-            duration: 1.3,
+            stagger: 0.2,
+            duration: 1,
           },
-          "-=0.6",
+          "-=0.6"
         );
     }
 
-    return () => {
-      tl?.kill();
-    };
+    return () => tl?.kill();
   }, [menuOpen]);
-useEffect(() => {
-  if (menuOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
 
-  return () => {
-    document.body.style.overflow = "auto";
-  };
-}, [menuOpen]);
+  // 🔥 BODY SCROLL LOCK
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
+  }, [menuOpen]);
+
+  // 🔥 SCROLL EFFECT (THEME + BLUR)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      setScrolled(scrollY > 20);
+      setTheme(scrollY > 100 ? "light" : "dark");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       {/* 🔥 FULLSCREEN MENU */}
       <div
         data-theme="light"
-        className={`fixed inset-0 z-999 flex flex-col justify-between bg-white transition-all duration-500 overflow-hidden max-h-screen ${
+        className={`fixed inset-0 z-999 flex flex-col justify-between bg-white transition-all duration-500 ${
           menuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
@@ -103,184 +100,102 @@ useEffect(() => {
           className="absolute top-0 right-0 w-[200px] h-[200px] bg-primary rounded-full"
         />
 
-        {/* CONTENT */}
         <div
           ref={contentRef}
           className="relative z-10 flex flex-col justify-between h-full bg-white"
         >
-          {/* CLOSE BUTTON */}
+          {/* CLOSE */}
           <button
             onClick={() => setMenuOpen(false)}
-            className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary text-white flex items-center justify-center text-lg md:text-xl"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center"
           >
             <HiX />
           </button>
 
+          {/* NAV */}
           <nav
             ref={navRef}
-            className="flex flex-col mt-19 lg:flex-row gap-6 items-center justify-center md:gap-10 lg:gap-12 xl:gap-16 h-fit"
+            className="flex flex-col mt-20 lg:flex-row gap-6 items-center justify-center"
           >
-            {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map((item) => (
-              <Link
-                key={item}
-                href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className="group flex flex-col items-center"
-              >
-                {/* TEXT */}
-                <span
-                  className="
-        text-[26px] 
-        sm:text-[32px] 
-        md:text-[36px] 
-        lg:text-[32px] 
-        xl:text-[40px]
-        font-bold text-text-primary
-        transition
-        group-hover:text-primary
-      "
+            {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map(
+              (item) => (
+                <Link
+                  key={item}
+                  href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="group flex flex-col items-center"
                 >
-                  {item}
-                </span>
+                  <span className="text-3xl font-bold text-text-primary group-hover:text-primary transition">
+                    {item}
+                  </span>
 
-                {/* BORDER IMAGE */}
-                <Image
-                  src={LinkBorder}
-                  alt="border"
-          
-                />
-              </Link>
-            ))}
+                  <Image src={LinkBorder} alt="border" />
+                </Link>
+              )
+            )}
           </nav>
 
-          {/* CENTER IMAGE */}
-          <div className="hidden lg:flex justify-center pointer-events-none px-4 md:px-8 ">
-            <div
-              className="
-    w-35 h-35 
-    md:w-50 md:h-50 
-    lg:w-60 lg:h-60
-    rounded-full bg-border 
-    flex items-center justify-center 
-    absolute top-[60%] left-1/2 
-    -translate-x-[70%] -translate-y-1/2
-    
-  "
-            >
-              <Image
-                src={Illustration}
-                alt="center"
-                width={200}
-                height={200}
-                className="rounded-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* BOTTOM BAR */}
-          <div
-            className="
-          bg-primary 
-          min-h-45 md:min-h-55 lg:h-65
-          text-white 
-          px-4 md:px-6
-          py-4 md:py-[66px]
-          flex flex-col md:flex-row 
-          items-center md:items-end justify-between 
-          gap-4 
-          text-center md:text-left
-        "
-          >
-            <div className="flex w-8 h-8 gap-3 text-[32px]">
-              <a
-                href="https://www.instagram.com/technodha/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="mingcute:instagram-fill" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/technodha-innovations/posts/?feedView=a"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="mdi:linkedin" />
-              </a>
+          {/* BOTTOM */}
+          <div className="bg-primary text-white px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex gap-3 text-2xl">
+              <Icon icon="mingcute:instagram-fill" />
+              <Icon icon="mdi:linkedin" />
             </div>
 
-            <div className="flex gap-4 md:gap-6 text-[13px]">
-              <Link className=" hover:text-black" href="/about">
-                ABOUT
-              </Link>
-              <Link className=" hover:text-black" href="/contact">
-                CONTACT
-              </Link>
-              <Link className=" hover:text-black" href="/career">
-                CAREER
-              </Link>
+            <div className="flex gap-6 text-sm">
+              <Link href="/about">ABOUT</Link>
+              <Link href="/contact">CONTACT</Link>
+              <Link href="/career">CAREER</Link>
             </div>
 
-            <a
-              href="mailto:support@techindr.com"
-              className="text-sm flex justify-center items-center gap-2 hover:underline"
-            >
+            <div className="text-sm flex items-center gap-2">
               <Icon icon="ic:sharp-email" />
               support@techindr.com
-            </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* 🔝 HEADER */}
       <header
-        data-theme="light"
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          showNavbar && !menuOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
+        data-theme={theme}
+        className={`
+          fixed top-0 w-full z-50
+          transition-all duration-500 ease-in-out
+
+          ${
+            scrolled
+              ? "bg-bg/80 backdrop-blur-md shadow-lg"
+              : "bg-transparent"
+          }
+        `}
       >
-        <div className="py-3 md:py-4 lg:py-5 flex items-center justify-between px-4 md:px-6 lg:px-10">
+        <div className="py-4 flex items-center justify-between px-6 lg:px-10">
           {/* LOGO */}
           <Link href="/">
             <Image
-              src="/nav-logo.png"
-              alt="Company Logo"
+              src={theme === "light" ? DarkLogo : LightLogo}
+              alt="logo"
               width={180}
               height={30}
-              className="w-35 md:w-45 lg:w-55"
+              className="transition-all duration-500"
             />
           </Link>
 
           {/* RIGHT */}
-          <div className="flex items-center gap-4 md:gap-8 lg:gap-10">
-            {/* TEXT */}
-
+          <div className="flex items-center gap-6">
             <Link href="/contact">
-              <div className="hidden md:flex flex-col items-start cursor-pointer">
-                <h1 className="text-[12px] md:text-[14px] lg:text-[16px] font-medium text-text-primary">
+              <div className="hidden md:flex flex-col">
+                <h1 className="text-sm font-medium text-text-primary transition">
                   GET YOUR CUSTOM QUOTE
                 </h1>
-
-                <Image
-                  src={NavBottom}
-                  alt="border"
-                  className="mt-1 w-full max-w-[180px]"
-                />
+                <Image src={NavBottom} alt="border" />
               </div>
             </Link>
 
-            {/* HAMBURGER */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="
-              text-white 
-              text-lg md:text-xl lg:text-2xl 
-              bg-primary 
-              w-9 h-9 
-              md:w-10.5 md:h-10.5 
-              lg:w-12 lg:h-12 
-              rounded-full flex items-center justify-center
-            "
+              className="text-white bg-primary w-10 h-10 rounded-full flex items-center justify-center"
             >
               {menuOpen ? <HiX /> : <HiMenu />}
             </button>

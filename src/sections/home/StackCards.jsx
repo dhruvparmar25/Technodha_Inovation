@@ -113,7 +113,7 @@ useEffect(() => {
     >
       <div className="max-w-[1440px] h-screen mx-auto w-full relative">
         {/* Heading */}
-        <h2 className="lg:text-[48px] font-semibold absolute top-0 text-center text-text-primary mt-4 lg:leading-[65px] w-full text-[35px] leading-[48px]">
+        <h2 className="lg:text-[48px] font-semibold absolute top-0 text-center text-text-primary mt-6 lg:leading-[48px]    w-full text-[35px] leading-[48px]">
           Where <span className="text-primary"> Innovation </span>
           <br />
           <span>
@@ -179,18 +179,18 @@ useEffect(() => {
               w-[190px] h-[240px] 
               xl:w-[260px] xl:h-[340px]
               border border-border rounded-xl overflow-hidden shadow-xl"
-              style={{ willChange: "transform" }} // ✅ smoother GPU rendering
+           
             >
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover opacity-70"
+                className="object-cover"
               />
 
               {/* Center Title */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-text-primary py-2 px-4 rounded-2xl">
-                <h1 className="text-gradient-primary text-[14px] font-bold">
+                <h1 className="text-gradient-primary text-[8px] xl:text-[14px] font-bold">
                   {service.title}
                 </h1>
               </div>
