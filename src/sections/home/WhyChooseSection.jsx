@@ -119,16 +119,10 @@ function WhyChooseSection() {
 
                 {/* RIGHT IMAGE */}
                 <div className="w-full xl:w-1/2 flex justify-center relative">
-                    <div className="left-circle left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
                     <div className="relative flex justify-center items-center">
 
-                        <Image
-                            src={MenBg}
-                            alt=""
-                            aria-hidden
-                            className="absolute -translate-x-1/2 -translate-y-1/2 opacity-80 pointer-events-none"
-                        />
+                       
 
                         <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-10">
                             {["Growth", "Reliability", "Speed", "Performance", "Stability"].map(

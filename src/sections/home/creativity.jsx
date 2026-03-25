@@ -124,7 +124,7 @@ export default function Creativity() {
       data-theme="light"
     >
       {/* HEADER */}
-      <div className="flex flex-col items-center mt-10  md:mt-20 lg:mt-12 px-4">
+      <div className="flex flex-col items-center mt-10  md:mt-20 lg:mt-12 xl:mt-20 px-4">
         <h2 className="text-[24px]  md:text-[32px] font-medium text-gradient-primary">
           OUR APPROACH
         </h2>
