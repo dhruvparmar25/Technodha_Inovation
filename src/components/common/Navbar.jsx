@@ -149,21 +149,39 @@ useEffect(() => {
 
           {/* BOTTOM */}
           <div className="bg-primary text-white px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex gap-3 text-2xl">
-              <Icon icon="mingcute:instagram-fill" />
-              <Icon icon="mdi:linkedin" />
-            </div>
+         <div className="flex gap-3 text-2xl">
+  <a
+    href="https://www.instagram.com/technodha/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:scale-110 transition cursor-pointer"
+  >
+    <Icon icon="mingcute:instagram-fill" />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/technodha-innovations/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:scale-110 transition cursor-pointer"
+  >
+    <Icon icon="mdi:linkedin" />
+  </a>
+</div>
 
             <div className="flex gap-6 text-sm">
-              <Link href="/about">ABOUT</Link>
-              <Link href="/contact">CONTACT</Link>
-              <Link href="/career">CAREER</Link>
+              <Link  onClick={() => setMenuOpen(false)} href="/about" className="hover:text-black" >ABOUT</Link>
+              <Link  onClick={() => setMenuOpen(false)} href="/contact" className="hover:text-black">CONTACT</Link>
+              <Link  onClick={() => setMenuOpen(false)} href="/career" className="hover:text-black">CAREER</Link>
             </div>
 
-            <div className="text-sm flex items-center gap-2">
-              <Icon icon="ic:sharp-email" />
-              support@techindr.com
-            </div>
+           <a
+  href="mailto:support@technodha.com"
+  className="text-sm flex items-center gap-2 hover:opacity-80 transition cursor-pointer hover:text-black"
+>
+  <Icon icon="ic:sharp-email" />
+  support@technodha.com
+</a>
           </div>
         </div>
       </div>
@@ -194,7 +212,7 @@ useEffect(() => {
           <div className="flex items-center gap-6">
             <Link href="/contact">
               <div className="hidden md:flex flex-col">
-                <h1 className="text-sm font-medium text-text-primary transition">
+                <h1 className="text-sm font-medium text-text-primary transition hover:text-primary">
                   GET YOUR CUSTOM QUOTE
                 </h1>
                 <Image src={NavBottom} alt="border" />

@@ -56,9 +56,9 @@ function HeroSection() {
       <div className="absolute inset-0 bg-bg/60 backdrop-blur-[2px]" />
 
       {/* Content */}
-      <div className="relative max-w-305 mx-auto w-full px-4 min-h-screen py-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div className="relative max-w-305 mx-auto w-full px-4 min-h-screen py-10 flex flex-col lg:flex-row items-center justify-between gap-10 ">
         {/* LEFT */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0">
+        <div className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0 flex flex-col items-center lg:items-start">
           <h1
             ref={headingRef}
             className="text-text-primary leading-14 tracking-[0%] space-x-2"

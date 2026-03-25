@@ -31,7 +31,7 @@ const FooterHeading = ({ children }) => (
 const Footer = () => {
   return (
     <footer
-      data-theme="light"
+      data-theme="dark"
       className="bg-black text-text-secondary text-[13px]"
     >
       {/* Top Section */}

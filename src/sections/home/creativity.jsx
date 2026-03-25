@@ -114,11 +114,14 @@ export default function Creativity() {
   ];
 
   return (
+  
     <section
       ref={sectionRef}
       className="relative lg:h-screen bg-bg overflow-hidden"
       data-theme="light"
     >
+        <div className="max-w-[1440px]  mx-auto w-full relative">
+
       {/* HEADER */}
       <div className="flex flex-col items-center mt-10 md:mt-20 px-4">
         <h2 className="text-[24px]  md:text-[32px] font-medium text-gradient-primary">
@@ -204,6 +207,7 @@ export default function Creativity() {
           </div>
         ))}
       </div>
+  </div>
     </section>
   );
 }

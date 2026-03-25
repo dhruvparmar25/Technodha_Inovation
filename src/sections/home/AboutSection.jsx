@@ -107,16 +107,16 @@ function AboutSection() {
               ))}
             </div>
 
-            <div className="mt-6 px-2 flex xl:justify-start sm:w-full">
-           <GradientButton
-  text="SEND YOUR REQUIREMENTS"
-  onClick={() => {
-    document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }}
-  className="m-auto lg:m-0"
-/>
+            <div className="mt-6 px-2 flex justify-start sm:w-full items-start">
+              <GradientButton
+                text="SEND YOUR REQUIREMENTS"
+                onClick={() => {
+                  document.getElementById("contact")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className=" m-0"
+              />
             </div>
           </div>
         </div>

@@ -70,7 +70,7 @@ export default function DirectorSection() {
           onClick={prev}
           className="absolute left-2 md:left-6 lg:left-10 top-1/2 -translate-y-1/2 z-20 
                      w-10 h-10 flex items-center justify-center 
-                     rounded-full border-2 border-text-primary bg-white"
+                     rounded-full border border-text-primary bg-white hover:bg-primary"
         >
           <Icon
             icon="lucide:arrow-left"
@@ -79,7 +79,7 @@ export default function DirectorSection() {
         </button>
 
         {/* DESKTOP FRAME */}
-        <div className="hidden md:block relative w-full max-w-175 h-90 md:h-105">
+        <div className="hidden md:block relative w-full max-w-200 h-100 md:h-125">
           <Image
             src={Frame}
             alt="frame"
@@ -148,7 +148,7 @@ export default function DirectorSection() {
           onClick={next}
           className="absolute right-2 md:right-6 lg:right-10 top-1/2 -translate-y-1/2 z-20 
                      w-10 h-10 flex items-center justify-center 
-                     rounded-full border-2 border-text-primary bg-white"
+                     rounded-full border border-text-primary bg-white hover:bg-primary"
         >
           <Icon
             icon="lucide:arrow-right"

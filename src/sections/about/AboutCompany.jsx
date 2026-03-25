@@ -14,7 +14,7 @@
         py-16  max-w-[1230px]  m-auto
           flex flex-col gap-8
           lg:flex-row lg:gap-12.25
-          justify-between items-center
+          justify-between items-center lg:px-10
         "
       >
         {/* ================= TEXT CONTENT ================= */}

@@ -12,8 +12,7 @@ export default function CareerHero() {
       illustration={CarrerIllustration}
       sectionTitle="CAREERS AT TECHNODHA"
       heading={
-        <h1 className="heading-primary-dark text-[32px]!">
-          Join   
+<h1 className="heading-primary-dark text-[28px]! md:text-[32px]!">          Join   
           <span className="italic text-primary mx-2">Technodha</span>
           and build what’s
           <span className="italic text-secondary mx-1">next</span>
