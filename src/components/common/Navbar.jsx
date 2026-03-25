@@ -14,7 +14,7 @@ import gsap from "gsap";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [scrolled, setScrolled] = useState(false);
 
   const navRef = useRef(null);
@@ -71,19 +71,31 @@ const Navbar = () => {
     return () => (document.body.style.overflow = "auto");
   }, [menuOpen]);
 
-  // 🔥 SCROLL EFFECT (THEME + BLUR)
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
 
-      setScrolled(scrollY > 20);
-      setTheme(scrollY > 100 ? "light" : "dark");
-    };
+useEffect(() => {
+  const handleScroll = () => {
+    const sections = document.querySelectorAll("[data-theme]");
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    let currentTheme = "light";
 
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+
+      // 👇 trigger ONLY when section top reaches navbar
+      if (rect.top <= 80 && rect.bottom > 80) {
+        currentTheme = section.getAttribute("data-theme");
+      }
+    });
+
+    setTheme(currentTheme || "light");
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+ 
   return (
     <>
       {/* 🔥 FULLSCREEN MENU */}
@@ -163,18 +175,14 @@ const Navbar = () => {
           fixed top-0 w-full z-50
           transition-all duration-500 ease-in-out
 
-          ${
-            scrolled
-              ? "bg-bg/80 backdrop-blur-md shadow-lg"
-              : "bg-transparent"
-          }
+        
         `}
       >
         <div className="py-4 flex items-center justify-between px-6 lg:px-10">
           {/* LOGO */}
           <Link href="/">
             <Image
-              src={theme === "light" ? DarkLogo : LightLogo}
+  src={theme === "light" ? DarkLogo : LightLogo}
               alt="logo"
               width={180}
               height={30}

@@ -12,11 +12,13 @@ export const metadata = {
 export default function CareerPage() {
   return (
     <div>
-      <CareerFirst/>
-      <CareerHero />
-      <CareerGrow/>
-      <CareerProcess/>
-      <CareerTech/>
+      <CareerFirst />
+      <section data-theme="dark">
+        <CareerHero />
+      </section>
+      <CareerGrow />
+      <CareerProcess />
+      <CareerTech />
       <CareerApplicationSection />
     </div>
   );

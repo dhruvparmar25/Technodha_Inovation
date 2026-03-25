@@ -52,7 +52,7 @@ export default function CommonHeroSection({
             )}
 
             {buttonText && (
-              <GradientButton onClick={()=> router.push('/contact')} text={buttonText} className="mt-6" />
+              <GradientButton onClick={()=> router.push('/contact')} text={buttonText} className="mt-6 text-white! hover:text-primary!" />
             )}
           </div>
 

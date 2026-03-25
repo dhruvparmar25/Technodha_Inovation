@@ -7,7 +7,7 @@ import HeroIllustration from "@/assets/images/sections/services/web-hero.png";
 export default function WebDevelopmentHero() {
   return (
     <CommonHeroSection
-      theme="light"
+      theme="dark"
       herobg={HeroBg}
       illustration={HeroIllustration}
       sectionTitle="WEB DEVELOPMENT"

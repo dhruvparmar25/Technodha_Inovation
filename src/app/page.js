@@ -13,15 +13,18 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <StackCards />
+      <section data-theme="dark">
+        <StackCards />
+      </section>
       <AboutSection />
       <WhyChooseSection />
       <Creativity />
-      <TechStackSection />
+      <section data-theme="dark">
+        <TechStackSection />
+      </section>
       <Process />
       <DirectorSection />
-      {/* <WorkflowSection />  */}
       <ContactSection />
     </main>
   );
-} 
+}

@@ -28,18 +28,11 @@ export default function ProjectCTASection() {
           and quickly.
         </p>
 <Link href="/contact">
-
-        <button className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0 hover:text-primary">
-          SEND YOUR REQUIREMENTS{" "}
-          <Icon
-            color="#fe9139"
-            className="w-9 h-9 bg-white rounded-full -rotate-45 
-                 transition-transform duration-300 ease-in-out 
-                 group-hover:rotate-0"
-            icon="fa6-solid:circle-right"
-          />
-        </button>
-        </Link>
+  <GradientButton
+    text="SEND YOUR REQUIREMENTS"
+    className="m-auto lg:m-0 hover:text-primary"
+  />
+</Link>
       </div>
     </section>
   );

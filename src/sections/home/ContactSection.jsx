@@ -148,13 +148,12 @@ function ContactSection() {
                     {status.text}
                   </p>
                 )}
-
-                <GradientButton
-                  type="submit"
-                  text={loading ? "Sending…" : "Send Message"}
-                  className="w-full lg:w-146.25 px-5 py-3"
-                  disabled={loading}
-                />
+<GradientButton
+  type="submit"
+  text={loading ? "Sending…" : "Send Message"}
+  className="w-full lg:w-146.25 px-5 py-3"
+  disabled={loading}
+/>
               </form>
             </div>
 

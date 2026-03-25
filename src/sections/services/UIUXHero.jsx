@@ -7,7 +7,7 @@ import Uiuxbg from "@/assets/images/sections/services/uiux-bg.jpg";
 export default function UIUXHero() {
   return (
     <CommonHeroSection
-      theme="light"
+      theme="dark"
       illustration={UIUXIllustration}
       herobg={Uiuxbg}
       sectionTitle="UI / UX DESIGN"

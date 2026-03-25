@@ -7,7 +7,7 @@ import MobileIllustration from "@/assets/images/sections/services/mobile-hero.pn
 export default function MobileHero() {
   return (
     <CommonHeroSection
-      theme="light"
+      theme="dark"
             herobg={HeroBg}
       
       illustration={MobileIllustration}

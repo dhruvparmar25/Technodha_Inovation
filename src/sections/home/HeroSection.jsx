@@ -42,7 +42,6 @@ function HeroSection() {
   }, []);
 
   return (
-    
     <section
       data-theme="light"
       className="relative w-full min-h-screen overflow-hidden"
@@ -85,23 +84,14 @@ function HeroSection() {
             and smarter.
           </p>
           <div ref={buttonRef} className="mt-6 ">
-         <button
-  onClick={() => {
-    document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }}
-  className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0"
->
-  GET IN TOUCH
-  <Icon
-    color="#fe9139"
-    className="w-9 h-9 bg-white rounded-full -rotate-45 
-     transition-transform duration-300 ease-in-out 
-     group-hover:rotate-0"
-    icon="fa6-solid:circle-right"
-  />
-</button>
+            <GradientButton
+              text="GET IN TOUCH"
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            />
           </div>
         </div>
         {/* RIGHT */}

@@ -7,7 +7,7 @@ import Careerbg from "@/assets/images/sections/career/Career-bg.jpg";
 export default function CareerHero() {
   return (
     <CommonHeroSection
-      theme="light"
+      theme="dark"
       herobg={Careerbg}
       illustration={CarrerIllustration}
       sectionTitle="CAREERS AT TECHNODHA"

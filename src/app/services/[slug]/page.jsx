@@ -33,11 +33,15 @@ const servicesMap = {
     title: "WebDevelopment | Technodha",
     content: (
       <>
-        <WebDevelopmentHero />
+        <section data-theme="dark">
+          <WebDevelopmentHero />
+        </section>
         <WebSolutionsSection />
         <Matters />
         <WebProcess />
-        <TechStackSection />
+        <section data-theme="dark">
+          <TechStackSection />
+        </section>
         <ContactSection />
       </>
     ),
@@ -47,11 +51,15 @@ const servicesMap = {
     title: "UiuxDesign | Technodha",
     content: (
       <>
-        <UIUXHero />
+        <section data-theme="dark">
+          <UIUXHero />
+        </section>
         <UIUXSolutions />
         <UIUXProcess />
         <UXFlow />
-        <UIUXTools />
+        <section data-theme="dark">
+          <UIUXTools />
+        </section>
         <ContactSection />
       </>
     ),
@@ -61,11 +69,16 @@ const servicesMap = {
     title: "MobileDevelopment | Technodha",
     content: (
       <>
-        <MobileHero />
+        {" "}
+        <section data-theme="dark">
+          <MobileHero />
+        </section>
         <MobileSolutions />
         <MobilePlatform />
         <MobileProcess />
-        <MobileTech />
+        <section data-theme="dark">
+          <MobileTech />
+        </section>
         <ContactSection />
       </>
     ),
@@ -75,11 +88,16 @@ const servicesMap = {
     title: "CloudComputing | Technodha",
     content: (
       <>
-        <CloudHero />
+        <section data-theme="dark">
+          <CloudHero />
+        </section>
         <CloudSolutions />
         <CloudProcess />
         <CloudPlatform />
-        <CloudTech />
+        <section data-theme="dark">
+          <CloudTech />
+        </section>
+
         <ContactSection />
       </>
     ),
@@ -107,3 +125,4 @@ export default async function ServicePage({ params }) {
 
   return <>{service.content}</>;
 }
+            

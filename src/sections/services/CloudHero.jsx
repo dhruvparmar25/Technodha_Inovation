@@ -8,7 +8,7 @@ import Cloudbg from "@/assets/images/sections/services/cloud-bg.jpg";
 export default function CloudHero() {
   return (
     <CommonHeroSection
-      theme="light"
+      theme="dark"
       herobg={Cloudbg}
       illustration={CloudIllustration}
       sectionTitle="CLOUD COMPUTING"

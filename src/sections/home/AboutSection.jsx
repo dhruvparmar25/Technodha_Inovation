@@ -108,20 +108,15 @@ function AboutSection() {
             </div>
 
             <div className="mt-6 px-2 flex xl:justify-start sm:w-full">
-              <button  onClick={() => {
+           <GradientButton
+  text="SEND YOUR REQUIREMENTS"
+  onClick={() => {
     document.getElementById("contact")?.scrollIntoView({
       behavior: "smooth",
     });
-  }} className="group text-4 font-medium text-text-primary py-2 flex items-center gap-2 m-auto lg:m-0">
-                SEND YOUR REQUIREMENTS{" "}
-                <Icon
-                  color="#fe9139"
-                  className="w-9 h-9 bg-white rounded-full -rotate-45 
-                                             transition-transform duration-300 ease-in-out 
-                                             group-hover:rotate-0"
-                  icon="fa6-solid:circle-right"
-                />
-              </button>
+  }}
+  className="m-auto lg:m-0"
+/>
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ import BGCreativity from "../../assets/images/sections/creativity/creativity.png
 import Men from "../../assets/images/sections/creativity/men.png";
 import MenFinsh from "../../assets/images/sections/creativity/men-finish.png";
 import Web from "../../assets/images/sections/creativity/programming.gif";
+import GradientButton from "@/components/common/GradientButton";
 
 export default function Creativity() {
   const sectionRef = useRef(null);
@@ -193,19 +194,11 @@ export default function Creativity() {
                 </ul>
 
                 {/* BUTTON */}
-                <button
-                  onClick={() => router.push(`/services/${item.slug}`)}
-                  className="flex items-center gap-2 text-sm lg:text-base text-text-primary cursor-pointer group"
-                >
-                  Explore our Capabilities
-                  <Icon
-                    icon="fa6-solid:circle-right"
-                    className="w-7 h-7 bg-white rounded-full -rotate-45 
-          transition-transform duration-300 
-          group-hover:rotate-0"
-                    color="#fe9139"
-                  />
-                </button>
+               <GradientButton
+  text="Explore our Capabilities"
+  onClick={() => router.push(`/services/${item.slug}`)}
+  className="text-sm lg:text-base cursor-pointer"
+/>
               </div>
             </div>
           </div>
