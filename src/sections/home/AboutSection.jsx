@@ -15,7 +15,7 @@ function AboutSection() {
   return (
     <section
       data-theme="light"
-      className="bg-bg flex items-center xl:h-153.5 max-w-[1230px] px-[15px] m-auto py-16 xl:py-0"
+      className="flex items-center xl:h-153.5 max-w-[1230px] px-[15px] m-auto py-16 xl:py-0"
     >
       <div className="w-full max-w-full">
         <div className="flex flex-col xl:flex-row items-center">

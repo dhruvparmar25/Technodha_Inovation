@@ -80,7 +80,7 @@ function ServicesSection() {
 
       <section
         data-theme="light"
-        className="bg-bg  max-w-[1230px] px-[15px] m-auto"
+        className="  max-w-[1230px] px-[15px] m-auto"
       >
         {/* HEADER */}
         <div className="text-center lg:text-left">

@@ -120,11 +120,11 @@ export default function Creativity() {
   return (
     <section
       ref={sectionRef}
-      className="relative lg:h-screen bg-bg overflow-hidden"
+      className="relative lg:h-screen  overflow-hidden"
       data-theme="light"
     >
       {/* HEADER */}
-      <div className="flex flex-col items-center mt-10 md:mt-20 px-4">
+      <div className="flex flex-col items-center mt-10  md:mt-20 lg:mt-12 px-4">
         <h2 className="text-[24px]  md:text-[32px] font-medium text-gradient-primary">
           OUR APPROACH
         </h2>
@@ -156,7 +156,7 @@ export default function Creativity() {
   border border-[#F2C5BE] rounded-xl flex flex-col lg:flex-row 
   gap-6 lg:gap-10 p-6 lg:px-16 lg:py-10 
   relative left-0 translate-x-0 
-  lg:absolute lg:bottom-10 lg:left-1/2 lg:-translate-x-1/2 
+  lg:absolute lg:bottom-3 xl:bottom-10 lg:left-1/2 lg:-translate-x-1/2 
   cursor-pointer overflow-hidden bg-white"
             style={{ zIndex: index }}
           >

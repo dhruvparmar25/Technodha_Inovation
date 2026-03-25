@@ -77,7 +77,7 @@ function WhyChooseSection() {
     }, []);
 
     return (
-        <section data-theme="light" className="bg-bg py-25 overflow-hidden">
+        <section data-theme="light" className=" py-25 overflow-hidden">
             <div className="flex flex-col md:flex-row items-center  max-w-[1230px] px-[15px] m-auto">
                 {/* LEFT CONTENT */}
                 <div className="w-full xl:w-1/2">

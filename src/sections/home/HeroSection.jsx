@@ -53,7 +53,7 @@ function HeroSection() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-bg/60 backdrop-blur-[2px]" />
+      <div className="absolute inset-0  backdrop-blur-[2px]" />
 
       {/* Content */}
       <div className="relative max-w-305 mx-auto w-full px-4 min-h-screen py-10 flex flex-col lg:flex-row items-center justify-between gap-10 ">
