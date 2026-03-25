@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className="overflow-x-hidden antialiased">
+      <body suppressHydrationWarning className="overflow-x-hidden antialiased bg-[#faf9f6]!">
         <Navbar />
         <main>{children}</main>
         <section data-theme="dark">

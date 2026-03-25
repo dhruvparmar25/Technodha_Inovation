@@ -40,10 +40,8 @@ export default function DirectorSection() {
   };
 
   return (
-    <section
-      data-theme="light"
-      className="relative py-16 md:py-20 bg-[#fff7f5] overflow-hidden"
-    >
+ <section       data-theme="light"
+ className="relative py-16 md:py-20 min-h-[600px] md:min-h-[700px] bg-[#fff7f5] overflow-hidden">
       <Image
         src={Left}
         alt=""
@@ -106,10 +104,9 @@ export default function DirectorSection() {
                 <span className="text-primary mr-1">Director’s</span> Message
               </h3>
 
-              <p className="text-sm text-gray-500 mb-4 leading-relaxed">
-                {data[index].message}
-              </p>
-
+            <p className="text-sm text-gray-500 mb-4 leading-relaxed min-h-[80px]">
+  {data[index].message}
+</p>
               <p className="text-primary font-medium">— {data[index].name}</p>
 
               <p className="text-sm text-gray-500">{data[index].role}</p>
@@ -133,7 +130,7 @@ export default function DirectorSection() {
               <span className="text-primary">Director’s</span> Message
             </h3>
 
-            <p className="text-sm text-gray-500 mb-4 leading-relaxed">
+            <p className="text-sm text-gray-500 mb-4 leading-relaxed ">
               {data[index].message}
             </p>
 

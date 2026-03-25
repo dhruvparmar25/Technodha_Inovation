@@ -70,11 +70,7 @@ function ContactSection() {
   return (
     <>
       <section data-theme="light" className="py-16 page-wrapper" id="contact">
-        {/* Left glow */}
-        <div className="left-circle top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
-
-        {/* Right glow */}
-        <div className="left-circle top-1/2 right-0 translate-x-1/2 -translate-y-1/2"></div>
+      
         <div className="max-w-[1230px] px-[15px] m-auto">
           <div className="flex flex-col xl:flex-row gap-18 items-center">
             {/* LEFT SIDE */}

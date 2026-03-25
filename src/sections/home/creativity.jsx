@@ -10,7 +10,11 @@ import CardBg from "@/assets/images/common/hero-bg.png";
 import BGCreativity from "../../assets/images/sections/creativity/creativity.png";
 import Men from "../../assets/images/sections/creativity/men.png";
 import MenFinsh from "../../assets/images/sections/creativity/men-finish.png";
-import Web from "../../assets/images/sections/creativity/programming.gif";
+import Web from "../../assets/images/sections/home/creativity/web-development.gif";
+import App from "../../assets/images/sections/home/creativity/mobile-app.gif";
+import UIUX from "../../assets/images/sections/home/creativity/ui-ux.gif";
+import Cloud from "../../assets/images/sections/home/creativity/cloud.gif";
+
 import GradientButton from "@/components/common/GradientButton";
 
 export default function Creativity() {
@@ -85,7 +89,7 @@ export default function Creativity() {
     {
       title: "Mobile App Development",
       slug: "mobile-apps",
-      image: Web,
+      image:App,
       desc: "We build fast and reliable mobile apps for iOS and Android platforms.",
       points: [
         "Cross-platform apps",
@@ -96,14 +100,14 @@ export default function Creativity() {
     {
       title: "UI/UX Design",
       slug: "ui-ux",
-      image: Web,
+      image: UIUX,
       desc: "We design intuitive and engaging user interfaces with great usability.",
       points: ["User-first design", "Wireframes to UI", "Design systems"],
     },
     {
       title: "Cloud Services",
       slug: "cloud-services",
-      image: Web,
+      image: Cloud,
       desc: "We provide scalable cloud infrastructure and deployment solutions.",
       points: [
         "Secure infrastructure",
@@ -114,14 +118,11 @@ export default function Creativity() {
   ];
 
   return (
-  
     <section
       ref={sectionRef}
       className="relative lg:h-screen bg-bg overflow-hidden"
       data-theme="light"
     >
-        <div className="max-w-[1440px]  mx-auto w-full relative">
-
       {/* HEADER */}
       <div className="flex flex-col items-center mt-10 md:mt-20 px-4">
         <h2 className="text-[24px]  md:text-[32px] font-medium text-gradient-primary">
@@ -159,18 +160,8 @@ export default function Creativity() {
   cursor-pointer overflow-hidden bg-white"
             style={{ zIndex: index }}
           >
-            {/* ✅ Background Image (opacity 50) */}
-            <Image
-              src={CardBg}
-              alt="card bg"
-              fill
-              className="object-cover opacity-50"
-            />
-
-            {/* ✅ Optional overlay (better contrast) */}
             <div className="absolute inset-0 "></div>
 
-            {/* ✅ CONTENT WRAPPER */}
             <div className="relative  w-full flex flex-col lg:flex-row gap-6 lg:gap-10">
               {/* IMAGE */}
               <div className="w-full lg:w-1/2">
@@ -197,17 +188,16 @@ export default function Creativity() {
                 </ul>
 
                 {/* BUTTON */}
-               <GradientButton
-  text="Explore our Capabilities"
-  onClick={() => router.push(`/services/${item.slug}`)}
-  className="text-sm lg:text-base cursor-pointer"
-/>
+                <GradientButton
+                  text="Explore our Capabilities"
+                  onClick={() => router.push(`/services/${item.slug}`)}
+                  className="text-sm lg:text-base cursor-pointer"
+                />
               </div>
             </div>
           </div>
         ))}
       </div>
-  </div>
     </section>
   );
 }
