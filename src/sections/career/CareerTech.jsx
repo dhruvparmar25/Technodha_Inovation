@@ -1,5 +1,5 @@
 import CommonProcessSection from "@/components/common/CommonProcessSection";
-import Illustration from "@/assets/images/sections/career/career-tech.png";
+import Illustration from "@/assets/images/sections/career/career-tech.gif";
 
 // Orange dot icon (reuse any small circle or create one)
 import Dot from "@/assets/images/sections/career/dot.png";

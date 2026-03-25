@@ -251,7 +251,7 @@ export default function CareerApplicationSection() {
           <GradientButton
             type="submit"
             text={loading ? "Submitting…" : "Submit Application"}
-            className="w-full sm:w-auto px-8 py-3"
+            className="w-full sm:w-auto  py-3"
             disabled={loading}
           />
         </form>

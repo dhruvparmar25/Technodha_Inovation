@@ -1,5 +1,5 @@
 import CommonProcessSection from "@/components/common/CommonProcessSection";
-import Illustration from "@/assets/images/sections/contact/contact-cta.png";
+import Illustration from "@/assets/images/sections/contact/contact-cta.gif";
 
 export default function ContactCTASection() {
   return (

@@ -1,5 +1,5 @@
   import Image from "next/image";
-  import AboutGif from "@/assets/images/sections/about/company/technodha-gif.png";
+  import AboutGif from "@/assets/images/sections/about/company/technodha-gif.gif";
 
   const ABOUT_CONTENT = {
     title: "ABOUT TECHNODHA",

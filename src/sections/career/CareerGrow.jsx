@@ -1,10 +1,10 @@
-import Illustration from "@/assets/images/sections/career/career-grow.png";
+import Illustration from "@/assets/images/sections/career/career-grow.gif";
 import CommonTechSection from "@/components/common/CommonTechSection";
 
 export default function CareerGrow() {
   return (
     <CommonTechSection
-  bg="white"
+  bg="#FAF9F6"
   textColor="text-black"
 
       illustration={Illustration}
