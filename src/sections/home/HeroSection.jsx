@@ -7,8 +7,6 @@ import GradientButton from "@/components/common/GradientButton";
 import { useRouter } from "next/navigation";
 
 import Main from "@/assets/images/sections/home/hero/main.gif";
-import { Icon } from "@iconify/react";
-import ContactSection from "./ContactSection";
 
 function HeroSection() {
   const headingRef = useRef(null);
@@ -23,19 +21,19 @@ function HeroSection() {
     tl.fromTo(
       headingRef.current,
       { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.6, ease: "power4.out" },
+      { y: 0, opacity: 1, duration: 1.6, ease: "power4.out" }
     )
       .fromTo(
         paraRef.current,
         { y: 40, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.2, ease: "power4.out" },
-        "-=1",
+        "-=1"
       )
       .fromTo(
         buttonRef.current,
         { y: 30, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "power4.out" },
-        "-=0.8",
+        "-=0.8"
       );
 
     return () => tl.kill();
@@ -44,46 +42,62 @@ function HeroSection() {
   return (
     <section
       data-theme="light"
-      className="relative w-full min-h-screen overflow-hidden"
+      className="relative w-full min-h-screen overflow-hidden px-4 sm:px-6 lg:px-10"
     >
-      {/* Background */}
+     {/* Background */}
       <div
         className="absolute inset-0 bg-cover opacity-25"
         style={{ backgroundImage: "url('/bg-hero.jpg') " }}
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 " />
-
       {/* Content */}
-      <div className="relative max-w-305 mx-auto w-full min-h-screen py-10 flex flex-col lg:flex-row items-center justify-between gap-10 ">
+      <div className="relative max-w-305 mx-auto w-full min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-10 py-10">
+        
         {/* LEFT */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0 flex flex-col items-center lg:items-start">
+        <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
+          
           <h1
             ref={headingRef}
-            className="text-text-primary leading-14 tracking-[0%] space-x-2"
+            className="text-text-primary leading-tight tracking-tight"
           >
             {/* Line 1 */}
-            <span className="font-light italic text-[50px]">Scalable</span>{" "}
-            <span className="font-medium text-[50px]">by</span> {/* Design. */}
+            <span className="font-light italic text-[22px] sm:text-[28px] md:text-[36px] lg:text-[50px]">
+              Scalable
+            </span>{" "}
+            <span className="font-medium text-[22px] sm:text-[28px] md:text-[36px] lg:text-[50px]">
+              by
+            </span>{" "}
             <span className="text-primary">
-              <span className="font-medium italic text-[55px]">D</span>
-              <span className="font-medium italic text-[50px]">esign.</span>
+              <span className="font-medium italic text-[26px] sm:text-[32px] md:text-[40px] lg:text-[55px]">
+                D
+              </span>
+              <span className="font-medium italic text-[22px] sm:text-[28px] md:text-[36px] lg:text-[50px]">
+                esign.
+              </span>
             </span>
             <br />
+
             {/* Line 2 */}
-            <span className="font-medium text-[45px]">Digital</span>{" "}
-            <span className="font-medium text-[50px]">by</span>{" "}
-            <span className="font-medium italic text-[50px]">Nature.</span>
+            <span className="font-medium text-[20px] sm:text-[26px] md:text-[32px] lg:text-[45px]">
+              Digital
+            </span>{" "}
+            <span className="font-medium text-[22px] sm:text-[28px] md:text-[36px] lg:text-[50px]">
+              by
+            </span>{" "}
+            <span className="font-medium italic text-[22px] sm:text-[28px] md:text-[36px] lg:text-[50px]">
+              Nature.
+            </span>
           </h1>
+
           <p
             ref={paraRef}
-            className="mt-5 text-sm m-auto lg:m-0 sm:text-base text-text-secondary max-w-[500px]"
+            className="mt-4 sm:mt-5 text-xs sm:text-sm md:text-base text-text-secondary max-w-120"
           >
             We build scalable digital solutions that help businesses move faster
             and smarter.
           </p>
-          <div ref={buttonRef} className="mt-6 ">
+
+          <div ref={buttonRef} className="mt-5 sm:mt-6">
             <GradientButton
               text="GET IN TOUCH"
               onClick={() => {
@@ -94,14 +108,15 @@ function HeroSection() {
             />
           </div>
         </div>
+
         {/* RIGHT */}
-        <div className="w-full lg:w-1/2 flex justify-end relative">
-          <div className="relative ">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          <div className="relative">
             <Image
               src={Main}
               alt="Laptop"
               priority
-              className="w-[220px] sm:w-[260px] lg:w-[460px] shrink-0"
+              className="w-60 sm:w-70 md:w-85 lg:w-115"
             />
           </div>
         </div>
