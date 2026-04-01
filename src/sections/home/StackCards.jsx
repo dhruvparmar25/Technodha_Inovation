@@ -31,24 +31,24 @@ export default function ServiceStack() {
 
     const mm = gsap.matchMedia();
 
-    // ================= MID SCREENS =================
+    // mid screen animation
     mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
       const cards = gsap.utils.toArray(".service-card");
       const centerIndex = Math.floor(cards.length / 2);
       const cardWidth = cards[0].getBoundingClientRect().width;
-      const gap = Math.min(cardWidth * 1.1, 260);
+      const gap = Math.min(cardWidth * 1.1, 270);
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=1600", // ✅ slower scroll
-          scrub: 1.5, // ✅ smooth delay
+          end: "+=1600",
+          scrub: 1.5,
           pin: true,
         },
       });
 
-      // 👉 smooth entry
+      // initial entry animation
       tl.from(cards, {
         y: 350,
         opacity: 0,
@@ -57,13 +57,14 @@ export default function ServiceStack() {
         ease: "power2.out",
       });
 
+      // horizontal spread animation
       tl.to(cards, {
         x: (i) => (i - centerIndex) * gap,
         ease: "none",
       });
     });
 
-    // ================= LARGE SCREENS =================
+    // large screen animation
     mm.add("(min-width: 1440px)", () => {
       const cards = gsap.utils.toArray(".service-card");
       const centerIndex = Math.floor(cards.length / 2);
@@ -86,7 +87,7 @@ export default function ServiceStack() {
         ease: "power2.out",
       });
 
-      // 👉 YOUR ORIGINAL spacing (kept same)
+      // horizontal spacing
       tl.to(cards, {
         x: (i) => (i - centerIndex) * 280,
         ease: "none",
@@ -96,7 +97,7 @@ export default function ServiceStack() {
     return () => mm.revert();
   }, []);
 
-  // ================= MOBILE SLIDER =================
+  // mobile slider controls
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % services.length);
   };
@@ -108,11 +109,11 @@ export default function ServiceStack() {
   return (
     <section
       ref={sectionRef}
-      className="h-screen bg-bg flex flex-col items-center justify-center overflow-hidden relative lg:px-[120px] py-[40px]  lg:py-[80px] "
+      className="h-screen bg-bg flex flex-col items-center justify-center overflow-hidden relative lg:px-30 py-10 lg:py-20"
     >
-      <div className="max-w-[1440px] h-screen mx-auto w-full relative ">
-        {/* Heading */}
-        <h2 className="lg:text-[48px] font-semibold absolute top-0 text-center text-text-primary  lg:leading-[48px]    w-full text-[35px] leading-[36px] lg:leading-[48px]">
+      <div className="max-w-360 h-screen mx-auto w-full relative">
+        {/* heading */}
+        <h2 className="lg:text-[48px] font-semibold absolute top-0 text-center text-text-primary w-full text-[35px] leading-9 lg:leading-12">
           Where <span className="text-primary"> Innovation </span>
           <br />
           <span>
@@ -120,8 +121,8 @@ export default function ServiceStack() {
           </span>
         </h2>
 
-        {/* ================= MOBILE ================= */}
-        <div className="lg:hidden w-full flex flex-col items-center gap-6  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* mobile layout */}
+        <div className="lg:hidden w-full flex flex-col items-center gap-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="relative w-full overflow-hidden">
             <div
               className="flex transition-transform duration-500"
@@ -131,13 +132,13 @@ export default function ServiceStack() {
             >
               {services.map((service, index) => (
                 <div key={index} className="min-w-full flex justify-center">
-                  <div className="w-[260px] h-[340px] relative border border-border rounded-xl overflow-hidden shadow-xl">
+                  <div className="w-65 h-85 relative border border-border rounded-xl overflow-hidden shadow-xl">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
                       className="object-cover opacity-70"
-                      priority={index === 0} // ✅ performance boost
+                      priority={index === 0}
                     />
 
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-text-primary py-2 px-4 rounded-2xl">
@@ -151,7 +152,7 @@ export default function ServiceStack() {
             </div>
           </div>
 
-          {/* Buttons */}
+          {/* navigation buttons */}
           <div className="flex gap-4">
             <button
               onClick={prevSlide}
@@ -169,14 +170,14 @@ export default function ServiceStack() {
           </div>
         </div>
 
-        {/* ================= DESKTOP ================= */}
-        <div className="hidden lg:flex relative w-full justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* desktop layout */}
+        <div className="hidden lg:flex relative w-full justify-center items-center  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           {services.map((service, index) => (
             <div
               key={index}
               className="service-card group absolute 
-              w-[190px] h-[240px] 
-              xl:w-[240px] xl:h-[300px]
+              w-47.5 h-60 
+              xl:w-60 xl:h-75
               border border-border rounded-xl overflow-hidden shadow-xl"
             >
               <Image
@@ -186,14 +187,14 @@ export default function ServiceStack() {
                 className="object-cover"
               />
 
-              {/* Center Title */}
+              {/* center title */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-text-primary py-2 px-4 rounded-2xl">
                 <h1 className="text-gradient-primary text-[8px] xl:text-[14px] font-bold">
                   {service.title}
                 </h1>
               </div>
 
-              {/* Hover Content */}
+              {/* hover content */}
               <div className="absolute inset-0 text-text-primary py-5 px-3 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-primary">
                 <div className="border border-text-primary h-full rounded-[10px] py-5 px-3">
                   <h3 className="text-[22px] font-semibold mb-4">
