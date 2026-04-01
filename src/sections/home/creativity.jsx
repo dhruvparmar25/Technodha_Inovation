@@ -171,7 +171,7 @@ export default function Creativity() {
         {services.map((item, index) => (
           <div
             key={index}
-            className="creativity-card relative left-0 w-full translate-x-0 cursor-pointer overflow-hidden rounded-xl border border-[#F2C5BE] bg-white p-4 flex flex-col gap-4 lg:absolute lg:bottom-[10%] lg:left-1/2 lg:w-[720px] lg:-translate-x-1/2 lg:flex-row lg:gap-8 lg:px-10 lg:py-6 xl:w-[900px] xl:gap-10 xl:px-16 xl:py-10 min-h-[260px] lg:h-[360px] xl:h-[420px]"
+            className="creativity-card relative left-0 w-full translate-x-0 cursor-pointer overflow-hidden rounded-xl border border-[#F2C5BE] bg-white p-4 flex flex-col gap-4 lg:absolute lg:bottom:-[10%] xl:bottom-[16%] lg:left-1/2 lg:w-[720px] lg:-translate-x-1/2 lg:flex-row lg:gap-8 lg:px-10 lg:py-6 xl:w-[900px] xl:gap-10 xl:px-16 xl:py-10 min-h-[260px] lg:h-[360px] xl:h-[420px]"
             style={{ zIndex: index }}
           >
             <div className="absolute inset-0" />

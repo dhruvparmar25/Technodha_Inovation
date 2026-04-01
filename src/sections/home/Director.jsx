@@ -4,27 +4,30 @@ import { useState } from "react";
 import Image from "next/image";
 import Frame from "@/assets/images/sections/home/director/director.png";
 import Left from "@/assets/images/sections/home/director/left-icon.png";
+import CEO from "@/assets/images/sections/home/director/ceo.png";
+import CMO from "@/assets/images/sections/home/director/cmo.png";
+
 
 const data = [
   {
-    name: "Amit Verma",
-    role: "Co-Founder",
-    image: "/icon-1.jpg",
-    message: "Innovation and commitment define our journey toward excellence.",
+    name: "MADHUR AHIR",
+    role: "Chief Executive Officer (CEO)",
+    image: CEO,
+    message: "Madhur Ahir is the strategic visionary and Chief Executive Officer of the group of companies. He defines long-term business direction, corporate governance, and expansion strategy across all enterprises. With a strong entrepreneurial mindset and leadership acumen, he drives the group’s focus on innovation, operational excellence, and sustainable growth. His ability to anticipate market trends and align business models accordingly has been instrumental in building a future-ready organization. He believes in building institutions rather than just companies — organizations that create lasting value for clients, employees, and partners.",
   },
   {
-    name: "Ranjan Singh",
-    role: "Director",
-    image: "/icon-1.jpg",
+    name: "HARDEVSINH RATHOD",
+    role: "Chief Marketing Officer (CMO)",
+    image: CMO,
     message:
-      "True success is not measured by how much we deliver, but by the value and trust we create.",
+      "Hardevsinh Rathod serves as the Chief Marketing Officer across the entire group of companies. He leads brand strategy, market positioning, and business development with a strong focus on corporate credibility and global standards. With expertise in strategic marketing, communication, and customer engagement, he ensures that each company maintains a strong professional identity and competitive presence in its respective market. His role bridges technology and business by transforming complex solutions into clear value propositions for enterprises and multinational clients. Under his leadership, the group continues to strengthen its brand equity and market trust.",
   },
   {
-    name: "Neha Sharma",
-    role: "Managing Director",
+    name: "YUVRAJSINH JADEJA",
+    role: "Chief Technical Officer (CTO)",
     image: "/icon-1.jpg",
     message:
-      "We believe in building relationships, not just delivering services.",
+      "Yuvrajsinh Jadeja is the Chief Technical Officer of the group and leads its technology innovation and product development strategy. He is responsible for building scalable, secure, and future-ready technology solutions across all companies. His expertise in system architecture, research & development, and advanced digital platforms ensures that every solution meets enterprise-grade standards. His leadership drives continuous innovation and enables the group to deliver reliable, high-performance solutions for startups, enterprises, and industrial clients",
   },
 ];
 
@@ -51,7 +54,7 @@ export default function DirectorSection() {
         src={Left}
         alt=""
         className="absolute 
-             -right-50 -bottom-70 
+             -right-50 -bottom-80 
              md:-right-34 md:-bottom-70 
              lg:-right-50 lg:-bottom-34.5
              w-100 opacity-100 z-50 
@@ -59,7 +62,7 @@ export default function DirectorSection() {
       />
 
       {/* Background Image with 50% opacity */}
-      <div className="absolute inset-0 bg-[url('/card-bg.jpg')] bg-cover bg-center opacity-50 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[url('/card-bg.jpg')] bg-cover bg-center opacity-20 pointer-events-none"></div>
 
       {/* Main Container */}
       <div className="relative max-w-6xl mx-auto flex items-center justify-center px-4">
@@ -77,7 +80,7 @@ export default function DirectorSection() {
         </button>
 
         {/* DESKTOP FRAME */}
-        <div className="hidden md:block relative w-full max-w-200 h-100 md:h-125">
+        <div className="hidden md:block relative w-full max-w-300 h-200 md:h-125">
           <Image
             src={Frame}
             alt="frame"
@@ -87,7 +90,7 @@ export default function DirectorSection() {
           />
 
           {/* CONTENT inside frame */}
-          <div className="absolute inset-0 flex items-center justify-center gap-10 px-6 ml-6">
+          <div className="absolute inset-0 flex items-center justify-center gap-10 px-6 ">
             {/* IMAGE */}
             <div className="w-50 h-60 relative">
               <Image
@@ -104,12 +107,12 @@ export default function DirectorSection() {
                 <span className="text-primary mr-1">Director’s</span> Message
               </h3>
 
-            <p className="text-sm text-gray-500 mb-4 leading-relaxed min-h-[80px]">
+            <p className="text-[12px] text-gray-500 mb-2 leading-relaxed min-h-[80px]">
   {data[index].message}
 </p>
               <p className="text-primary font-medium">— {data[index].name}</p>
 
-              <p className="text-sm text-gray-500">{data[index].role}</p>
+              <p className="text-[12px] text-gray-500">{data[index].role}</p>
             </div>
           </div>
         </div>
