@@ -24,76 +24,77 @@ export default function ServiceStack() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-useEffect(() => {
-  if (typeof window === "undefined") return;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  const mm = gsap.matchMedia();
+    const mm = gsap.matchMedia();
 
-  // ================= MID SCREENS =================
-  mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
-    const cards = gsap.utils.toArray(".service-card");
-    const centerIndex = Math.floor(cards.length / 2);
+    // ================= MID SCREENS =================
+    mm.add("(min-width: 1024px) and (max-width: 1439px)", () => {
+      const cards = gsap.utils.toArray(".service-card");
+      const centerIndex = Math.floor(cards.length / 2);
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const gap = Math.min(cardWidth * 1.1, 260);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=1600", // ✅ slower scroll
-        scrub: 1.5, // ✅ smooth delay
-        pin: true,
-      },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=1600", // ✅ slower scroll
+          scrub: 1.5, // ✅ smooth delay
+          pin: true,
+        },
+      });
+
+      // 👉 smooth entry
+      tl.from(cards, {
+        y: 350,
+        opacity: 0,
+        rotate: (i) => (i % 2 === 0 ? -5 : 5),
+        stagger: 0.2,
+        ease: "power2.out",
+      });
+
+      tl.to(cards, {
+        x: (i) => (i - centerIndex) * gap,
+        ease: "none",
+      });
     });
 
-    // 👉 smooth entry
-    tl.from(cards, {
-      y: 300,
-      opacity: 0,
-      rotate: (i) => (i % 2 === 0 ? -5 : 5),
-      stagger: 0.2,
-      ease: "power2.out",
+    // ================= LARGE SCREENS =================
+    mm.add("(min-width: 1440px)", () => {
+      const cards = gsap.utils.toArray(".service-card");
+      const centerIndex = Math.floor(cards.length / 2);
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=1600",
+          scrub: 1.5,
+          pin: true,
+        },
+      });
+
+      tl.from(cards, {
+        y: 400,
+        opacity: 0,
+        rotate: (i) => (i % 2 === 0 ? -6 : 6),
+        stagger: 0.2,
+        ease: "power2.out",
+      });
+
+      // 👉 YOUR ORIGINAL spacing (kept same)
+      tl.to(cards, {
+        x: (i) => (i - centerIndex) * 280,
+        ease: "none",
+      });
     });
 
-    // 👉 YOUR ORIGINAL spacing (kept same)
-    tl.to(cards, {
-      x: (i) => (i - centerIndex) * 200,
-      ease: "none", // ✅ important
-    });
-  });
-
-  // ================= LARGE SCREENS =================
-  mm.add("(min-width: 1440px)", () => {
-    const cards = gsap.utils.toArray(".service-card");
-    const centerIndex = Math.floor(cards.length / 2);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=1600",
-        scrub: 1.5,
-        pin: true,
-      },
-    });
-
-    tl.from(cards, {
-      y: 400,
-      opacity: 0,
-      rotate: (i) => (i % 2 === 0 ? -6 : 6),
-      stagger: 0.2,
-      ease: "power2.out",
-    });
-
-    // 👉 YOUR ORIGINAL spacing (kept same)
-    tl.to(cards, {
-      x: (i) => (i - centerIndex) * 280,
-      ease: "none",
-    });
-  });
-
-  return () => mm.revert();
-}, []);
+    return () => mm.revert();
+  }, []);
 
   // ================= MOBILE SLIDER =================
   const nextSlide = () => {
@@ -101,19 +102,17 @@ useEffect(() => {
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? services.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
   };
 
   return (
     <section
       ref={sectionRef}
-      className="h-screen bg-bg flex flex-col items-center justify-center overflow-hidden relative lg:px-[120px]"
+      className="h-screen bg-bg flex flex-col items-center justify-center overflow-hidden relative lg:px-[120px] py-[40px]  lg:py-[80px] "
     >
-      <div className="max-w-[1440px] h-screen mx-auto w-full relative">
+      <div className="max-w-[1440px] h-screen mx-auto w-full relative ">
         {/* Heading */}
-        <h2 className="lg:text-[48px] font-semibold absolute top-0 text-center text-text-primary mt-6 lg:leading-[48px]    w-full text-[35px] leading-[48px]">
+        <h2 className="lg:text-[48px] font-semibold absolute top-0 text-center text-text-primary  lg:leading-[48px]    w-full text-[35px] leading-[36px] lg:leading-[48px]">
           Where <span className="text-primary"> Innovation </span>
           <br />
           <span>
@@ -122,7 +121,7 @@ useEffect(() => {
         </h2>
 
         {/* ================= MOBILE ================= */}
-        <div className="lg:hidden w-full flex flex-col items-center gap-6 mt-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="lg:hidden w-full flex flex-col items-center gap-6  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="relative w-full overflow-hidden">
             <div
               className="flex transition-transform duration-500"
@@ -177,9 +176,8 @@ useEffect(() => {
               key={index}
               className="service-card group absolute 
               w-[190px] h-[240px] 
-              xl:w-[260px] xl:h-[340px]
+              xl:w-[240px] xl:h-[300px]
               border border-border rounded-xl overflow-hidden shadow-xl"
-           
             >
               <Image
                 src={service.image}

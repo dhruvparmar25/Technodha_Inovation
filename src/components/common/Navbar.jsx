@@ -40,13 +40,13 @@ const Navbar = () => {
           x: 0,
           y: 0,
           duration: 2,
-        }
+        },
       )
         .fromTo(
           contentRef.current,
           { opacity: 0 },
           { opacity: 1, duration: 0.8 },
-          "-=1.2"
+          "-=1.2",
         )
         .fromTo(
           navRef.current.children,
@@ -57,7 +57,7 @@ const Navbar = () => {
             stagger: 0.2,
             duration: 1,
           },
-          "-=0.6"
+          "-=0.6",
         );
     }
 
@@ -121,61 +121,66 @@ const Navbar = () => {
             <HiX />
           </button>
 
-          {/* NAV */}
-         <nav
-  ref={navRef}
-  className="flex flex-col mt-20 lg:mt-60 xl:mt-30 lg:flex-row gap-6 lg:gap-16 items-center justify-center"
->
-  {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map(
-    (item) => (
-      <Link
-        key={item}
-        href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
-        onClick={() => setMenuOpen(false)}
-        className="group flex flex-col items-center"
-      >
-        {/* TEXT */}
-        <span className="text-3xl font-bold text-text-primary group-hover:text-primary transition">
-          {item}
-        </span>
+          {/* 🔥 NAV */}
+          <nav
+            ref={navRef}
+            className="flex flex-col mt-20 lg:mt-40 xl:mt-32 lg:flex-row gap-6 lg:gap-16 items-center justify-center"
+          >
+            {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map((item) => (
+              <Link
+                key={item}
+                href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
+                onClick={() => setMenuOpen(false)}
+                className="group flex flex-col items-center"
+              >
+                {/* TEXT */}
+                <span
+                  className="
+              font-bold text-text-primary transition group-hover:text-primary
+              
+              text-2xl
+              sm:text-3xl
+              md:text-4xl
+              lg:text-4xl
+              xl:text-[50px]  
+            "
+                >
+                  {item}
+                </span>
 
-        {/* IMAGE (TEXT WIDTH FOLLOW) */}
-        <div className="w-full">
-          <Image
-            src={LinkBorder}
-            alt="border"
-            className="w-full h-auto"
-          />
-        </div>
-      </Link>
-    )
-  )}
-</nav>
-
-          {/* 🔥 BOTTOM SECTION */}
+                {/* BORDER IMAGE */}
+                <div className="w-full">
+                  <Image
+                    src={LinkBorder}
+                    alt="border"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </Link>
+            ))}
+          </nav>
           <div
             className="
-              relative
-              bg-primary text-white 
-              px-6 py-10 
-              flex flex-col md:flex-row 
-              justify-between items-end 
-              gap-4
-              lg:h-[293px]
-            "
+    relative
+    bg-primary text-white 
+    px-6
+    h-[200px]
+   lg:h-[293px]   /* ✅ fixed height retained */
+    flex flex-col justify-end
+  "
           >
             {/* 🔥 FLOATING CENTER CIRCLE */}
-            <div className="hidden lg:flex absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <div className="hidden lg:flex absolute left-1/2 -top-24 -translate-x-1/2 z-10">
               <div
                 className="
-                  w-32 h-32 
-                  md:w-40 md:h-40 
-                  lg:w-52 lg:h-52 
-                  xl:w-60 xl:h-60
-                  rounded-full bg-border 
-                  flex items-center justify-center
-                  shadow-[0_0_40px_rgba(255,255,255,0.2)]
-                "
+        w-32 h-32
+        md:w-40 md:h-40 
+        lg:w-52 lg:h-52 
+        xl:w-60 xl:h-60
+        rounded-full bg-border 
+        flex items-center justify-center
+        shadow-[0_0_40px_rgba(255,255,255,0.2)]
+      "
               >
                 <Image
                   src={Illustration}
@@ -185,31 +190,43 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* SOCIAL */}
-            <div className="flex gap-3 text-2xl">
-              <a href="https://www.instagram.com/technodha/" target="_blank">
-                <Icon icon="mingcute:instagram-fill" />
-              </a>
-              <a href="https://www.linkedin.com/company/technodha-innovations/" target="_blank">
-                <Icon icon="mdi:linkedin" />
-              </a>
-            </div>
+         <div className="w-full flex flex-col lg:flex-row items-center justify-between mb-[60px] gap-6 lg:gap-0">
+  
+  {/* LEFT */}
+  <div className="flex items-center gap-2.5">
+    <a href="https://www.instagram.com/technodha/" target="_blank">
+      <Icon icon="mingcute:instagram-fill" width={24} height={24} />
+    </a>
+    <a
+      href="https://www.linkedin.com/company/technodha-innovations/"
+      target="_blank"
+    >
+      <Icon icon="mdi:linkedin" width={24} height={24} />
+    </a>
+  </div>
 
-            {/* LINKS */}
-            <div className="flex gap-6 text-sm">
-              <Link href="/about" className="hover:text-black" onClick={() => setMenuOpen(false)}>ABOUT</Link>
-              <Link href="/contact" className="hover:text-black" onClick={() => setMenuOpen(false)}>CONTACT</Link>
-              <Link href="/career" className="hover:text-black" onClick={() => setMenuOpen(false)}>CAREER</Link>
-            </div>
+  {/* CENTER */}
+  <div className="flex gap-6 text-sm lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+    <Link href="/about" onClick={() => setMenuOpen(false)}>
+      ABOUT
+    </Link>
+    <Link href="/contact" onClick={() => setMenuOpen(false)}>
+      CONTACT
+    </Link>
+    <Link href="/career" onClick={() => setMenuOpen(false)}>
+      CAREER
+    </Link>
+  </div>
 
-            {/* EMAIL */}
-            <a
-              href="mailto:support@technodha.com"
-              className="text-sm flex items-center gap-2 hover:text-black"
-            >
-              <Icon icon="ic:sharp-email" />
-              support@technodha.com
-            </a>
+  {/* RIGHT */}
+  <a
+    href="mailto:support@technodha.com"
+    className="text-sm flex items-center gap-2"
+  >
+    <Icon icon="ic:sharp-email" />
+    support@technodha.com
+  </a>
+</div>
           </div>
         </div>
       </div>
@@ -232,7 +249,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <Link href="/contact">
               <div className="hidden md:flex flex-col">
-              <h1 className="text-sm font-medium text-text-primary transition hover:text-primary">
+                <h1 className="text-sm font-medium text-text-primary transition hover:text-primary">
                   GET YOUR CUSTOM QUOTE
                 </h1>
                 <Image src={NavBottom} alt="border" />
