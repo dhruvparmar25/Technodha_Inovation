@@ -13,12 +13,12 @@ function AboutSection() {
 
   return (
     // main section wrapper
-    <section
-      data-theme="light"
-      className="bg-bg w-full flex items-center justify-center py-4 sm:py-4 lg:py-5"
-    >
-      {/* container */}
-      <div className="w-full max-w-308 mx-auto px-4 sm:px-6">
+  <section
+  data-theme="light"
+  className="w-full flex items-center justify-between py-4 sm:py-4 lg:py-5"
+>
+  {/* container */}
+  <div className="w-full  px-6 sm:px-6 lg:px-20">
         
         {/* layout wrapper */}
         <div className="flex flex-col xl:flex-row items-center">
@@ -76,7 +76,7 @@ function AboutSection() {
           </div>
 
           {/* content section */}
-          <div className="about-contain w-full px-6 py-4 xl:w-1/2 xl:py-16 text-left">
+          <div className="about-contain w-full  py-4 xl:w-1/2 xl:py-16 text-left">
             
             {/* label */}
             <span className="bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent text-sm tracking-wide">

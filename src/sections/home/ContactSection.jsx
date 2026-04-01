@@ -9,7 +9,6 @@ import { IoCallOutline } from "react-icons/io5";
 import { post } from "@/lib/api";
 import ContactUs from "@/assets/images/sections/home/contact/contact-gif.gif";
 
-// ✅ Static data (safe outside component)
 const contactInfo = [
   {
     icon: <FaRegMessage size={16} />,
@@ -147,7 +146,7 @@ function ContactSection() {
 <GradientButton
   type="submit"
   text={loading ? "Sending…" : "Send Message"}
-  className="w-full lg:w-146.25 px-5 py-3"
+  className="w-full lg:w-146.25  py-3"
   disabled={loading}
 />
               </form>

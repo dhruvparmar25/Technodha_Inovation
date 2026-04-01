@@ -13,72 +13,89 @@ import IconWC5 from "@/assets/images/sections/home/whychoose/icone-wc-5.png";
 import MenBg from "@/assets/images/sections/home/whychoose/men-bg.png";
 
 function WhyChooseSection() {
-    useEffect(() => {
-        const mm = gsap.matchMedia();
+ useEffect(() => {
+    const mm = gsap.matchMedia();
 
-        gsap.set(".word", { x: 0, y: 0, opacity: 0 });
-        gsap.set(".men-image", { scale: 1 });
+    gsap.set(".word", { x: 0, y: 0, opacity: 0 });
+    gsap.set(".men-image", { scale: 1 });
 
-        /* ================= MOBILE ================= */
-        mm.add("(max-width: 639px)", () => {
-            const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    /* ================= MOBILE ================= */
+    mm.add("(max-width: 639px)", () => {
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
-            tl.to(".word-1", { opacity: 1, x: -120, y: -40, duration: 1 })
-                .to(".men-image", { scale: 1.05, duration: 1 }, "<")
-                .to(".word-2", { opacity: 1, x: -160, y: 20, duration: 1 })
-                .to(".men-image", { scale: 1.08, duration: 1 }, "<")
-                .to(".word-3", { opacity: 1, x: 80, y: -30, duration: 1 })
-                .to(".men-image", { scale: 1.1, duration: 1 }, "<")
-                .to(".word-4", { opacity: 1, x: -180, y: 130, duration: 1 })
-                .to(".men-image", { scale: 1.12, duration: 1 }, "<")
-                .to(".word-5", { opacity: 1, x: 90, y: 130, duration: 1 })
-                .to(".men-image", { scale: 1.15, duration: 1 }, "<")
-                .to(".word", { opacity: 0, x: 0, y: 0, duration: 1 })
-                .to(".men-image", { scale: 1, duration: 1.5 }, "<");
-        });
+        tl.to(".word-1", { opacity: 1, x: -120, y: -40, duration: 1 })
+            .to(".men-image", { scale: 1.05, duration: 1 }, "<")
+            .to(".word-2", { opacity: 1, x: -160, y: 20, duration: 1 })
+            .to(".men-image", { scale: 1.08, duration: 1 }, "<")
+            .to(".word-3", { opacity: 1, x: 80, y: -30, duration: 1 })
+            .to(".men-image", { scale: 1.1, duration: 1 }, "<")
+            .to(".word-4", { opacity: 1, x: -180, y: 130, duration: 1 })
+            .to(".men-image", { scale: 1.12, duration: 1 }, "<")
+            .to(".word-5", { opacity: 1, x: 90, y: 130, duration: 1 })
+            .to(".men-image", { scale: 1.15, duration: 1 }, "<")
+            .to(".word", { opacity: 0, x: 0, y: 0, duration: 1 })
+            .to(".men-image", { scale: 1, duration: 1.5 }, "<");
+    });
 
-        /* ================= TABLET ================= */
-        mm.add("(min-width: 640px) and (max-width: 1023px)", () => {
-            const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    /* ================= TABLET ================= */
+    mm.add("(min-width: 640px) and (max-width: 1023px)", () => {
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
-            tl.to(".word-1", { opacity: 1, x: -130, y: -70, duration: 1.1 })
-                .to(".men-image", { scale: 1.05, duration: 1 }, "<")
-                .to(".word-2", { opacity: 1, x: -200, y: 30, duration: 1.1 })
-                .to(".men-image", { scale: 1.1, duration: 1 }, "<")
-                .to(".word-3", { opacity: 1, x: 80, y: -40, duration: 1.1 })
-                .to(".men-image", { scale: 1.15, duration: 1 }, "<")
-                .to(".word-4", { opacity: 1, x: -220, y: 140, duration: 1.1 })
-                .to(".men-image", { scale: 1.18, duration: 1 }, "<")
-                .to(".word-5", { opacity: 1, x: 90, y: 150, duration: 1.1 })
-                .to(".men-image", { scale: 1.2, duration: 1 }, "<")
-                .to(".word", { opacity: 0, x: 0, y: 0, duration: 1.3 })
-                .to(".men-image", { scale: 1, duration: 2 }, "<");
-        });
+        tl.to(".word-1", { opacity: 1, x: -130, y: -70, duration: 1.1 })
+            .to(".men-image", { scale: 1.05, duration: 1 }, "<")
+            .to(".word-2", { opacity: 1, x: -200, y: 30, duration: 1.1 })
+            .to(".men-image", { scale: 1.1, duration: 1 }, "<")
+            .to(".word-3", { opacity: 1, x: 80, y: -40, duration: 1.1 })
+            .to(".men-image", { scale: 1.15, duration: 1 }, "<")
+            .to(".word-4", { opacity: 1, x: -220, y: 140, duration: 1.1 })
+            .to(".men-image", { scale: 1.18, duration: 1 }, "<")
+            .to(".word-5", { opacity: 1, x: 90, y: 150, duration: 1.1 })
+            .to(".men-image", { scale: 1.2, duration: 1 }, "<")
+            .to(".word", { opacity: 0, x: 0, y: 0, duration: 1.3 })
+            .to(".men-image", { scale: 1, duration: 2 }, "<");
+    });
 
-        /* ================= DESKTOP ================= */
-        mm.add("(min-width: 1024px)", () => {
-            const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    /* ================= SMALL DESKTOP ================= */
+    mm.add("(min-width: 1024px) and (max-width: 1279px)", () => {
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
-            tl.to(".word-1", { opacity: 1, x: -220, y: -120, duration: 1.2 })
-                .to(".men-image", { scale: 1.05, duration: 1 }, "<")
-                .to(".word-2", { opacity: 1, x: -360, y: 20, duration: 1.2 })
-                .to(".men-image", { scale: 1.1, duration: 1 }, "<")
-                .to(".word-3", { opacity: 1, x: 100, y: -60, duration: 1.2 })
-                .to(".men-image", { scale: 1.15, duration: 1 }, "<")
-                .to(".word-4", { opacity: 1, x: -410, y: 180, duration: 1.2 })
-                .to(".men-image", { scale: 1.2, duration: 1 }, "<")
-                .to(".word-5", { opacity: 1, x: 120, y: 190, duration: 1.2 })
-                .to(".men-image", { scale: 1.25, duration: 1 }, "<")
-                .to(".word", { opacity: 0, x: 0, y: 0, duration: 1.5 })
-                .to(".men-image", { scale: 1, duration: 2.5 }, "<");
-        });
+        tl.to(".word-1", { opacity: 1, x: -200, y: -100, duration: 1.2 })
+            .to(".men-image", { scale: 1.05, duration: 1 }, "<")
+            .to(".word-2", { opacity: 1, x: -320, y: 20, duration: 1.2 })
+            .to(".men-image", { scale: 1.1, duration: 1 }, "<")
+            .to(".word-3", { opacity: 1, x: 90, y: -50, duration: 1.2 })
+            .to(".men-image", { scale: 1.15, duration: 1 }, "<")
+            .to(".word-4", { opacity: 1, x: -360, y: 160, duration: 1.2 })
+            .to(".men-image", { scale: 1.2, duration: 1 }, "<")
+            .to(".word-5", { opacity: 1, x: 110, y: 170, duration: 1.2 })
+            .to(".men-image", { scale: 1.22, duration: 1 }, "<")
+            .to(".word", { opacity: 0, x: 0, y: 0, duration: 1.5 })
+            .to(".men-image", { scale: 1, duration: 2.2 }, "<");
+    });
 
-        return () => mm.revert();
-    }, []);
+    /* ================= LARGE DESKTOP (XL) ================= */
+    mm.add("(min-width: 1280px)", () => {
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
+        tl.to(".word-1", { opacity: 1, x: -220, y: -120, duration: 1.2 })
+            .to(".men-image", { scale: 1.05, duration: 1 }, "<")
+            .to(".word-2", { opacity: 1, x: -360, y: 20, duration: 1.2 })
+            .to(".men-image", { scale: 1.1, duration: 1 }, "<")
+            .to(".word-3", { opacity: 1, x: 100, y: -60, duration: 1.2 })
+            .to(".men-image", { scale: 1.15, duration: 1 }, "<")
+            .to(".word-4", { opacity: 1, x: -410, y: 180, duration: 1.2 })
+            .to(".men-image", { scale: 1.2, duration: 1 }, "<")
+            .to(".word-5", { opacity: 1, x: 120, y: 190, duration: 1.2 })
+            .to(".men-image", { scale: 1.25, duration: 1 }, "<")
+            .to(".word", { opacity: 0, x: 0, y: 0, duration: 1.5 })
+            .to(".men-image", { scale: 1, duration: 2.5 }, "<");
+    });
+
+    return () => mm.revert();
+}, []);
     return (
-        <section data-theme="light" className=" py-25 overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center  max-w-[1230px] px-[15px] m-auto">
+       <section data-theme="light" className="py-20 sm:py-24 lg:py-25 overflow-hidden">
+  <div className="w-full  px-6 sm:px-6  lg:px-[120px] flex flex-col md:flex-row items-center">
                 {/* LEFT CONTENT */}
                 <div className="w-full xl:w-1/2">
                     <span className="bg-linear-to-r from-[#FB6557] to-[#FE9139] bg-clip-text text-transparent text-sm">

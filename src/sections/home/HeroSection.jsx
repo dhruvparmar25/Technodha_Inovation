@@ -42,7 +42,7 @@ function HeroSection() {
   return (
     <section
       data-theme="light"
-      className="relative w-full min-h-screen overflow-hidden px-4 sm:px-6 lg:px-10"
+      className="relative w-full min-h-screen overflow-hidden "
     >
      {/* Background */}
       <div
@@ -51,7 +51,7 @@ function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative max-w-305 mx-auto w-full min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-10 py-10">
+      <div className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-10 py-10 px-6 sm:px-6 lg:px-30">
         
         {/* LEFT */}
         <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
