@@ -74,7 +74,7 @@ function Process() {
 
   return (
     <div className="relative" data-theme="light">
-      <div className="max-w-[1440px] mx-auto w-full relative">
+      <div className=" w-full relative">
         <div
           ref={sectionRef}
           className="process min-h-screen lg:h-screen flex flex-col md:flex-col lg:flex-row justify-start lg:justify-center items-center overflow-hidden py-20 lg:py-0"

@@ -6,10 +6,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+
 import CardBg from "@/assets/images/common/hero-bg.png";
 import BGCreativity from "../../assets/images/sections/creativity/creativity.png";
 import Men from "../../assets/images/sections/creativity/men.png";
 import MenFinsh from "../../assets/images/sections/creativity/men-finish.png";
+
 import Web from "../../assets/images/sections/home/creativity/web-development.gif";
 import App from "../../assets/images/sections/home/creativity/mobile-app.gif";
 import UIUX from "../../assets/images/sections/home/creativity/ui-ux.gif";
@@ -44,6 +46,7 @@ export default function Creativity() {
 
       gsap.set(finishRef.current, { opacity: 0 });
 
+      // Animation sequence
       tl.to(menRef.current, {
         x: "50vw",
         duration: 1,
@@ -57,15 +60,17 @@ export default function Creativity() {
         .to(menRef.current, { opacity: 0, duration: 0.5 }, "<")
         .to(finishRef.current, { opacity: 1, duration: 0.5 }, "<");
 
-      cards.forEach((card, i) => {
+      // Cards animation
+      cards.forEach((card) => {
         tl.from(card, {
           y: 200,
           opacity: 0,
           duration: 0.6,
           ease: "power2.out",
           onStart: () => {
-            cards.forEach((c) => gsap.set(c, { pointerEvents: "none" }));
-
+            cards.forEach((c) =>
+              gsap.set(c, { pointerEvents: "none" })
+            );
             gsap.set(card, { pointerEvents: "auto" });
           },
         });
@@ -77,7 +82,7 @@ export default function Creativity() {
     return () => mm.revert();
   }, []);
 
-  // ✅ SERVICES WITH SLUG
+  // SERVICES
   const services = [
     {
       title: "Web Development",
@@ -89,7 +94,7 @@ export default function Creativity() {
     {
       title: "Mobile App Development",
       slug: "mobile-apps",
-      image:App,
+      image: App,
       desc: "We build fast and reliable mobile apps for iOS and Android platforms.",
       points: [
         "Cross-platform apps",
@@ -120,78 +125,88 @@ export default function Creativity() {
   return (
     <section
       ref={sectionRef}
-      className="relative lg:h-screen  overflow-hidden"
+      className="relative overflow-hidden lg:h-screen"
       data-theme="light"
     >
       {/* HEADER */}
-      <div className="flex flex-col items-center mt-10  md:mt-20 lg:mt-12 xl:mt-20 px-4">
-        <h2 className="text-[24px]  md:text-[32px] font-medium text-gradient-primary">
+      <div className="mt-10 flex flex-col items-center px-4 md:mt-20 lg:mt-12 xl:mt-20">
+        <h2 className="text-[24px] font-medium text-gradient-primary md:text-[32px]">
           OUR APPROACH
         </h2>
 
-        <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[58px] font-bold text-center text-text-primary max-w-[90%] md:max-w-212.5 leading-tight">
+        <h1 className="max-w-[90%] text-center text-[28px] font-bold leading-tight text-text-primary sm:text-[36px] md:max-w-[850px] md:text-[48px] lg:text-[58px]">
           WHERE CREATIVITY MEETS FUNCTIONALITY
         </h1>
       </div>
 
       {/* IMAGE */}
-      <div className="hidden lg:flex justify-center relative h-[400px]">
-        <div ref={menRef} className="absolute left-0 bottom-75 ">
-          <Image src={Men} alt="Men" className="w-[250px] h-[350px]" />
+      <div className="relative hidden h-[300px] justify-center lg:flex xl:h-[400px]">
+        <div
+          ref={menRef}
+          className="absolute left-0 lg:bottom-[220px] xl:bottom-[300px]"
+        >
+          <Image
+            src={Men}
+            alt="Men"
+            className="w-[160px] h-[220px] sm:w-[180px] sm:h-[250px] md:w-[200px] md:h-[280px] lg:w-[190px] lg:h-[270px] xl:w-[230px] xl:h-[320px]"
+          />
         </div>
 
-        <div ref={finishRef} className="absolute right-10 bottom-75 ">
-          <Image src={MenFinsh} alt="Finish" className="w-[250px] h-[350px]" />
+        <div
+          ref={finishRef}
+          className="absolute right-10 lg:bottom-[220px] xl:bottom-[300px]"
+        >
+          <Image
+            src={MenFinsh}
+            alt="Finish"
+            className="w-[160px] h-[220px] sm:w-[180px] sm:h-[250px] md:w-[200px] md:h-[280px] lg:w-[190px] lg:h-[270px] xl:w-[230px] xl:h-[320px]"
+          />
         </div>
 
-        <Image src={BGCreativity} alt="bg" className="object-contain" />
+        <Image src={BGCreativity} alt="bg" className="w-full" />
       </div>
 
       {/* CARDS */}
-      <div className="relative flex flex-col gap-6 px-4 mt-10 pb-10 lg:absolute lg:inset-0 lg:flex lg:justify-center lg:items-end">
+      <div className="relative mt-8 flex flex-col items-center gap-6 px-6 pb-10 lg:absolute lg:inset-0 lg:justify-center lg:items-end">
         {services.map((item, index) => (
           <div
             key={index}
-            className="creativity-card w-full lg:w-[900px] min-h-[300px] lg:h-[420px] 
-  border border-[#F2C5BE] rounded-xl flex flex-col lg:flex-row 
-  gap-6 lg:gap-10 p-6 lg:px-16 lg:py-10 
-  relative left-0 translate-x-0 
-  lg:absolute lg:bottom-3 xl:bottom-10 lg:left-1/2 lg:-translate-x-1/2 
-  cursor-pointer overflow-hidden bg-white"
+            className="creativity-card relative left-0 w-full translate-x-0 cursor-pointer overflow-hidden rounded-xl border border-[#F2C5BE] bg-white p-4 flex flex-col gap-4 lg:absolute lg:bottom-[10%] lg:left-1/2 lg:w-[720px] lg:-translate-x-1/2 lg:flex-row lg:gap-8 lg:px-10 lg:py-6 xl:w-[900px] xl:gap-10 xl:px-16 xl:py-10 min-h-[260px] lg:h-[360px] xl:h-[420px]"
             style={{ zIndex: index }}
           >
-            <div className="absolute inset-0 "></div>
+            <div className="absolute inset-0" />
 
-            <div className="relative  w-full flex flex-col lg:flex-row gap-6 lg:gap-10">
+            <div className="relative flex w-full flex-col gap-6 lg:flex-row lg:gap-10">
               {/* IMAGE */}
               <div className="w-full lg:w-1/2">
                 <Image src={item.image} alt={item.title} />
               </div>
 
               {/* CONTENT */}
-              <div className="w-full lg:w-1/2 space-y-4">
-                <h3 className="text-[20px] lg:text-[24px] font-semibold text-[#2C2C2C]">
+              <div className="w-full space-y-3 lg:w-1/2 lg:space-y-4">
+                <h3 className="text-[20px] font-semibold text-[#2C2C2C] lg:text-[24px]">
                   {item.title}
                 </h3>
 
-                <p className="text-[14px] lg:text-[16px] text-[#5F5F6B]">
+                <p className="text-[14px] text-[#5F5F6B] lg:text-[16px]">
                   {item.desc}
                 </p>
 
-                <ul className="text-[12px] lg:text-[13px] space-y-2">
+                <ul className="space-y-2 text-[12px] lg:text-[13px]">
                   {item.points.map((point, i) => (
                     <li key={i} className="flex gap-2 text-[#5F5F6B]">
-                      <span className="w-2 h-2 lg:w-3 lg:h-3 bg-primary rounded-full mt-1"></span>
+                      <span className="mt-1 h-2 w-2 rounded-full bg-primary lg:h-3 lg:w-3" />
                       {point}
                     </li>
                   ))}
                 </ul>
 
-                {/* BUTTON */}
                 <GradientButton
                   text="Explore our Capabilities"
-                  onClick={() => router.push(`/services/${item.slug}`)}
-                  className="text-sm lg:text-base cursor-pointer"
+                  onClick={() =>
+                    router.push(`/services/${item.slug}`)
+                  }
+                  className="cursor-pointer text-sm lg:text-base"
                 />
               </div>
             </div>
