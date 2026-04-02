@@ -15,6 +15,12 @@ import UiUxgif from "@/assets/images/sections/home/services/uiux-gif.gif";
 import Cloud from "@/assets/images/sections/home/services/cloud-service.jpg";
 import Cloudgif from "@/assets/images/sections/home/services/cloud-gif.gif";
 
+import AI from "@/assets/images/sections/home/services/ai-service.svg";
+import AIgif from "@/assets/images/sections/home/services/ai-gif.svg";
+
+import Maintenance from "@/assets/images/sections/home/services/maintenance-service.svg";
+import Maintenancegif from "@/assets/images/sections/home/services/maintenance-gif.svg";
+
 import { useRouter } from "next/navigation";
 
 const services = [
@@ -68,6 +74,32 @@ const services = [
       "Scalable and reliable infrastructure.",
       "Security-first architecture.",
       "Cost and performance optimization.",
+    ],
+  },
+  {
+    title: "AI Integration & Automation",
+    url: "/services/ai-automation",
+    description:
+      "We help businesses integrate AI into their workflows — automating repetitive tasks, uncovering insights, and building intelligent systems that boost efficiency and decision-making.",
+    image: AI,
+    gif: AIgif,
+    points: [
+      "Automate workflows to save time and reduce errors.",
+      "AI-powered analytics for smarter decisions.",
+      "Custom AI solutions tailored to your business.",
+    ],
+  },
+  {
+    title: "Maintenance & Support",
+    url: "/services/maintenance-support",
+    description:
+      "We provide ongoing maintenance and support to keep your digital products secure, updated, and performing at their best — so you can focus on growth.",
+    image: Maintenance,
+    gif: Maintenancegif,
+    points: [
+      "Proactive monitoring and quick bug resolution.",
+      "Regular security updates and performance tuning.",
+      "Long-term reliability with 24/7 support.",
     ],
   },
 ];

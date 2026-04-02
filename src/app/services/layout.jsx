@@ -10,6 +10,8 @@ const tabs = [
   { name: "Mobile App Development", slug: "mobile-apps" },
   { name: "UI/UX Design", slug: "ui-ux" },
   { name: "Cloud Computing Services", slug: "cloud-services" },
+  { name: "AI Integration & Automation", slug: "ai-automation" },
+  { name: "Maintenance & Support", slug: "maintenance-support" },
 ];
 
 export default function ServicesLayout({ children }) {
@@ -27,7 +29,7 @@ export default function ServicesLayout({ children }) {
 
       {/* Tabs */}
       <div className="w-full flex justify-center px-4 relative z-20 -mt-10 sm:-mt-12">
-        
+
         <div className="
           flex gap-2 sm:gap-4
           bg-white shadow-lg rounded-full
@@ -47,7 +49,7 @@ export default function ServicesLayout({ children }) {
                 href={`/services/${tab.slug}`}
                 className={`
                   whitespace-nowrap
-                  mx-4 sm:mx-5
+                  mx-1.5 sm:mx-2.5
                   py-2
                   text-xs sm:text-sm
                   font-medium

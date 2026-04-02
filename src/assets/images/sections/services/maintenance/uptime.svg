@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="ut1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="ut2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="utScreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="utSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#FB6557" flood-opacity="0.22"/>
+    </filter>
+    <filter id="utGl">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Monitor shadow -->
+  <rect x="43" y="45" width="200" height="140" rx="14" fill="#D44F3D" opacity="0.05" transform="translate(4, 5)"/>
+
+  <!-- 3D Monitor -->
+  <rect x="38" y="38" width="200" height="140" rx="14" stroke="url(#ut1)" stroke-width="2.5" fill="url(#utScreen)" filter="url(#utSh)"/>
+  <!-- Glass bezel -->
+  <rect x="43" y="42" width="160" height="30" rx="10" fill="url(#ut2)" opacity="0.3"/>
+
+  <!-- Screen inner -->
+  <rect x="50" y="52" width="176" height="114" rx="8" fill="url(#utScreen)"/>
+
+  <!-- 3D Heartbeat pulse with glow -->
+  <path d="M65 110 L100 110 L112 82 L128 138 L138 92 L148 118 L158 110 L212 110" stroke="url(#ut1)" stroke-width="2" fill="none" opacity="0.08" filter="url(#utGl)"/>
+  <path d="M65 110 L100 110 L112 82 L128 138 L138 92 L148 118 L158 110 L212 110" stroke="url(#ut1)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 3D Pulse dot -->
+  <circle cx="158" cy="110" r="6" fill="url(#ut1)" filter="url(#utSh)"/>
+  <circle cx="156" cy="108" r="2.5" fill="white" opacity="0.4"/>
+
+  <!-- 3D Monitor stand -->
+  <rect x="125" y="178" width="48" height="12" rx="3" fill="url(#ut1)" opacity="0.25" filter="url(#utSh)"/>
+  <rect x="125" y="178" width="48" height="5" rx="3" fill="url(#ut2)" opacity="0.3"/>
+  <rect x="105" y="190" width="88" height="8" rx="4" fill="url(#ut1)" opacity="0.18"/>
+  <rect x="105" y="190" width="88" height="3" rx="4" fill="url(#ut2)" opacity="0.2"/>
+
+  <!-- 3D 24/7 badge -->
+  <circle cx="222" cy="52" r="24" fill="url(#ut1)" opacity="0.08" filter="url(#utGl)"/>
+  <circle cx="220" cy="50" r="22" stroke="url(#ut1)" stroke-width="2" fill="url(#utScreen)" filter="url(#utSh)"/>
+  <circle cx="215" cy="44" r="9" fill="url(#ut2)" opacity="0.3"/>
+  <text x="205" y="56" font-family="Arial" font-weight="bold" font-size="13" fill="url(#ut1)">24/7</text>
+
+  <!-- 3D Status section -->
+  <circle cx="78" cy="228" r="7" fill="#4CAF50" opacity="0.5" filter="url(#utSh)"/>
+  <circle cx="76" cy="226" r="3" fill="white" opacity="0.25"/>
+  <text x="92" y="232" font-family="Arial" font-size="12" fill="#5F5F6B">Online</text>
+
+  <!-- Progress bar 3D -->
+  <rect x="135" y="222" width="55" height="12" rx="6" fill="url(#ut1)" opacity="0.12"/>
+  <rect x="135" y="222" width="50" height="12" rx="6" fill="url(#ut1)" opacity="0.35"/>
+  <rect x="135" y="222" width="50" height="5" rx="3" fill="url(#ut2)" opacity="0.25"/>
+  <text x="196" y="232" font-family="Arial" font-weight="bold" font-size="11" fill="url(#ut1)">99.9%</text>
+</svg>

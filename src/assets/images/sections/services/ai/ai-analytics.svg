@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="an1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="an2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="anBar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FE9139"/>
+      <stop offset="100%" stop-color="#FB6557"/>
+    </linearGradient>
+    <filter id="anSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#FB6557" flood-opacity="0.2"/>
+    </filter>
+    <filter id="anGl">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Base platform -->
+  <path d="M30 230 L250 230 L265 218 L45 218 Z" fill="url(#an1)" opacity="0.15"/>
+  <line x1="35" y1="225" x2="255" y2="225" stroke="url(#an1)" stroke-width="2" opacity="0.5"/>
+
+  <!-- 3D Bars with shadows and highlights -->
+  <!-- Bar 1 -->
+  <rect x="48" y="175" width="30" height="50" rx="4" fill="url(#anBar)" opacity="0.35" filter="url(#anSh)"/>
+  <rect x="48" y="175" width="30" height="10" rx="4" fill="url(#an2)" opacity="0.5"/>
+  <!-- Bar 2 -->
+  <rect x="88" y="145" width="30" height="80" rx="4" fill="url(#anBar)" opacity="0.5" filter="url(#anSh)"/>
+  <rect x="88" y="145" width="30" height="12" rx="4" fill="url(#an2)" opacity="0.5"/>
+  <!-- Bar 3 -->
+  <rect x="128" y="115" width="30" height="110" rx="4" fill="url(#anBar)" opacity="0.65" filter="url(#anSh)"/>
+  <rect x="128" y="115" width="30" height="14" rx="4" fill="url(#an2)" opacity="0.5"/>
+  <!-- Bar 4 -->
+  <rect x="168" y="85" width="30" height="140" rx="4" fill="url(#anBar)" opacity="0.8" filter="url(#anSh)"/>
+  <rect x="168" y="85" width="30" height="14" rx="4" fill="url(#an2)" opacity="0.5"/>
+  <!-- Bar 5 -->
+  <rect x="208" y="55" width="30" height="170" rx="4" fill="url(#anBar)" filter="url(#anSh)"/>
+  <rect x="208" y="55" width="30" height="16" rx="4" fill="url(#an2)" opacity="0.6"/>
+
+  <!-- 3D Trend line with glow -->
+  <path d="M63 170 L103 140 L143 110 L183 80 L223 50" stroke="#FB6557" stroke-width="1.5" fill="none" opacity="0.15" filter="url(#anGl)"/>
+  <path d="M63 170 L103 140 L143 110 L183 80 L223 50" stroke="url(#an1)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 3D Data points with glow -->
+  <circle cx="63" cy="170" r="7" fill="url(#an1)" filter="url(#anSh)"/>
+  <circle cx="63" cy="168" r="3" fill="white" opacity="0.5"/>
+  <circle cx="103" cy="140" r="7" fill="url(#an1)" filter="url(#anSh)"/>
+  <circle cx="103" cy="138" r="3" fill="white" opacity="0.5"/>
+  <circle cx="143" cy="110" r="8" fill="url(#an1)" filter="url(#anSh)"/>
+  <circle cx="143" cy="108" r="3.5" fill="white" opacity="0.5"/>
+  <circle cx="183" cy="80" r="7" fill="url(#an1)" filter="url(#anSh)"/>
+  <circle cx="183" cy="78" r="3" fill="white" opacity="0.5"/>
+  <circle cx="223" cy="50" r="8" fill="url(#an1)" filter="url(#anSh)"/>
+  <circle cx="223" cy="48" r="3.5" fill="white" opacity="0.5"/>
+
+  <!-- AI Brain badge at peak -->
+  <circle cx="223" cy="50" r="18" stroke="url(#an1)" stroke-width="1.5" fill="url(#an1)" fill-opacity="0.08"/>
+  <path d="M218 42 L220 48 L226 50 L220 52 L218 58 L216 52 L210 50 L216 48 Z" fill="#FE9139" opacity="0.6"/>
+</svg>

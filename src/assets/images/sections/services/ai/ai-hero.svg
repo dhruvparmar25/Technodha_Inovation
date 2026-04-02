@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="aiG1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="aiG2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FE9139" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="aiG3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="aiGlow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="aiShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#FB6557" flood-opacity="0.3"/>
+    </filter>
+    <filter id="aiGlowF" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="aiInner">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <radialGradient id="aiRadial" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.02"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer glow ring -->
+  <circle cx="200" cy="190" r="155" fill="none" stroke="url(#aiG1)" stroke-width="1" opacity="0.12"/>
+  <circle cx="200" cy="190" r="140" fill="none" stroke="url(#aiG1)" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- 3D Brain base (back shadow) -->
+  <ellipse cx="204" cy="198" rx="100" ry="90" fill="#FB6557" opacity="0.08" filter="url(#aiShadow)"/>
+
+  <!-- 3D Brain main shape -->
+  <ellipse cx="200" cy="185" rx="100" ry="90" fill="url(#aiRadial)" stroke="url(#aiG1)" stroke-width="2.5"/>
+  <!-- Glass highlight on brain -->
+  <ellipse cx="185" cy="145" rx="60" ry="35" fill="url(#aiG3)" opacity="0.5"/>
+
+  <!-- Brain center divider with glow -->
+  <path d="M200 95 Q200 185 200 275" stroke="url(#aiG1)" stroke-width="2" fill="none" opacity="0.7"/>
+
+  <!-- Brain folds - left (3D depth) -->
+  <path d="M200 115 Q155 128 132 158" stroke="url(#aiG1)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M200 155 Q148 168 122 200" stroke="url(#aiG1)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M200 195 Q155 208 135 235" stroke="url(#aiG1)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Brain folds - right -->
+  <path d="M200 115 Q245 128 268 158" stroke="url(#aiG1)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M200 155 Q252 168 278 200" stroke="url(#aiG1)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M200 195 Q245 208 265 235" stroke="url(#aiG1)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- 3D Neural nodes with glow -->
+  <circle cx="132" cy="158" r="11" fill="url(#aiG1)" filter="url(#aiGlowF)"/>
+  <circle cx="132" cy="158" r="6" fill="white" opacity="0.5"/>
+  <circle cx="268" cy="158" r="11" fill="url(#aiG1)" filter="url(#aiGlowF)"/>
+  <circle cx="268" cy="158" r="6" fill="white" opacity="0.5"/>
+  <circle cx="122" cy="200" r="10" fill="url(#aiG1)" filter="url(#aiGlowF)" opacity="0.85"/>
+  <circle cx="122" cy="200" r="5" fill="white" opacity="0.4"/>
+  <circle cx="278" cy="200" r="10" fill="url(#aiG1)" filter="url(#aiGlowF)" opacity="0.85"/>
+  <circle cx="278" cy="200" r="5" fill="white" opacity="0.4"/>
+  <circle cx="135" cy="235" r="7" fill="#FB6557" opacity="0.5"/>
+  <circle cx="265" cy="235" r="7" fill="#FE9139" opacity="0.5"/>
+
+  <!-- Cross-connections with glow -->
+  <line x1="132" y1="158" x2="278" y2="200" stroke="url(#aiG1)" stroke-width="1.2" opacity="0.2"/>
+  <line x1="268" y1="158" x2="122" y2="200" stroke="url(#aiG1)" stroke-width="1.2" opacity="0.2"/>
+  <line x1="132" y1="158" x2="268" y2="158" stroke="url(#aiG1)" stroke-width="1" opacity="0.15"/>
+  <line x1="122" y1="200" x2="278" y2="200" stroke="url(#aiG1)" stroke-width="1" opacity="0.15"/>
+
+  <!-- 3D Circuit stem -->
+  <path d="M200 275 L200 320" stroke="url(#aiG1)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 3D Circuit branches -->
+  <path d="M200 320 L145 320 L145 355" stroke="url(#aiG1)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M200 320 L255 320 L255 355" stroke="url(#aiG1)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M200 320 L200 365" stroke="url(#aiG1)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- 3D Circuit endpoints with shadow -->
+  <circle cx="145" cy="360" r="9" fill="url(#aiG1)" filter="url(#aiShadow)"/>
+  <circle cx="145" cy="358" r="4" fill="white" opacity="0.4"/>
+  <circle cx="200" cy="370" r="9" fill="url(#aiG1)" filter="url(#aiShadow)"/>
+  <circle cx="200" cy="368" r="4" fill="white" opacity="0.4"/>
+  <circle cx="255" cy="360" r="9" fill="url(#aiG1)" filter="url(#aiShadow)"/>
+  <circle cx="255" cy="358" r="4" fill="white" opacity="0.4"/>
+
+  <!-- Floating particles with depth -->
+  <circle cx="80" cy="100" r="5" fill="#FB6557" opacity="0.25" filter="url(#aiGlowF)"/>
+  <circle cx="320" cy="95" r="4" fill="#FE9139" opacity="0.2"/>
+  <circle cx="65" cy="260" r="4" fill="#FE9139" opacity="0.15"/>
+  <circle cx="335" cy="255" r="5" fill="#FB6557" opacity="0.18"/>
+  <circle cx="340" cy="130" r="3" fill="#FE9139" opacity="0.12"/>
+  <circle cx="60" cy="160" r="3" fill="#FB6557" opacity="0.1"/>
+</svg>

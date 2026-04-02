@@ -162,8 +162,8 @@ body {
 .heading-primary {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 30px;
-
+  font-size: 22px;
+  line-height: 1.3;
   letter-spacing: 0.006em;
   margin-top: 8px;
   color: #1a1a1f;
@@ -222,6 +222,7 @@ body {
 @media (min-width: 1024px) {
   .heading-primary {
     font-size: 30px;
+    line-height: 42px;
   }
 }
 

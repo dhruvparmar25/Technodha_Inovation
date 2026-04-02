@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="mh1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="mh2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="mhRad" cx="45%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.02"/>
+    </radialGradient>
+    <filter id="mhSh" x="-20%" y="-10%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#FB6557" flood-opacity="0.3"/>
+    </filter>
+    <filter id="mhGl">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Outer glow ring -->
+  <circle cx="200" cy="195" r="165" stroke="url(#mh1)" stroke-width="1" fill="none" opacity="0.1"/>
+
+  <!-- 3D Shield shadow -->
+  <path d="M204 58 L318 108 L318 225 Q318 318 204 365 Q90 318 90 225 L90 108 Z" fill="#D44F3D" opacity="0.06"/>
+
+  <!-- 3D Shield -->
+  <path d="M200 50 L310 100 L310 220 Q310 310 200 355 Q90 310 90 220 L90 100 Z" stroke="url(#mh1)" stroke-width="3" fill="url(#mhRad)" filter="url(#mhSh)"/>
+  <!-- Shield glass highlight -->
+  <path d="M200 60 L290 105 L290 150 Q240 100 170 80 Z" fill="url(#mh2)" opacity="0.3"/>
+
+  <!-- Inner shield line -->
+  <path d="M200 80 L290 120 L290 210 Q290 285 200 325 Q110 285 110 210 L110 120 Z" stroke="url(#mh1)" stroke-width="1.5" fill="none" opacity="0.2"/>
+
+  <!-- 3D Wrench -->
+  <g transform="translate(148, 135) rotate(-40, 52, 38)">
+    <rect x="15" y="30" width="65" height="16" rx="5" fill="url(#mh1)" opacity="0.65" filter="url(#mhSh)"/>
+    <rect x="15" y="30" width="65" height="6" rx="5" fill="url(#mh2)" opacity="0.4"/>
+    <circle cx="10" cy="38" r="20" stroke="url(#mh1)" stroke-width="3" fill="none" opacity="0.6"/>
+    <circle cx="10" cy="38" r="10" fill="url(#mh1)" opacity="0.3"/>
+    <circle cx="8" cy="34" r="4" fill="white" opacity="0.2"/>
+  </g>
+
+  <!-- 3D Gear -->
+  <g transform="translate(190, 172)">
+    <circle cx="33" cy="33" r="26" fill="#D44F3D" opacity="0.05" transform="translate(3, 4)"/>
+    <circle cx="30" cy="30" r="26" stroke="url(#mh1)" stroke-width="2.5" fill="url(#mh1)" fill-opacity="0.12" filter="url(#mhSh)"/>
+    <circle cx="30" cy="28" r="12" fill="url(#mh1)" opacity="0.4"/>
+    <circle cx="27" cy="25" r="5" fill="white" opacity="0.2"/>
+    <!-- Gear teeth -->
+    <rect x="24" y="-1" width="12" height="10" rx="3" fill="url(#mh1)" opacity="0.55"/>
+    <rect x="24" y="51" width="12" height="10" rx="3" fill="url(#mh1)" opacity="0.5"/>
+    <rect x="-1" y="24" width="10" height="12" rx="3" fill="url(#mh1)" opacity="0.5"/>
+    <rect x="51" y="24" width="10" height="12" rx="3" fill="url(#mh1)" opacity="0.5"/>
+  </g>
+
+  <!-- 3D Checkmark with glow -->
+  <path d="M175 270 L192 287 L230 248" stroke="url(#mh1)" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#mhSh)"/>
+  <path d="M175 270 L192 287 L230 248" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- Floating particles -->
+  <circle cx="70" cy="75" r="5" fill="#FB6557" opacity="0.25" filter="url(#mhGl)"/>
+  <circle cx="330" cy="80" r="4" fill="#FE9139" opacity="0.2"/>
+  <circle cx="55" cy="290" r="4" fill="#FE9139" opacity="0.15"/>
+  <circle cx="345" cy="285" r="5" fill="#FB6557" opacity="0.18"/>
+</svg>

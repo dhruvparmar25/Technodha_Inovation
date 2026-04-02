@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="dc1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="dc2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dcPaper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="dcSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#FB6557" flood-opacity="0.22"/>
+    </filter>
+    <filter id="dcGl">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Document shadow -->
+  <rect x="68" y="48" width="140" height="190" rx="12" fill="#D44F3D" opacity="0.06" transform="translate(5, 6)"/>
+
+  <!-- 3D Document -->
+  <rect x="60" y="40" width="140" height="190" rx="12" stroke="url(#dc1)" stroke-width="2.5" fill="url(#dcPaper)" filter="url(#dcSh)"/>
+
+  <!-- Document fold (3D page corner) -->
+  <path d="M160 40 L200 40 L200 78 L168 78 Q160 78 160 70 Z" fill="url(#dc1)" opacity="0.12"/>
+  <path d="M160 40 L160 70 Q160 78 168 78 L200 78" stroke="url(#dc1)" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <!-- Fold highlight -->
+  <path d="M162 42 L162 68 Q162 74 168 74 L196 74" fill="url(#dc2)" opacity="0.3"/>
+
+  <!-- 3D Text lines with depth -->
+  <rect x="82" y="98" width="90" height="7" rx="3.5" fill="url(#dc1)" opacity="0.35"/>
+  <rect x="82" y="98" width="90" height="3" rx="1.5" fill="url(#dc2)" opacity="0.3"/>
+  <rect x="82" y="115" width="70" height="7" rx="3.5" fill="url(#dc1)" opacity="0.28"/>
+  <rect x="82" y="132" width="82" height="7" rx="3.5" fill="url(#dc1)" opacity="0.22"/>
+  <rect x="82" y="149" width="58" height="7" rx="3.5" fill="url(#dc1)" opacity="0.16"/>
+  <rect x="82" y="166" width="74" height="7" rx="3.5" fill="url(#dc1)" opacity="0.12"/>
+
+  <!-- 3D AI Scan line -->
+  <line x1="50" y1="135" x2="210" y2="135" stroke="url(#dc1)" stroke-width="2.5" opacity="0.5"/>
+  <line x1="50" y1="135" x2="210" y2="135" stroke="#FE9139" stroke-width="6" opacity="0.08" filter="url(#dcGl)"/>
+  <circle cx="50" cy="135" r="5" fill="url(#dc1)" filter="url(#dcSh)"/>
+  <circle cx="50" cy="133" r="2" fill="white" opacity="0.4"/>
+  <circle cx="210" cy="135" r="5" fill="url(#dc1)" filter="url(#dcSh)"/>
+  <circle cx="210" cy="133" r="2" fill="white" opacity="0.4"/>
+
+  <!-- 3D AI Chip badge -->
+  <rect x="185" y="195" width="55" height="55" rx="12" fill="url(#dc1)" opacity="0.1" filter="url(#dcSh)"/>
+  <rect x="183" y="192" width="55" height="55" rx="12" stroke="url(#dc1)" stroke-width="2" fill="url(#dcPaper)"/>
+  <!-- Glass on chip -->
+  <rect x="188" y="195" width="40" height="15" rx="7" fill="url(#dc2)" opacity="0.35"/>
+
+  <!-- 3D Chip inner -->
+  <circle cx="210" cy="220" r="13" fill="url(#dc1)" opacity="0.3"/>
+  <circle cx="210" cy="218" r="6" fill="white" opacity="0.15"/>
+
+  <!-- 3D Chip pins -->
+  <line x1="195" y1="192" x2="195" y2="180" stroke="url(#dc1)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="210" y1="192" x2="210" y2="180" stroke="url(#dc1)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="225" y1="192" x2="225" y2="180" stroke="url(#dc1)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Checkmark in chip -->
+  <path d="M202 220 L208 226 L220 214" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

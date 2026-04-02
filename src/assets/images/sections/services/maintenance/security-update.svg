@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="su1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="su2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="suRad" cx="45%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.02"/>
+    </radialGradient>
+    <filter id="suSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#FB6557" flood-opacity="0.25"/>
+    </filter>
+    <filter id="suGl">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Shield shadow -->
+  <path d="M143 38 L235 80 L235 168 Q235 240 143 268 Q52 240 52 168 L52 80 Z" fill="#D44F3D" opacity="0.05"/>
+
+  <!-- 3D Shield -->
+  <path d="M140 35 L232 77 L232 165 Q232 237 140 265 Q48 237 48 165 L48 77 Z" stroke="url(#su1)" stroke-width="2.5" fill="url(#suRad)" filter="url(#suSh)"/>
+  <!-- Glass highlight -->
+  <path d="M140 42 L220 80 L220 120 Q180 75 130 60 Z" fill="url(#su2)" opacity="0.3"/>
+
+  <!-- Inner shield -->
+  <path d="M140 62 L210 95 L210 158 Q210 215 140 238 Q70 215 70 158 L70 95 Z" stroke="url(#su1)" stroke-width="1" fill="none" opacity="0.15"/>
+
+  <!-- 3D Lock body -->
+  <rect x="110" y="140" width="60" height="52" rx="10" fill="url(#su1)" opacity="0.15" filter="url(#suSh)"/>
+  <rect x="108" y="138" width="60" height="52" rx="10" stroke="url(#su1)" stroke-width="2.5" fill="url(#suRad)"/>
+  <!-- Lock glass -->
+  <rect x="113" y="141" width="48" height="15" rx="7" fill="url(#su2)" opacity="0.35"/>
+
+  <!-- 3D Lock shackle -->
+  <path d="M118 138 L118 118 Q118 96 140 96 Q162 96 162 118 L162 138" stroke="url(#su1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M120 136 L120 118 Q120 100 140 100" stroke="white" stroke-width="1.5" fill="none" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- 3D Keyhole -->
+  <circle cx="138" cy="160" r="9" fill="url(#su1)" opacity="0.45"/>
+  <circle cx="136" cy="157" r="4" fill="white" opacity="0.2"/>
+  <rect x="135" y="163" width="6" height="14" rx="2" fill="url(#su1)" opacity="0.45"/>
+
+  <!-- 3D Update arrows -->
+  <path d="M228 38 Q255 55 245 88" stroke="url(#su1)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <polygon points="241,88 249,88 245,100" fill="url(#su1)"/>
+  <path d="M52 225 Q25 208 35 175" stroke="url(#su1)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <polygon points="39,175 31,175 35,163" fill="url(#su1)"/>
+</svg>

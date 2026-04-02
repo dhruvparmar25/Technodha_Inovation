@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="mg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="mgRad" cx="45%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.02"/>
+    </radialGradient>
+    <filter id="mgSh">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#FB6557" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="200" height="200" rx="16" fill="#FFF7F2"/>
+
+  <!-- 3D Shield -->
+  <path d="M100 25 L158 52 L158 112 Q158 158 100 175 Q42 158 42 112 L42 52 Z" stroke="url(#mg1)" stroke-width="2.5" fill="url(#mgRad)" filter="url(#mgSh)"/>
+  <path d="M100 32 L148 55 L148 80 Q130 50 88 42 Z" fill="url(#mg2)" opacity="0.25"/>
+
+  <!-- 3D Wrench inside -->
+  <g transform="translate(68, 65) rotate(-22, 32, 25)">
+    <rect x="5" y="18" width="38" height="11" rx="4" fill="url(#mg1)" opacity="0.55" filter="url(#mgSh)"/>
+    <rect x="5" y="18" width="38" height="4" rx="2" fill="url(#mg2)" opacity="0.3"/>
+    <circle cx="48" cy="24" r="12" stroke="url(#mg1)" stroke-width="2" fill="none" opacity="0.4"/>
+    <circle cx="48" cy="24" r="5" fill="url(#mg1)" opacity="0.25"/>
+  </g>
+
+  <!-- 3D Checkmark -->
+  <path d="M82 118 L94 130 L120 104" stroke="url(#mg1)" stroke-width="3.5" fill="none" stroke-linecap="round" filter="url(#mgSh)"/>
+
+  <!-- 3D Gear accent -->
+  <circle cx="155" cy="158" r="18" stroke="url(#mg1)" stroke-width="2" fill="url(#mgRad)" filter="url(#mgSh)"/>
+  <circle cx="155" cy="156" r="8" fill="url(#mg1)" opacity="0.3"/>
+  <circle cx="152" cy="153" r="3.5" fill="white" opacity="0.15"/>
+  <rect x="149" y="136" width="12" height="7" rx="2" fill="url(#mg1)" opacity="0.3"/>
+  <rect x="149" y="173" width="12" height="7" rx="2" fill="url(#mg1)" opacity="0.25"/>
+</svg>

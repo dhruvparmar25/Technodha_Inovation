@@ -19,6 +19,8 @@ const serviceLinks = [
   { id: 2, name: "Mobile App Development", path: "/services/mobile-apps" },
   { id: 3, name: "UI / UX Design", path: "/services/ui-ux" },
   { id: 4, name: "Cloud Computing", path: "/services/cloud-services" },
+  { id: 5, name: "AI Integration & Automation", path: "/services/ai-automation" },
+  { id: 6, name: "Maintenance & Support", path: "/services/maintenance-support" },
 ];
 
 const FooterHeading = ({ children }) => (

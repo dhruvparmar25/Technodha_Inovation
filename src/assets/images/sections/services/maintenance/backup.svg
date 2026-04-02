@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="bk1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="bk2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="bkRad" cx="45%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.02"/>
+    </radialGradient>
+    <filter id="bkSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#FB6557" flood-opacity="0.22"/>
+    </filter>
+    <filter id="bkGl">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Cloud shadow -->
+  <path d="M83 142 Q83 102 123 97 Q133 58 173 63 Q213 52 223 90 Q260 90 260 127 Q265 158 233 162 L83 162 Q52 157 52 132 Q52 112 83 142 Z" fill="#D44F3D" opacity="0.04" transform="translate(3, 5)"/>
+
+  <!-- 3D Cloud -->
+  <path d="M80 140 Q80 100 120 95 Q130 58 170 63 Q210 52 222 90 Q258 90 258 125 Q262 155 230 160 L80 160 Q48 155 48 128 Q48 108 80 140 Z" stroke="url(#bk1)" stroke-width="2.5" fill="url(#bkRad)" filter="url(#bkSh)"/>
+  <!-- Glass highlight -->
+  <path d="M100 100 Q120 80 165 78 Q195 70 210 85 Q200 75 160 72 Q130 72 110 90 Z" fill="url(#bk2)" opacity="0.35"/>
+
+  <!-- 3D Upload arrow -->
+  <path d="M140 188 L140 125" stroke="url(#bk1)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M122 142 L140 122 L158 142" stroke="url(#bk1)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow glow -->
+  <path d="M140 188 L140 125" stroke="#FE9139" stroke-width="8" opacity="0.06" filter="url(#bkGl)"/>
+
+  <!-- 3D Database stacks -->
+  <!-- Left DB -->
+  <ellipse cx="100" cy="218" rx="32" ry="11" stroke="url(#bk1)" stroke-width="2" fill="url(#bkRad)" filter="url(#bkSh)"/>
+  <rect x="68" y="218" width="64" height="28" stroke="url(#bk1)" stroke-width="2" fill="url(#bkRad)"/>
+  <ellipse cx="100" cy="246" rx="32" ry="11" stroke="url(#bk1)" stroke-width="2" fill="url(#bkRad)"/>
+  <ellipse cx="100" cy="218" rx="28" ry="7" fill="url(#bk2)" opacity="0.25"/>
+
+  <!-- Right DB -->
+  <ellipse cx="182" cy="218" rx="32" ry="11" stroke="url(#bk1)" stroke-width="2" fill="url(#bkRad)" filter="url(#bkSh)"/>
+  <rect x="150" y="218" width="64" height="28" stroke="url(#bk1)" stroke-width="2" fill="url(#bkRad)"/>
+  <ellipse cx="182" cy="246" rx="32" ry="11" stroke="url(#bk1)" stroke-width="2" fill="url(#bkRad)"/>
+  <ellipse cx="182" cy="218" rx="28" ry="7" fill="url(#bk2)" opacity="0.25"/>
+
+  <!-- 3D Sync arrows -->
+  <path d="M132 228 L150 228" stroke="url(#bk1)" stroke-width="2"/>
+  <polygon points="150,224 158,228 150,232" fill="url(#bk1)"/>
+  <path d="M150 240 L132 240" stroke="url(#bk1)" stroke-width="2"/>
+  <polygon points="132,236 124,240 132,244" fill="url(#bk1)"/>
+
+  <!-- 3D Shield badge -->
+  <path d="M232 180 L254 192 L254 214 Q254 230 232 238 Q210 230 210 214 L210 192 Z" stroke="url(#bk1)" stroke-width="2" fill="url(#bkRad)" filter="url(#bkSh)"/>
+  <path d="M232 184 L248 192 L248 198 Q240 186 228 188 Z" fill="url(#bk2)" opacity="0.3"/>
+  <path d="M224 210 L230 216 L242 204" stroke="url(#bk1)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="cb1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="cb2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cbBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="cbSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#FB6557" flood-opacity="0.25"/>
+    </filter>
+    <filter id="cbGl">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Shadow of chat bubble -->
+  <rect x="48" y="58" width="184" height="130" rx="22" fill="#D44F3D" opacity="0.06" transform="translate(4, 6)"/>
+
+  <!-- 3D Chat bubble -->
+  <rect x="45" y="50" width="184" height="130" rx="22" fill="url(#cbBody)" stroke="url(#cb1)" stroke-width="2.5" filter="url(#cbSh)"/>
+  <!-- Glass highlight -->
+  <rect x="55" y="55" width="130" height="35" rx="16" fill="url(#cb2)" opacity="0.4"/>
+
+  <!-- Chat bubble tail - 3D -->
+  <path d="M88 180 L65 210 L125 180" fill="url(#cbBody)" stroke="url(#cb1)" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- 3D Robot eyes -->
+  <circle cx="108" cy="108" r="16" fill="url(#cb1)" opacity="0.2" filter="url(#cbSh)"/>
+  <circle cx="108" cy="106" r="14" fill="url(#cb1)" opacity="0.7"/>
+  <circle cx="104" cy="102" r="6" fill="white" opacity="0.45"/>
+  <circle cx="108" cy="106" r="5" fill="white" opacity="0.3"/>
+
+  <circle cx="168" cy="108" r="16" fill="url(#cb1)" opacity="0.2" filter="url(#cbSh)"/>
+  <circle cx="168" cy="106" r="14" fill="url(#cb1)" opacity="0.7"/>
+  <circle cx="164" cy="102" r="6" fill="white" opacity="0.45"/>
+  <circle cx="168" cy="106" r="5" fill="white" opacity="0.3"/>
+
+  <!-- 3D Robot smile -->
+  <path d="M118 138 Q138 158 158 138" stroke="url(#cb1)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- 3D Antenna -->
+  <line x1="138" y1="50" x2="138" y2="25" stroke="url(#cb1)" stroke-width="2.5"/>
+  <circle cx="138" cy="20" r="8" fill="url(#cb1)" filter="url(#cbSh)"/>
+  <circle cx="136" cy="17" r="3.5" fill="white" opacity="0.35"/>
+
+  <!-- 3D Signal waves -->
+  <path d="M155 18 Q168 8 163 -5" stroke="#FE9139" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M163 23 Q180 10 173 -8" stroke="#FE9139" stroke-width="1.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+
+  <!-- 3D Typing indicator dots -->
+  <circle cx="180" cy="235" r="7" fill="url(#cb1)" opacity="0.3" filter="url(#cbSh)"/>
+  <circle cx="180" cy="234" r="3" fill="white" opacity="0.25"/>
+  <circle cx="200" cy="235" r="7" fill="url(#cb1)" opacity="0.5" filter="url(#cbSh)"/>
+  <circle cx="200" cy="234" r="3" fill="white" opacity="0.3"/>
+  <circle cx="220" cy="235" r="7" fill="url(#cb1)" opacity="0.75" filter="url(#cbSh)"/>
+  <circle cx="220" cy="234" r="3.5" fill="white" opacity="0.35"/>
+</svg>

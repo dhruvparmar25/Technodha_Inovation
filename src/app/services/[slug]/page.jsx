@@ -28,6 +28,20 @@ import CloudProcess from "@/sections/services/CloudProcess";
 import CloudSolutions from "@/sections/services/CloudSolutions";
 import CloudTech from "@/sections/services/CloudTech";
 
+// AI Integration & Automation
+import AIHero from "@/sections/services/AIHero";
+import AISolutions from "@/sections/services/AISolutions";
+import AIProcess from "@/sections/services/AIProcess";
+import AIPlatform from "@/sections/services/AIPlatform";
+import AITech from "@/sections/services/AITech";
+
+// Maintenance & Support
+import MaintenanceHero from "@/sections/services/MaintenanceHero";
+import MaintenanceSolutions from "@/sections/services/MaintenanceSolutions";
+import MaintenanceProcess from "@/sections/services/MaintenanceProcess";
+import MaintenancePlatform from "@/sections/services/MaintenancePlatform";
+import MaintenanceTech from "@/sections/services/MaintenanceTech";
+
 const servicesMap = {
   "web-development": {
     title: "WebDevelopment | Technodha",
@@ -98,6 +112,42 @@ const servicesMap = {
           <CloudTech />
         </section>
 
+        <ContactSection />
+      </>
+    ),
+  },
+
+  "ai-automation": {
+    title: "AI Integration & Automation | Technodha",
+    content: (
+      <>
+        <section data-theme="dark">
+          <AIHero />
+        </section>
+        <AISolutions />
+        <AIProcess />
+        <AIPlatform />
+        <section data-theme="dark">
+          <AITech />
+        </section>
+        <ContactSection />
+      </>
+    ),
+  },
+
+  "maintenance-support": {
+    title: "Maintenance & Support | Technodha",
+    content: (
+      <>
+        <section data-theme="dark">
+          <MaintenanceHero />
+        </section>
+        <MaintenanceSolutions />
+        <MaintenanceProcess />
+        <MaintenancePlatform />
+        <section data-theme="dark">
+          <MaintenanceTech />
+        </section>
         <ContactSection />
       </>
     ),

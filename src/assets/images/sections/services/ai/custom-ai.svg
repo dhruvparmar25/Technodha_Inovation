@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="ca1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="ca2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="caFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.04"/>
+    </linearGradient>
+    <filter id="caSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#FB6557" flood-opacity="0.22"/>
+    </filter>
+    <filter id="caGl">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Puzzle pieces with depth -->
+  <!-- Top left -->
+  <path d="M55 55 L120 55 L120 78 Q132 68 140 78 L140 55 L140 120 L118 120 Q128 132 118 140 L55 140 Z" stroke="url(#ca1)" stroke-width="2.5" fill="url(#caFill)" filter="url(#caSh)"/>
+  <path d="M58 58 L118 58 L118 60" fill="none" stroke="url(#ca2)" stroke-width="12" opacity="0.2" stroke-linecap="round"/>
+
+  <!-- Top right -->
+  <path d="M140 55 L140 78 Q148 68 160 78 L160 55 L225 55 L225 140 L202 140 Q212 132 202 120 L140 120 Z" stroke="url(#ca1)" stroke-width="2.5" fill="url(#caFill)" filter="url(#caSh)"/>
+  <path d="M162 58 L222 58 L222 60" fill="none" stroke="url(#ca2)" stroke-width="12" opacity="0.2" stroke-linecap="round"/>
+
+  <!-- Bottom left -->
+  <path d="M55 140 L118 140 Q128 132 140 140 L140 140 L140 205 L118 205 Q128 215 118 225 L55 225 Z" stroke="url(#ca1)" stroke-width="2.5" fill="url(#caFill)" filter="url(#caSh)"/>
+  <path d="M58 143 L100 143" fill="none" stroke="url(#ca2)" stroke-width="10" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- Bottom right -->
+  <path d="M140 140 L162 140 Q148 150 162 160 L225 160 L225 225 L140 225 L140 205 Q148 215 140 205 Z" stroke="url(#ca1)" stroke-width="2.5" fill="url(#caFill)" filter="url(#caSh)"/>
+  <path d="M162 162 L222 162 L222 165" fill="none" stroke="url(#ca2)" stroke-width="10" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- 3D Central AI chip with glow -->
+  <circle cx="140" cy="140" r="28" fill="url(#ca1)" opacity="0.08" filter="url(#caGl)"/>
+  <circle cx="140" cy="140" r="25" stroke="url(#ca1)" stroke-width="2.5" fill="url(#caFill)" filter="url(#caSh)"/>
+  <circle cx="140" cy="138" r="14" fill="url(#ca1)" opacity="0.4"/>
+  <!-- Glass highlight -->
+  <ellipse cx="135" cy="132" rx="10" ry="6" fill="url(#ca2)" opacity="0.5"/>
+
+  <!-- AI text -->
+  <text x="131" y="143" font-family="Arial" font-weight="bold" font-size="13" fill="white">AI</text>
+
+  <!-- 3D Corner nodes with glow -->
+  <circle cx="55" cy="55" r="6" fill="url(#ca1)" opacity="0.4" filter="url(#caSh)"/>
+  <circle cx="225" cy="55" r="6" fill="url(#ca1)" opacity="0.4" filter="url(#caSh)"/>
+  <circle cx="55" cy="225" r="6" fill="url(#ca1)" opacity="0.4" filter="url(#caSh)"/>
+  <circle cx="225" cy="225" r="6" fill="url(#ca1)" opacity="0.4" filter="url(#caSh)"/>
+
+  <!-- 3D Sparkles -->
+  <path d="M245 95 L248 105 L258 108 L248 111 L245 121 L242 111 L232 108 L242 105 Z" fill="#FE9139" opacity="0.4" filter="url(#caSh)"/>
+  <path d="M35 185 L37 192 L44 194 L37 196 L35 203 L33 196 L26 194 L33 192 Z" fill="#FB6557" opacity="0.35"/>
+</svg>

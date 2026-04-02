@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 410" fill="none">
+  <defs>
+    <linearGradient id="ap1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="ap2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="apRad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FE9139" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FB6557" stop-opacity="0.02"/>
+    </radialGradient>
+    <filter id="apSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#FB6557" flood-opacity="0.25"/>
+    </filter>
+    <filter id="apGl">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Main circle -->
+  <circle cx="230" cy="200" r="165" fill="url(#apRad)"/>
+  <circle cx="230" cy="200" r="165" stroke="url(#ap1)" stroke-width="1.5" fill="none" opacity="0.15"/>
+  <circle cx="230" cy="200" r="155" stroke="url(#ap1)" stroke-width="0.8" fill="none" opacity="0.08"/>
+
+  <!-- 3D Brain -->
+  <ellipse cx="233" cy="185" rx="58" ry="53" fill="#D44F3D" opacity="0.04"/>
+  <ellipse cx="230" cy="182" rx="58" ry="53" stroke="url(#ap1)" stroke-width="2.5" fill="url(#apRad)" filter="url(#apSh)"/>
+  <ellipse cx="218" cy="158" rx="32" ry="18" fill="url(#ap2)" opacity="0.3"/>
+
+  <!-- Brain structure -->
+  <path d="M230 129 Q230 182 230 235" stroke="url(#ap1)" stroke-width="1.8" fill="none" opacity="0.5"/>
+  <path d="M230 148 Q208 158 193 175" stroke="url(#ap1)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M230 175 Q208 183 193 200" stroke="url(#ap1)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <path d="M230 148 Q252 158 267 175" stroke="url(#ap1)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M230 175 Q252 183 267 200" stroke="url(#ap1)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- 3D Neural nodes -->
+  <circle cx="193" cy="175" r="7" fill="url(#ap1)" filter="url(#apSh)"/>
+  <circle cx="191" cy="173" r="3" fill="white" opacity="0.3"/>
+  <circle cx="267" cy="175" r="7" fill="url(#ap1)" filter="url(#apSh)"/>
+  <circle cx="265" cy="173" r="3" fill="white" opacity="0.3"/>
+  <circle cx="193" cy="200" r="6" fill="url(#ap1)" filter="url(#apSh)" opacity="0.8"/>
+  <circle cx="267" cy="200" r="6" fill="url(#ap1)" filter="url(#apSh)" opacity="0.8"/>
+
+  <!-- 3D Circuit -->
+  <path d="M230 240 L230 285" stroke="url(#ap1)" stroke-width="2.5"/>
+  <path d="M230 285 L170 318" stroke="url(#ap1)" stroke-width="2"/>
+  <path d="M230 285 L230 338" stroke="url(#ap1)" stroke-width="2"/>
+  <path d="M230 285 L290 318" stroke="url(#ap1)" stroke-width="2"/>
+
+  <!-- 3D Output nodes -->
+  <circle cx="170" cy="322" r="12" fill="url(#ap1)" opacity="0.15" filter="url(#apSh)"/>
+  <circle cx="170" cy="320" r="10" stroke="url(#ap1)" stroke-width="1.5" fill="url(#apRad)"/>
+  <circle cx="230" cy="342" r="12" fill="url(#ap1)" opacity="0.15" filter="url(#apSh)"/>
+  <circle cx="230" cy="340" r="10" stroke="url(#ap1)" stroke-width="1.5" fill="url(#apRad)"/>
+  <circle cx="290" cy="322" r="12" fill="url(#ap1)" opacity="0.15" filter="url(#apSh)"/>
+  <circle cx="290" cy="320" r="10" stroke="url(#ap1)" stroke-width="1.5" fill="url(#apRad)"/>
+
+  <!-- Orbital accents -->
+  <circle cx="110" cy="110" r="22" stroke="url(#ap1)" stroke-width="1.5" fill="none" opacity="0.1"/>
+  <circle cx="350" cy="100" r="18" stroke="url(#ap1)" stroke-width="1.5" fill="none" opacity="0.08"/>
+  <circle cx="100" cy="280" r="8" fill="url(#ap1)" opacity="0.08"/>
+  <circle cx="360" cy="270" r="6" fill="url(#ap1)" opacity="0.06"/>
+</svg>

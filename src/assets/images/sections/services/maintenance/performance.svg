@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <linearGradient id="pf1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB6557"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <linearGradient id="pf2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pfArc1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FB6557" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FE9139"/>
+    </linearGradient>
+    <filter id="pfSh" x="-15%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#FB6557" flood-opacity="0.25"/>
+    </filter>
+    <filter id="pfGl">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Speedometer arc with depth -->
+  <!-- Back glow -->
+  <path d="M50 195 A100 100 0 0 1 230 195" stroke="url(#pf1)" stroke-width="14" fill="none" opacity="0.06" filter="url(#pfGl)"/>
+  <!-- Main arc -->
+  <path d="M55 195 A95 95 0 0 1 225 195" stroke="url(#pfArc1)" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <!-- Highlight on arc -->
+  <path d="M180 110 A95 95 0 0 1 225 195" stroke="url(#pf1)" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+  <!-- 3D Speed segment marks -->
+  <line x1="68" y1="188" x2="75" y2="180" stroke="url(#pf1)" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+  <line x1="82" y1="148" x2="92" y2="153" stroke="url(#pf1)" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+  <line x1="140" y1="102" x2="140" y2="113" stroke="url(#pf1)" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <line x1="198" y1="148" x2="188" y2="153" stroke="url(#pf1)" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+  <line x1="212" y1="188" x2="205" y2="180" stroke="url(#pf1)" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- 3D Needle with shadow -->
+  <line x1="140" y1="193" x2="198" y2="132" stroke="#D44F3D" stroke-width="3.5" stroke-linecap="round" opacity="0.1" transform="translate(2, 3)"/>
+  <line x1="140" y1="190" x2="198" y2="130" stroke="url(#pf1)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- 3D Needle hub -->
+  <circle cx="140" cy="192" r="14" fill="url(#pf1)" filter="url(#pfSh)"/>
+  <circle cx="137" cy="188" r="6" fill="white" opacity="0.25"/>
+  <circle cx="140" cy="190" r="5" fill="white" opacity="0.15"/>
+
+  <!-- 3D Speed label -->
+  <rect x="108" y="215" width="64" height="24" rx="12" fill="url(#pf1)" opacity="0.12" filter="url(#pfSh)"/>
+  <text x="120" y="232" font-family="Arial" font-weight="bold" font-size="14" fill="url(#pf1)">FAST</text>
+
+  <!-- 3D Lightning bolt -->
+  <path d="M215 48 L203 78 L220 78 L198 115 L210 82 L193 82 Z" fill="url(#pf1)" opacity="0.45" filter="url(#pfSh)"/>
+  <path d="M215 48 L210 65 L220 65" fill="url(#pf2)" opacity="0.4"/>
+</svg>
