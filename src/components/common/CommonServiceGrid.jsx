@@ -7,7 +7,7 @@ export default function CommonSolutionsGrid({
   items = [],
 }) {
   return (
-    <section data-theme="light" className=" max-w-[1230px] px-[15px] m-auto py-16">
+    <section data-theme="light" className=" max-w-[1230px] px-[15px] m-auto pt-16">
 
       {/* Header */}
       <div className="text-center">

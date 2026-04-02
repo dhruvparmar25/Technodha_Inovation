@@ -68,7 +68,7 @@ export default function CollaborationSection() {
   });
 
   return (
-    <section data-theme="light" className="min-h-96  max-w-[1230px] px-[15px] m-auto py-16 gap-10 flex flex-col md:flex-row items-center md:items-start overflow-hidden">
+    <section data-theme="light" className="min-h-96  max-w-[1230px] px-[15px] m-auto  lg:px-10 pt-16 gap-10 flex flex-col md:flex-row items-center md:items-start overflow-hidden">
       {/* LEFT */}
       <div className="w-full lg:w-1/2">
         <div className="section-title">HOW WE COLLABORATE</div>

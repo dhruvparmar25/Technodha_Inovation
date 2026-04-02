@@ -16,10 +16,10 @@ export default function CommonTechSection({
       className="w-full"
       style={{ background: bg }}
     >      {" "}
-      <div className="max-w-[1230px] px-[15px] mx-auto py-6 lg:py-16 overflow-x-hidden">
+      <div className="max-w-[1230px] px-[15px] mx-auto py-16 overflow-x-hidden">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div
-            className={`p-5 flex justify-center
+            className={`flex justify-center
           ${reverse ? "lg:order-2" : ""}`}
           >
             <Image

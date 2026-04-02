@@ -13,7 +13,7 @@ import BottomRightIcon from "@/assets/images/sections/home/matters/bottomright-i
 import Animated from "@/assets/images/sections/home/matters/animated-img.png";
 export default function Maters() {
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-16 " data-theme="light">
+    <section className=" max-w-[1230px] px-[15px] m-auto pt-16 " data-theme="light">
       {" "}
       {/* Heading */}
       <div>

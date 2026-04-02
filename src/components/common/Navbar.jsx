@@ -124,7 +124,7 @@ const Navbar = () => {
           {/* 🔥 NAV */}
           <nav
             ref={navRef}
-            className="flex flex-col mt-20 lg:mt-40 xl:mt-32 lg:flex-row gap-6 lg:gap-16 items-center justify-center"
+            className="flex flex-col mt-20 lg:mt-16 xl-24 2xl:mt-32 lg:flex-row gap-6 lg:gap-16 items-center justify-center"
           >
             {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map((item) => (
               <Link

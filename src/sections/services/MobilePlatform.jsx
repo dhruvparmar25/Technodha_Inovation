@@ -24,7 +24,7 @@ const expectations = [
 
 export default function MobilePlatform() {
   return (
-    <section className=" max-w-[1230px] px-[15px] m-auto py-16 " data-theme="light">
+    <section className=" max-w-[1230px] px-[15px] m-auto pt-16 " data-theme="light">
 
       {/* Header */}
       <div className="text-center max-w-180 mx-auto">

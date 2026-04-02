@@ -42,7 +42,7 @@ const cards = [
 
 export default function HoverCardsSection() {
   return (
-    <section className=" relative  max-w-[1230px] px-[15px] m-auto py-16">
+    <section className=" relative  max-w-[1230px] px-[15px] m-auto pt-16">
       <div className="text-center flex flex-col items-center justify-center">
         {/* Small Gradient Title */}
         <span className="section-title">THE WAY WE BUILD</span>

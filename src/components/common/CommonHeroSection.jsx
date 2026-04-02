@@ -19,7 +19,7 @@ export default function CommonHeroSection({
   return (
     <section
       data-theme={theme}
-      className="relative overflow-hidden bg-black py-16"
+      className="relative overflow-hidden bg-black py-8"
     >
      {herobg && (
   <Image
@@ -27,7 +27,7 @@ export default function CommonHeroSection({
     alt="bg"
     fill
     priority
-    className="object-cover opacity-50"
+  className="object-cover object-center opacity-50 pointer-events-none"
   />
 )}
 

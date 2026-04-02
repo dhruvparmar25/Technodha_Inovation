@@ -1,6 +1,6 @@
 export default function ContactHeader() {
   return (
-    <div data-theme="light" className="contact-header-section p-6 xl:py-16 xl:px-30  ">
+    <div data-theme="light" className="contact-header-section px-[15px] pt-16 xl:px-30  ">
       <div className="text-center">
         <span className="section-title">START HERE </span>
 
@@ -19,7 +19,8 @@ export default function ContactHeader() {
         <p className="text-support ">
           Submit your requirement and we’ll respond with a clear plan. Email us
           anytime at{" "}
-          <span className="italic text-(--color-primary)">
+          <span     href="mailto:support@technodha.com"
+ className="italic text-(--color-primary)">
             {" "}
             support@technodha.com
           </span>

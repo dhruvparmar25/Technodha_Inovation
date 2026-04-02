@@ -68,7 +68,7 @@ function ContactSection() {
 
   return (
     <>
-      <section data-theme="light" className="py-16 page-wrapper" id="contact">
+      <section data-theme="light" className="py-16  page-wrapper" id="contact">
       
         <div className="max-w-[1230px] px-[15px] m-auto">
           <div className="flex flex-col xl:flex-row gap-18 items-center">
