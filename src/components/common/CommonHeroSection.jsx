@@ -35,7 +35,7 @@ export default function CommonHeroSection({
       <div className="absolute inset-0" />
 
       <div className="relative max-w-[1230px] px-[15px] m-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center ">
 
           {/* LEFT */}
           <div>

@@ -138,11 +138,12 @@ const Navbar = () => {
                   className="
               font-bold text-text-primary transition group-hover:text-primary
               
-              text-2xl
-              sm:text-3xl
-              md:text-4xl
-              lg:text-4xl
-              xl:text-[50px]  
+              text-[24px]
+              sm:text-[28px]
+              md:text-[32px]
+              lg:text-[36px]
+              xl:text-[45px]
+              2xl:text-[50px]  
             "
                 >
                   {item}
