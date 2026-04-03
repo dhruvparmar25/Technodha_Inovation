@@ -6,6 +6,7 @@ import Frame from "@/assets/images/sections/home/director/director.png";
 import Left from "@/assets/images/sections/home/director/left-icon.png";
 import CEO from "@/assets/images/sections/home/director/ceo.png";
 import CMO from "@/assets/images/sections/home/director/cmo.png";
+import CTO from "@/assets/images/sections/home/director/uv.png"
 
 
 const data = [
@@ -25,7 +26,7 @@ const data = [
   {
     name: "YUVRAJSINH JADEJA",
     role: "Chief Technical Officer (CTO)",
-    image: "/icon-1.jpg",
+    image: CTO,
     message:
       "To design intelligent systems that simplify complexity and enable business transformation - Yuvrajsinh Jadeja",
   },
@@ -90,7 +91,7 @@ export default function DirectorSection() {
           <div className="absolute inset-0 flex items-center justify-center gap-10 px-6">
             
             {/* IMAGE */}
-            <div className="w-60 h-80 relative">
+            <div className="w-60 h-80 relative bg-white">
               <Image
                 src={data[index].image}
                 alt={data[index].name}
