@@ -6,6 +6,7 @@ import Frame from "@/assets/images/sections/home/director/director.png";
 import Left from "@/assets/images/sections/home/director/left-icon.png";
 import CEO from "@/assets/images/sections/home/director/ceo.png";
 import CMO from "@/assets/images/sections/home/director/cmo.png";
+import CTO from "@/assets/images/sections/home/director/uv.png";
 
 
 const data = [
@@ -25,7 +26,7 @@ const data = [
   {
     name: "YUVRAJSINH JADEJA",
     role: "Chief Technical Officer (CTO)",
-    image: "/icon-1.jpg",
+    image: CTO,
     message:
       "To design intelligent systems that simplify complexity and enable business transformation - Yuvrajsinh Jadeja",
   },
