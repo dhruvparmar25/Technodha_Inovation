@@ -54,6 +54,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar-scrolled {
   background: transparent;
 }
@@ -554,4 +558,30 @@ body {
 /* Align career content right */
 .career-right-align {
   justify-content: end;
+}
+
+.screenshot-marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: screenshotsLoop 50s linear infinite;
+}
+
+.screenshot-marquee:hover .screenshot-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes screenshotsLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screenshot-marquee-track {
+    animation: none;
+  }
 }

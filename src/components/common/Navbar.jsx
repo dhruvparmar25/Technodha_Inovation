@@ -7,6 +7,7 @@ import LightLogo from "@/assets/images/common/nav-logo-light.png";
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
@@ -15,6 +16,7 @@ import gsap from "gsap";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
+  const pathname = usePathname();
 
   const navRef = useRef(null);
   const overlayRef = useRef(null);
@@ -124,12 +126,15 @@ const Navbar = () => {
           {/* 🔥 NAV */}
           <nav
             ref={navRef}
-            className="flex flex-col mt-20 lg:mt-16 xl-24 2xl:mt-32 lg:flex-row gap-6 lg:gap-16 items-center justify-center"
+            className="flex flex-col mt-20 lg:mt-16 xl-24 2xl:mt-32 lg:flex-row gap-6 lg:gap-12 items-center justify-center"
           >
-            {["HOME", "ABOUT", "SERVICES", "CONTACT", "CAREER"].map((item) => (
+            {["HOME", "ABOUT", "SERVICES", "PORTFOLIO", "CONTACT", "CAREER"].map((item) => {
+              const href = `/${item === "HOME" ? "" : item.toLowerCase()}`;
+              const isActive = item === "HOME" ? pathname === "/" : pathname.startsWith(href);
+              return (
               <Link
                 key={item}
-                href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
+                href={href}
                 onClick={() => setMenuOpen(false)}
                 className="group flex flex-col items-center"
               >
@@ -141,10 +146,11 @@ const Navbar = () => {
               text-[24px]
               sm:text-[28px]
               md:text-[32px]
-              lg:text-[36px]
-              xl:text-[45px]
+              lg:text-[32px]
+              xl:text-[40px]
               2xl:text-[50px]  
             "
+                  style={{ color: isActive ? "var(--color-primary)" : "" }}
                 >
                   {item}
                 </span>
@@ -158,7 +164,7 @@ const Navbar = () => {
                   />
                 </div>
               </Link>
-            ))}
+            )})}
           </nav>
           <div
             className="
@@ -210,6 +216,9 @@ const Navbar = () => {
   <div className="flex gap-6 text-sm lg:absolute lg:left-1/2 lg:-translate-x-1/2">
     <Link href="/about" onClick={() => setMenuOpen(false)}>
       ABOUT
+    </Link>
+    <Link href="/portfolio" onClick={() => setMenuOpen(false)}>
+      PORTFOLIO
     </Link>
     <Link href="/contact" onClick={() => setMenuOpen(false)}>
       CONTACT
@@ -271,3 +280,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
