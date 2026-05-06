@@ -10,8 +10,9 @@ const companyLinks = [
   { id: 1, name: "Home", path: "/" },
   { id: 2, name: "About", path: "/about" },
   { id: 3, name: "Services", path: "/services/web-development" },
-  { id: 4, name: "Contact", path: "/contact" },
-  { id: 5, name: "Career", path: "/career" },
+  { id: 4, name: "Portfolio", path: "/portfolio" },
+  { id: 5, name: "Contact", path: "/contact" },
+  { id: 6, name: "Career", path: "/career" },
 ];
 
 const serviceLinks = [
@@ -82,7 +83,10 @@ const Footer = () => {
               </li>
             ))}
           </ul>
+
+     
         </nav>
+
 
         {/* Office */}
         <address className="not-italic">

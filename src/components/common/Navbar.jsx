@@ -145,10 +145,10 @@ const Navbar = () => {
               
               text-[24px]
               sm:text-[28px]
-              md:text-[32px]
+              md:text-[30px]
               lg:text-[32px]
-              xl:text-[40px]
-              2xl:text-[50px]  
+              xl:text-[34px]
+              2xl:text-[36px]  
             "
                   style={{ color: isActive ? "var(--color-primary)" : "" }}
                 >
