@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import ohcAppointments from "@/assets/images/sections/projects/OHC web app/Appointments.png";
 import ohcEmployee from "@/assets/images/sections/projects/OHC web app/Employee (2).png";
@@ -25,6 +26,7 @@ import houseEarnings from "@/assets/images/sections/projects/Housekeeping/Earnin
 
 const projectDetails = [
   {
+    slug: "ohc-web-app",
     title: "OHC Web App",
     subtitle: "Occupational Healthcare Platform",
     description:
@@ -37,6 +39,7 @@ const projectDetails = [
     images: [ohcAppointments, ohcEmployee, ohcNotifications, ohcOPD],
   },
   {
+    slug: "ehr-web-app",
     title: "EHR Web App",
     subtitle: "Clinical Dashboard System",
     description:
@@ -49,6 +52,7 @@ const projectDetails = [
     images: [ehrWebPatientDash, ehrWebLabOrders, ehrWebVitals, ehrWebReports],
   },
   {
+    slug: "ehr-mobile-app",
     title: "EHR Mobile App",
     subtitle: "Family Health Companion",
     isMobileApp: true,
@@ -62,6 +66,7 @@ const projectDetails = [
     images: [ehrAppHealthTracker, ehrAppFamilyDetail, ehrAppLabReports, ehrAppRecordList],
   },
   {
+    slug: "housekeeping-app",
     title: "Housekeeping App",
     subtitle: "Service Operations App",
     isMobileApp: true,
@@ -78,6 +83,7 @@ const projectDetails = [
 
 export default function ProjectsCaseStudies() {
   const [activePreview, setActivePreview] = useState(null);
+  const router = useRouter();
 
   return (
     <section data-theme="light" className="py-12">
@@ -85,7 +91,16 @@ export default function ProjectsCaseStudies() {
         {projectDetails.map((project, projectIndex) => (
           <article
             key={project.title}
-            className="rounded-[28px] border border-[#f2c5be] bg-[#fffdfc] p-5 md:p-8 lg:p-10"
+            className="rounded-[28px] border border-[#f2c5be] bg-[#fffdfc] p-5 md:p-8 lg:p-10 cursor-pointer"
+            role="button"
+            tabIndex={0}
+            onClick={() => router.push(`/projects/${project.slug}`)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                router.push(`/projects/${project.slug}`);
+              }
+            }}
           >
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
               <div className="max-w-2xl">
@@ -118,13 +133,15 @@ export default function ProjectsCaseStudies() {
                   <button
                     type="button"
                     key={`${project.title}-${index}`}
-                    onClick={() =>
+                    onClick={(event) => {
+                      event.stopPropagation();
                       setActivePreview({
                         image,
                         title: project.title,
                         screen: (index % project.images.length) + 1,
-                      })
-                    }
+                      });
+                    }}
+                    onMouseDown={(event) => event.stopPropagation()}
                     className={`overflow-hidden rounded-2xl border border-[#f5dfda] bg-white p-2 text-left cursor-zoom-in ${
                       project.isMobileApp
                         ? "min-w-[170px] sm:min-w-[220px] xl:min-w-[260px]"

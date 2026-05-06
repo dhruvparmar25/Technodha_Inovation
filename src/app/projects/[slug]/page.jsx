@@ -102,6 +102,54 @@ export default async function ProjectDetailPage({ params }) {
           </div>
         </div>
 
+        <div className="mt-14">
+          <p className="section-title">DELIVERY MODEL</p>
+          <h2 className="heading-primary">Execution Phases</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {project.deliveryPhases.map((phase, index) => (
+              <article
+                key={phase}
+                className="rounded-2xl border border-[#F2C5BE] bg-white p-5 shadow-[0_8px_24px_rgba(34,34,43,0.06)]"
+              >
+                <p className="text-[12px] uppercase tracking-[0.08em] text-[#FE9139]">
+                  Phase {index + 1}
+                </p>
+                <p className="mt-2 text-[15px] leading-7 text-[#4E4E58]">{phase}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <p className="section-title">TECH STACK</p>
+          <h2 className="heading-primary">Core Technologies Used</h2>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {project.techStack.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-[#F2C5BE] bg-[#fff7f5] px-4 py-2 text-[13px] font-medium text-[#1A1A1F]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <p className="section-title">BUSINESS IMPACT</p>
+          <h2 className="heading-primary">Outcome Highlights</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {project.outcomes.map((outcome) => (
+              <article
+                key={outcome}
+                className="rounded-2xl border border-[#F2C5BE] bg-white p-5 shadow-[0_8px_24px_rgba(34,34,43,0.06)]"
+              >
+                <p className="text-[15px] leading-7 text-[#4E4E58]">{outcome}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-14 rounded-3xl border border-[#F2C5BE] bg-[#fff7f5] p-7 sm:p-10 text-center">
           <p className="section-title">LET'S BUILD</p>
           <h2 className="heading-primary">
@@ -116,54 +164,6 @@ export default async function ProjectDetailPage({ params }) {
           >
             Start Your Project
           </Link>
-        </div>
-      </div>
-
-      <div className="max-w-[1230px] px-[15px] m-auto mt-14">
-        <p className="section-title">DELIVERY MODEL</p>
-        <h2 className="heading-primary">Execution Phases</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {project.deliveryPhases.map((phase, index) => (
-            <article
-              key={phase}
-              className="rounded-2xl border border-[#F2C5BE] bg-white p-5 shadow-[0_8px_24px_rgba(34,34,43,0.06)]"
-            >
-              <p className="text-[12px] uppercase tracking-[0.08em] text-[#FE9139]">
-                Phase {index + 1}
-              </p>
-              <p className="mt-2 text-[15px] leading-7 text-[#4E4E58]">{phase}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-
-      <div className="max-w-[1230px] px-[15px] m-auto mt-14">
-        <p className="section-title">TECH STACK</p>
-        <h2 className="heading-primary">Core Technologies Used</h2>
-        <div className="mt-6 flex flex-wrap gap-3">
-          {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-[#F2C5BE] bg-[#fff7f5] px-4 py-2 text-[13px] font-medium text-[#1A1A1F]"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="max-w-[1230px] px-[15px] m-auto mt-14">
-        <p className="section-title">BUSINESS IMPACT</p>
-        <h2 className="heading-primary">Outcome Highlights</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {project.outcomes.map((outcome) => (
-            <article
-              key={outcome}
-              className="rounded-2xl border border-[#F2C5BE] bg-white p-5 shadow-[0_8px_24px_rgba(34,34,43,0.06)]"
-            >
-              <p className="text-[15px] leading-7 text-[#4E4E58]">{outcome}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

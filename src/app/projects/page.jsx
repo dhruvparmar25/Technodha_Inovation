@@ -13,8 +13,10 @@ export default function ProjectsPage() {
     <div>
       <ProjectsHero />
       <ProjectsOverview />
-      <TechStackSection />
+            <section data-theme="dark">
 
+      <TechStackSection />
+</section>
       <ProjectsCaseStudies />
       <ProjectCTASection />
     </div>
