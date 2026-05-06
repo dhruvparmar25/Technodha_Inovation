@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function Portfolio3DSection({ project }) {
   return (
-    <section data-theme="light" className="py-16 md:py-20 lg:py-24 bg-white">
+    <section data-theme="light" className="py-12 md:py-16 lg:py-18 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <RevealOnScroll className="order-2 lg:order-1">
@@ -30,10 +30,10 @@ export default function Portfolio3DSection({ project }) {
             <div className="relative aspect-video overflow-hidden group">
               <div className="absolute inset-0" />
               <Image
-                src="/3d-model.gif"
+                src="/portfolio.gif"
                 alt={`Showcase of ${project.name}`}
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1440px) 100vw, 50vw"
                 className="object-contain w-full h-full"
                 priority
               />

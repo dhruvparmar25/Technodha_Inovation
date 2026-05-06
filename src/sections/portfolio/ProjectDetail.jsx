@@ -10,40 +10,46 @@ export default function ProjectDetail({ project }) {
   const [activeImage, setActiveImage] = useState(null);
 
   return (
-    <section data-theme="light" className="bg-[#faf9f6] py-16 md:py-20 lg:py-24">
+    <section data-theme="light" className="bg-white py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <RevealOnScroll>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-semibold text-[#2c2c2c]">{project.name}</h1>
-              <p className="text-support mt-4">{project.fullDescription}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 items-start">
+            {/* Left Column: Details & Features */}
+            <div className="lg:col-span-2">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">{project.name}</h1>
+              <p className="text-gray-600 mt-4 text-lg leading-relaxed">{project.fullDescription}</p>
 
-              <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {project.features.map((feature) => (
-                  <div key={feature.title} className="rounded-2xl border border-[#f2c5be] bg-white p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon icon={feature.icon} className="text-[#fb6557] w-5 h-5" />
-                      <h3 className="font-semibold text-[#2c2c2c]">{feature.title}</h3>
+              <div className="mt-8">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">Key Features</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {project.features.map((feature) => (
+                    <div key={feature.title} className="flex items-start gap-4">
+                      <div className="w-10 h-10 flex-shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                        <Icon icon={feature.icon} className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-800 text-lg">{feature.title}</h3>
+                        <p className="text-sm text-gray-500 mt-1">{feature.text}</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-[#5f5f6b]">{feature.text}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div>
-              <div className="rounded-2xl border border-[#f2c5be] overflow-hidden bg-white">
+            {/* Right Column: Image & Tech Stack */}
+            <div className="lg:col-span-1 space-y-8 sticky top-24">
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200/80">
                 <div className="relative aspect-[16/10]">
-                  <Image src={project.image} alt={project.name} fill className="object-cover p-1 rounded-2xl" sizes="(max-width: 1024px) 100vw, 50vw" priority />
+                  <Image src={project.image} alt={project.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" priority />
                 </div>
               </div>
 
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-[#2c2c2c] mb-3">Technology Stack</h3>
-                <div className="flex flex-wrap gap-3">
+              <div className="p-6 rounded-2xl bg-gray-50 border border-gray-200/80">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Technology Stack</h3>
+                <div className="flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
-                    <span key={tech} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#fff7f5] border border-[#f2c5be] text-sm font-medium text-[#2c2c2c]">
-                      <Icon icon="mdi:code-tags" className="text-[#fe9139]" />
+                    <span key={tech} className="text-xs font-medium px-3 py-1.5 rounded-md bg-gray-200 text-gray-700">
                       {tech}
                     </span>
                   ))}

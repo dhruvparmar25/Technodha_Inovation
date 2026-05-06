@@ -23,29 +23,43 @@ export default function PortfolioStorySection({ project }) {
           <RevealOnScroll delay={100}>
             <div className="max-w-xl">
               <h2 className="heading-primary">The Story Behind {project.name}</h2>
-              <p className="text-support mt-4 mb-6">
-                {project.shortDescription} Our team collaborated closely with the client to understand their vision and challenges. We crafted a bespoke solution focusing on user experience, performance, and scalability, delivering a product that exceeded expectations.
+              <p className="text-support mt-4 mb-8">
+                {project.shortDescription} Our team collaborated closely with the client to understand their vision and challenges, crafting a bespoke solution that exceeded expectations.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 mt-1 flex-shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                    <Icon icon="ph:strategy-bold" className="w-5 h-5" />
+              <div className="space-y-6">
+                {/* Card 1: Strategy */}
+                <div className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-12 h-12 flex-shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                    <Icon icon="ph:strategy-bold" className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">Strategic Planning</h3>
                     <p className="text-support mt-1">
-                      Defined project goals, user personas, and a comprehensive roadmap for development.
+                      We defined clear project goals, user personas, and a comprehensive roadmap for development.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 mt-1 flex-shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                    <Icon icon="ph:desktop-tower-bold" className="w-5 h-5" />
+                {/* Card 2: Design & Development */}
+                <div className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-12 h-12 flex-shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                    <Icon icon="ph:desktop-tower-bold" className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">Design & Development</h3>
                     <p className="text-support mt-1">
-                      Executed an iterative design and development process with continuous feedback and refinement.
+                      We executed an iterative design and development process with continuous feedback and refinement.
+                    </p>
+                  </div>
+                </div>
+                {/* Card 3: Launch & Optimization */}
+                <div className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-12 h-12 flex-shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                    <Icon icon="ph:rocket-launch-bold" className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">Launch & Optimization</h3>
+                    <p className="text-support mt-1">
+                      Post-launch, we monitor performance and optimize for user engagement and business goals.
                     </p>
                   </div>
                 </div>

@@ -16,20 +16,19 @@ export default function PortfolioHero() {
 
       <div className="absolute inset-x-0 bottom-10 z-20 px-4">
         <div className="mx-auto max-w-3xl text-center">
-        
-
+         
           <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
             <a
               href="#projects"
-              className="px-5 py-2.5 rounded-full bg-gradient-primary text-white text-sm font-semibold transition-transform duration-300 hover:-translate-y-0.5"
+              className="px-6 py-3 rounded-full bg-gradient-primary text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
             >
-              View Our Work
+              Explore Our Work
             </a>
             <Link
               href="/contact"
-              className="px-5 py-2.5 rounded-full border border-[#f2c5be] bg-white/80 text-[#2c2c2c] text-sm font-semibold transition-all duration-300 hover:border-primary hover:text-primary"
+              className="px-6 py-3 rounded-full border border-transparent bg-white/90 text-gray-800 font-semibold shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:border-primary/50 hover:-translate-y-0.5"
             >
-              Get a Quote
+              Start a Project
             </Link>
           </div>
         </div>
