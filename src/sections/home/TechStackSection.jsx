@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 import Aws from "@/assets/images/tech/aws.svg";
 import Bootstrap from "@/assets/images/tech/bootstrap.png";
 import Css from "@/assets/images/tech/css.png";
@@ -30,9 +31,11 @@ const techItems = [
   { title: "Python", img: Python },
   { title: "Django", img: Django },
   { title: "Nodejs", img: Nodejs },
+  { title: "TensorFlow", icon: "logos:tensorflow" },
+  { title: "PyTorch", icon: "logos:pytorch-icon" },
   { title: "AWS", img: Aws },
   { title: "Gitlab", img: Gitlab },
-  { title: "Github", img: Github },
+  { title: "Github", img: Github, invert: true },
   { title: "Slack", img: Slack },
 ];
 
@@ -47,6 +50,9 @@ const techItemsSecond = [
   { title: "React JS", img: ReactImg },
   { title: "TypeScript", img: Typescript },
   { title: "Next JS", img: Nextjs },
+  { title: "OpenAI", icon: "simple-icons:openai", iconColor: "#ffffff" },
+  { title: "Hugging Face", icon: "logos:hugging-face-icon" },
+  { title: "LangChain", icon: "simple-icons:langchain", iconColor: "#ffffff" },
 ];
 
 /* ================================
@@ -67,13 +73,23 @@ const MarqueeRow = ({ items, reverse = false }) => {
             key={`${item.title}-${index}`}
             className="tech-box bg-[#0B0C0C]! flex items-center justify-center gap-2 sm:gap-3"
           >
-            <Image
-              src={item.img}
-              alt={item.title}
-              width={32}
-              height={32}
-              className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 object-contain"
-            />
+            {item.icon ? (
+              <Icon
+                icon={item.icon}
+                className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 shrink-0"
+                style={item.iconColor ? { color: item.iconColor } : undefined}
+              />
+            ) : (
+              <Image
+                src={item.img}
+                alt={item.title}
+                width={32}
+                height={32}
+                className={`w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 object-contain ${
+                  item.invert ? "brightness-0 invert" : ""
+                }`}
+              />
+            )}
             <span className="whitespace-nowrap text-white">{item.title}</span>
           </div>
         ))}
@@ -84,13 +100,13 @@ const MarqueeRow = ({ items, reverse = false }) => {
 
 function TechStackSection() {
   return (
-    <section className=" relative bg-[#000000]  sm:pb-20 page-wrapper ">
-      <div className="mt-4 py-8">
+    <section className="relative bg-[#000000] page-wrapper py-10 sm:py-14">
+      <div>
         {/* HEADER */}
         <div className="w-19 h-31.25 -rotate-25  flex justify-center items-center m-auto   ">
           <Image src={Techmen} className="w-full pb-6" alt="" />
         </div>
-        <div className="text-center mb-12 sm:mb-16 px-">
+        <div className="text-center mb-8 sm:mb-10">
           <span className="bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent text-sm sm:text-base font-medium">
             POWERED BY MODERN ENGINEERING
           </span>
@@ -107,7 +123,7 @@ function TechStackSection() {
         </div>
 
         {/* MARQUEE ROWS */}
-        <div className="flex flex-col gap-6 sm:gap-8 mt-14 sm:mt-16">
+        <div className="flex flex-col gap-6 sm:gap-8">
           <MarqueeRow items={techItemsSecond} />
           <MarqueeRow items={techItems} reverse />
         </div>
